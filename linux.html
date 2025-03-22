@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Administration | Success Meets Academy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Comprehensive Linux Administration Course at Success Meets Academy">
+    <meta name="keywords" content="linux administration, server management, shell scripting, system administration">
+    <meta name="author" content="Success Meets Academy">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f4f6f9;
+            
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            
+            --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        .hero-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .linux-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .linux-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .linux-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .curriculum-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .linux-benefit-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .linux-benefit-list li i {
+            color: var(--secondary-color);
+            margin-right: 15px;
+        }
+
+        .technology-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .technology-stack img {
+            max-width: 100px;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .technology-stack img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .certification-section {
+            background-color: var(--bg-secondary);
+            padding: 50px 0;
+        }
+
+        .command-cheat-sheet {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Hero Section Button Styles */
+.hero-section .btn-light {
+    position: relative;
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: 
+        color var(--transition-speed) ease,
+        transform var(--transition-speed) ease;
+}
+
+.hero-section .btn-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: 
+        left var(--transition-speed) ease,
+        transform var(--transition-speed) ease;
+    z-index: -1;
+}
+
+.hero-section .btn-light:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .btn-light:hover::before {
+    left: 0;
+}
+
+.hero-section .btn-light:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+    .hero-section .btn-light {
+        padding: 12px 24px !important;
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="Success Meets Academy Logo" height="50">
+                Success Meets Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs" aria-label="Professional Programs">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses" aria-label="Our Courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" aria-label="About Us">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" aria-label="Contact Us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="enroll.html" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Linux Administration</h1>
+            <p class="lead mb-5">Comprehensive System Administration and Server Management Course</p>
+            <a href="enroll.html" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Comprehensive Linux System Administration</h2>
+                    <p class="lead">Our Linux Administration course provides in-depth training in system management, server configuration, and advanced Linux technologies.</p>
+                    <ul class="list-unstyled linux-benefit-list">
+                        <li><i class="fas fa-check-circle"></i>Hands-on Practical Learning</li>
+                        <li><i class="fas fa-check-circle"></i>Server Configuration Techniques</li>
+                        <li><i class="fas fa-check-circle"></i>Shell Scripting Mastery</li>
+                        <li><i class="fas fa-check-circle"></i>Industry-Recognized Certification</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="linux-admin-image.jpg" alt="Linux Administration Training" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Focus Areas -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Linux Administration Focus Areas</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card linux-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server linux-icon"></i>
+                            <h4>Server Management</h4>
+                            <p>Advanced server configuration, performance optimization, and maintenance strategies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card linux-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-terminal linux-icon"></i>
+                            <h4>Shell Scripting</h4>
+                            <p>Automation techniques, script development, and system task optimization.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card linux-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt linux-icon"></i>
+                            <h4>System Security</h4>
+                            <p>Linux security best practices, firewall configuration, and threat mitigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Details -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Comprehensive Curriculum</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="curriculum-item">
+                        <h4>Module 1: Linux Fundamentals</h4>
+                        <p>Linux distribution overview, system architecture, and basic command-line operations</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h4>Module 2: System Administration</h4>
+                        <p>User management, file system administration, and system configuration</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h4>Module 3: Network Configuration</h4>
+                        <p>Network services, firewall setup, and network troubleshooting</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h4>Module 4: Advanced Shell Scripting</h4>
+                        <p>Automation scripts, system monitoring, and advanced scripting techniques</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Command Cheat Sheet -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Linux Command Cheat Sheet</h2>
+            <div class="command-cheat-sheet">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>File Operations</h5>
+                        <ul>
+                            <li><code>ls</code> - List files</li>
+                            <li><code>cp</code> - Copy files</li>
+                            <li><code>mv</code> - Move files</li>
+                            <li><code>rm</code> - Remove files</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>System Information</h5>
+                        <ul>
+                            <li><code>uname</code> - System information</li>
+                            <li><code>df</code> - Disk space</li>
+                            <li><code>top</code> - Process monitoring</li>
+                            <li><code>ps</code> - Running processes</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Network Commands</h5>
+                        <ul>
+                            <li><code>ping</code> - Network connectivity</li>
+                            <li><code>ifconfig</code> - Network interfaces</li>
+                            <li><code>netstat</code> - Network statistics</li>
+                            <li><code>ssh</code> - Remote access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Tools and Technologies</h2>
+            <div class="technology-stack">
+                <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
+                <img src="https://www.vectorlogo.zone/logos/ubuntu/ubuntu-icon.svg" alt="Ubuntu">
+                <img src="https://www.vectorlogo.zone/logos/centos/centos-icon.svg" alt="CentOS">
+                <img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="Ansible">
+                <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker">
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="certification-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Industry-Recognized Certification</h2>
+                    <p class="lead">Upon completion of the course, receive a globally recognized Linux administration certification.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-certificate text-primary me-2"></i>Internationally Accredited</li>
+                        <li><i class="fas fa-trophy text-primary me-2"></i>Career Advancement Credential</li>
+                        <li><i class="fas fa-globe text-primary me-2"></i>Recognized by Top Employers</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="linux-certification.png" alt="Linux Administration Certification" class="img-fluid" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Success Stories</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="student1.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Student">
+                            <h5>Sarah Thompson</h5>
+                            <p class="text-muted">System Administrator</p>
+                            <p>"The course provided practical skills I use daily."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="student2.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Student">
+                            <h5>Michael Rodriguez</h5>
+                            <p class="text-muted">DevOps Engineer</p>
+                            <p>"Comprehensive and industry-relevant training."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="student3.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Student">
+                            <h5>Emily Chen</h5>
+                            <p class="text-muted">Cloud Infrastructure Specialist</p>
+                            <p>"Transformed my understanding of Linux systems."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section text-center">
+        <div class="container">
+            <h2 class="display-5 mb-4">Master Linux Administration</h2>
+            <p class="lead mb-5">Join our Linux Administration Course and become a system management expert</p>
+            <a href="enroll.html" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

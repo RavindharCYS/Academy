@@ -189,278 +189,279 @@
             <div class="form-header">
                 <h2>Enrollment Form</h2>
             </div>
-                        <!-- Enrollment Type Toggle -->
-                        <div class="enrollment-type-toggle mb-4">
-                            <button class="btn enrollment-type-btn active" data-type="training">
-                                Professional Training
-                            </button>
-                            <button class="btn enrollment-type-btn" data-type="courses">
-                                Specialized Courses
-                            </button>
+            <!-- Enrollment Type Toggle -->
+            <div class="enrollment-type-toggle mb-4">
+                <button class="btn enrollment-type-btn active" data-type="training">
+                    Professional Training
+                </button>
+                <button class="btn enrollment-type-btn" data-type="courses">
+                    Specialized Courses
+                </button>
+            </div>
+            <!-- Enrollment Form -->
+            <form id="enrollmentForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdYHn_l6N9o2E94Kjr2hgwuoX8POHEk4VH5UiZdv6fLqa0MSQ/formResponse" method="POST" target="_self" novalidate>
+                <!-- Hidden Inputs -->
+                <input type="hidden" name="entry.1738812687" id="firstName" required>
+                <input type="hidden" name="entry.441809842" id="lastName" required>
+                <input type="hidden" name="entry.48306933" id="email" required>
+                <input type="hidden" name="entry.1719525943" id="phone" required>
+                <input type="hidden" name="entry.1248646777" id="institution" required>
+                <input type="hidden" name="entry.1884316333" id="trainingProgram" required>
+                <input type="hidden" name="entry.727454542" id="course" required>
+                <input type="hidden" name="entry.1804922025" id="additionalInfo">
+                <input type="hidden" name="entry.1357856485" id="option">
+                                <!-- Personal Information Section -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstNameInput" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstNameInput" name="firstName" required>
+                        <div class="invalid-feedback">Please enter your first name</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastNameInput" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastNameInput" name="lastName" required>
+                        <div class="invalid-feedback">Please enter your last name</div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="emailInput" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="emailInput" name="email" required>
+                        <div class="invalid-feedback">Please enter a valid email address</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="phoneInput" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneInput" name="phone" required>
+                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                    </div>
+                </div>
+
+                <!-- Educational Information -->
+                <div class="mb-3">
+                    <label for="institutionInput" class="form-label">Current Institution/College</label>
+                    <input type="text" class="form-control" id="institutionInput" name="institution" required>
+                    <div class="invalid-feedback">Please enter your current institution</div>
+                </div>
+
+                <!-- Training Program Section -->
+                <div id="trainingSection">
+                    <div class="mb-3">
+                        <label for="trainingProgramSelect" class="form-label">Select Training Program</label>
+                        <select class="form-select" id="trainingProgramSelect" name="trainingProgram" required>
+                            <option value="">Choose a Training Program</option>
+                            <option value="Placement Training">Placement Training</option>
+                            <option value="Soft Skill Development">Soft Skill Development</option>
+                            <option value="Technical Training">Technical Training</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a training program</div>
+                    </div>
+                </div>
+
+                <!-- Courses Section (Initially Hidden) -->
+                <div id="coursesSection" style="display:none;">
+                    <div class="mb-3">
+                        <label for="courseSelect" class="form-label">Select Course</label>
+                        <select class="form-select" id="courseSelect" name="course" required>
+                            <option value="">Choose a Course</option>
+                            <option value="Cyber Security Essentials">Cyber Security Essentials</option>
+                            <option value="Linux Administration">Linux Administration</option>
+                            <option value="Full Stack Development">Full Stack Development</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a course</div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="mb-3">
+                    <label for="additionalInfoInput" class="form-label">Additional Information (Optional)</label>
+                    <textarea class="form-control" id="additionalInfoInput" name="additionalInfo" rows="3" placeholder="Any additional details you'd like to share"></textarea>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                    <label class="form-check-label" for="termsCheck">
+                        I agree to the Terms and Conditions and Privacy Policy
+                    </label>
+                    <div class="invalid-feedback">You must agree to the terms and conditions</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-submit w-100 mt-3">
+                    <i class="fas fa-paper-plane me-2"></i>Submit Enrollment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true" inert>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 justify-content-center">
+                    <h5 class="modal-title text-center" id="successModalLabel">
+                        <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                        <div class="mt-3">Enrollment Successful!</div>
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="lead">Thank you for choosing Success Meets Academy</p>
+                    <p>We've received your enrollment application. Our team will contact you shortly to confirm your registration.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <strong>Confirmation Details:</strong>
+                            <p id="confirmationDetails" class="text-muted"></p>
                         </div>
-            
-                        <!-- Enrollment Form -->
-                        <form id="enrollmentForm" novalidate>
-                            <!-- Personal Information Section -->
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="firstName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
-                                    <div class="invalid-feedback">Please enter your first name</div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="lastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
-                                    <div class="invalid-feedback">Please enter your last name</div>
-                                </div>
-                            </div>
-            
-                            <!-- Contact Information -->
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                    <div class="invalid-feedback">Please enter a valid email address</div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" required>
-                                    <div class="invalid-feedback">Please enter a valid phone number</div>
-                                </div>
-                            </div>
-            
-                            <!-- Educational Information -->
-                            <div class="mb-3">
-                                <label for="institution" class="form-label">Current Institution/College</label>
-                                <input type="text" class="form-control" id="institution" name="institution" required>
-                                <div class="invalid-feedback">Please enter your current institution</div>
-                            </div>
-            
-                            <!-- Training Program Section -->
-                            <div id="trainingSection">
-                                <div class="mb-3">
-                                    <label for="trainingProgram" class="form-label">Select Training Program</label>
-                                    <select class="form-select" id="trainingProgram" name="trainingProgram" required>
-                                        <option value="">Choose a Training Program</option>
-                                        <option value="placement">Placement Training</option>
-                                        <option value="softskills">Soft Skill Development</option>
-                                        <option value="technical">Technical Training</option>
-                                    </select>
-                                    <div class="invalid-feedback">Please select a training program</div>
-                                </div>
-                            </div>
-            
-                            <!-- Courses Section (Initially Hidden) -->
-                            <div id="coursesSection" style="display:none;">
-                                <div class="mb-3">
-                                    <label for="course" class="form-label">Select Course</label>
-                                    <select class="form-select" id="course" name="course">
-                                        <option value="">Choose a Course</option>
-                                        <option value="cyber" data-price="9,999">Cyber Security Essentials - ₹9,999</option>
-                                        <option value="linux" data-price="12,999">Linux Administration - ₹12,999</option>
-                                        <option value="fullstack" data-price="14,999">Full Stack Development - ₹14,999</option>
-                                    </select>
-                                    <div class="course-price-display" id="coursePriceDisplay"></div>
-                                    <div class="invalid-feedback">Please select a course</div>
-                                </div>
-                            </div>
-            
-                            <!-- Additional Information -->
-                            <div class="mb-3">
-                                <label for="additionalInfo" class="form-label">Additional Information (Optional)</label>
-                                <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any additional details you'd like to share"></textarea>
-                            </div>
-            
-                            <!-- Terms and Conditions -->
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
-                                <label class="form-check-label" for="termsCheck">
-                                    I agree to the Terms and Conditions and Privacy Policy
-                                </label>
-                                <div class="invalid-feedback">You must agree to the terms and conditions</div>
-                            </div>
-            
-                            <!-- Submit Button -->
-                            <button type="submit" class="btn btn-submit w-100 mt-3">
-                                <i class="fas fa-paper-plane me-2"></i>Submit Enrollment
+                        <div class="col-md-6">
+                            <strong>Next Steps:</strong>
+                            <ul class="list-unstyled text-muted">
+                                <li>Check your email</li>
+                                <li>Prepare documents</li>
+                                <li>Await further instructions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-3">Success Meets Academy</h5>
+                    <p>Transforming careers through innovative training and skill development programs.</p>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Andagaloregate, Near Rasipuram, Namakkal
+                        </p>
+                        <p>
+                            <i class="fas fa-phone me-2"></i>
+                            +91 93609 94617 (or) +91 93604 05503
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope me-2"></i>
+                            successmeetsacademy@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#programs" class="text-white">Programs</a></li>
+                        <li><a href="index.html#courses" class="text-white">Courses</a></li>
+                        <li><a href="index.html#about" class="text-white">About Us</a></li>
+                        <li><a href="index.html#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19ryQbVNLp/" class="text-white me-3" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/success-meets-technology-b0378734b/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/success_meets_foundation/" class="text-white" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="newsletter-signup mt-4">
+                        <h6 class="text-white mb-3">Subscribe to Our Newsletter</h6>
+                        <form id="newsletterForm" class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
                     </div>
                 </div>
-                        <!-- Success Modal -->
-        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header border-0 justify-content-center">
-                        <h5 class="modal-title text-center" id="successModalLabel">
-                            <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
-                            <div class="mt-3">Enrollment Successful!</div>
-                        </h5>
-                    </div>
-                    <div class="modal-body text-center">
-                        <p class="lead">Thank you for choosing Success Meets Academy</p>
-                        <p>We've received your enrollment application. Our team will contact you shortly to confirm your registration.</p>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <strong>Confirmation Details:</strong>
-                                <p id="confirmationDetails" class="text-muted"></p>
-                            </div>
-                            <div class="col-md-6">
-                                <strong>Next Steps:</strong>
-                                <ul class="list-unstyled text-muted">
-                                    <li>Check your email</li>
-                                    <li>Prepare documents</li>
-                                    <li>Await further instructions</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer border-0 justify-content-center">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                            Continue
-                        </button>
-                    </div>
-                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
             </div>
         </div>
-    
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-5 mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5 class="mb-3">Success Meets Academy</h5>
-                        <p>Transforming careers through innovative training and skill development programs.</p>
-                        <div class="contact-info">
-                            <p>
-                                <i class="fas fa-map-marker-alt me-2"></i>
-                                Andagaloregate, Near Rasipuram, Namakkal
-                            </p>
-                            <p>
-                                <i class="fas fa-phone me-2"></i>
-                                +91 93609 94617 (or) +91 93604 05503
-                            </p>
-                            <p>
-                                <i class="fas fa-envelope me-2"></i>
-                                successmeetsacademy@gmail.com
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="mb-3">Quick Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html#programs" class="text-white">Programs</a></li>
-                            <li><a href="index.html#courses" class="text-white">Courses</a></li>
-                            <li><a href="index.html#about" class="text-white">About Us</a></li>
-                            <li><a href="index.html#contact" class="text-white">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="mb-3">Connect With Us</h5>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/share/19ryQbVNLp/" class="text-white me-3" target="_blank" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="text-white me-3" target="_blank" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/success-meets-technology-b0378734b/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://www.instagram.com/success_meets_foundation/" class="text-white" target="_blank" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                        <div class="newsletter-signup mt-4">
-                            <h6 class="text-white mb-3">Subscribe to Our Newsletter</h6>
-                            <form id="newsletterForm" class="d-flex">
-                                <input type="email" class="form-control me-2" placeholder="Enter your email" required>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <hr class="my-4 bg-secondary">
-                <div class="text-center">
-                    <p class="mb-0">&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
-    
-        <!-- External Libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-        <!-- Custom Scripts -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Enrollment Type Toggle
-                const trainingBtn = document.querySelector('.enrollment-type-btn[data-type="training"]');
-                const coursesBtn = document.querySelector('.enrollment-type-btn[data-type="courses"]');
-                const trainingSection = document.getElementById('trainingSection');
-                const coursesSection = document.getElementById('coursesSection');
-    
-                trainingBtn.addEventListener('click', () => {
-                    trainingBtn.classList.add('active');
-                    coursesBtn.classList.remove('active');
-                    trainingSection.style.display = 'block';
-                    coursesSection.style.display = 'none';
-                    document.getElementById('trainingProgram').setAttribute('required', 'required');
-                    document.getElementById('course').removeAttribute('required');
-                });
-    
-                coursesBtn.addEventListener('click', () => {
-                    coursesBtn.classList.add('active');
-                    trainingBtn.classList.remove('active');
-                    coursesSection.style.display = 'block';
-                    trainingSection.style.display = 'none';
-                    document.getElementById('course').setAttribute('required', 'required');
-                    document.getElementById('trainingProgram').removeAttribute('required');
-                });
-    
-                // Course Price Display
-                const courseSelect = document.getElementById('course');
-                const priceDisplay = document.getElementById('coursePriceDisplay');
-    
-                courseSelect.addEventListener('change', () => {
-                    const selectedOption = courseSelect.options[courseSelect.selectedIndex];
-                    priceDisplay.textContent = selectedOption.value 
-                        ? `Course Price: ₹${selectedOption.dataset.price}` 
-                        : '';
-                });
-    
-                // Form Submission
-                const enrollmentForm = document.getElementById('enrollmentForm');
-                enrollmentForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-    
-                    if (enrollmentForm.checkValidity()) {
-                        // Collect form data
-                        const formData = new FormData(enrollmentForm);
-                        const enrollmentDetails = {};
-    
-                        for (let [key, value] of formData.entries()) {
-                            enrollmentDetails[key] = value;
-                        }
-    
-                        // Show success modal
-                        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                        const confirmationDetails = document.getElementById('confirmationDetails');
-                        
-                        confirmationDetails.innerHTML = `
-                            Name: ${enrollmentDetails.firstName} ${enrollmentDetails.lastName}<br>
-                            Email: ${enrollmentDetails.email}
-                        `;
-    
-                        successModal.show();
-                        enrollmentForm.reset();
-                    } else {
-                        enrollmentForm.classList.add('was-validated');
-                    }
-                });
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enrollment Type Toggle
+            const trainingBtn = document.querySelector('.enrollment-type-btn[data-type="training"]');
+            const coursesBtn = document.querySelector('.enrollment-type-btn[data-type="courses"]');
+            const trainingSection = document.getElementById('trainingSection');
+            const coursesSection = document.getElementById('coursesSection');
+
+            trainingBtn.addEventListener('click', () => {
+                trainingBtn.classList.add('active');
+                coursesBtn.classList.remove('active');
+                trainingSection.style.display = 'block';
+                coursesSection.style.display = 'none';
+                document.getElementById('trainingProgramSelect').setAttribute('required', 'required');
+                document.getElementById('courseSelect').removeAttribute('required');
             });
-        </script>
-    </body>
+
+            coursesBtn.addEventListener('click', () => {
+                coursesBtn.classList.add('active');
+                trainingBtn.classList.remove('active');
+                coursesSection.style.display = 'block';
+                trainingSection.style.display = 'none';
+                document.getElementById('courseSelect').setAttribute('required', 'required');
+                document.getElementById('trainingProgramSelect').removeAttribute('required');
+            });
+
+            // Form Submission
+            const enrollmentForm = document.getElementById('enrollmentForm');
+            enrollmentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (enrollmentForm.checkValidity()) {
+                    // Populate hidden inputs
+                    document.getElementById('firstName').value = document.getElementById('firstNameInput').value;
+                    document.getElementById('lastName').value = document.getElementById('lastNameInput').value;
+                    document.getElementById('email').value = document.getElementById('emailInput').value;
+                    document.getElementById('phone').value = document.getElementById('phoneInput').value;
+                    document.getElementById('institution').value = document.getElementById('institutionInput').value;
+                    document.getElementById('trainingProgram').value = document.getElementById('trainingProgramSelect').value;
+                    document.getElementById('course').value = document.getElementById('courseSelect').value;
+                    document.getElementById('additionalInfo').value = document.getElementById('additionalInfoInput').value;
+                    document.getElementById('option').value = document.getElementById('option').value;
+
+                    // Show success modal
+                    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    const confirmationDetails = document.getElementById('confirmationDetails');
+                    
+                    confirmationDetails.innerHTML = `
+                        Name: ${document.getElementById('firstNameInput').value} ${document.getElementById('lastNameInput').value}<br>
+                        Email: ${document.getElementById('emailInput').value}
+                    `;
+
+                    successModal.show();
+                    enrollmentForm.reset();
+                } else {
+                    enrollmentForm.classList.add('was-validated');
+                }
+            });
+        });
+    </script>
+</body>
 </html>

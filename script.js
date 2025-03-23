@@ -90,32 +90,21 @@ const ErrorHandler = {
         console.groupEnd();
     }
 };
-
 // Google Forms Handler Module
 const GoogleFormsHandler = {
     FORMS_CONFIG: {
         ENROLLMENT: {
             // Replace with your actual Google Form submission URL
-            URL: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdYHn_l6N9o2E94Kjr2hgwuoX8POHEk4VH5UiZdv6fLqa0MSQ/formResponse',
+            URL: 'https://docs.google.com/forms/d/e/1FAIpQLSdYHn_l6N9o2E94Kjr2hgwuoX8POHEk4VH5UiZdv6fLqa0MSQ/formResponse',
             FIELDS: {
-                FIRST_NAME: 'entry.123456789',
-                LAST_NAME: 'entry.234567890',
-                EMAIL: 'entry.345678901',
-                PHONE: 'entry.456789012',
-                INSTITUTION: 'entry.567890123',
-                ENROLLMENT_TYPE: 'entry.678901234',
-                TRAINING_PROGRAM: 'entry.789012345',
-                COURSE: 'entry.890123456',
-                ADDITIONAL_INFO: 'entry.901234567'
-            }
-        },
-        CONTACT: {
-            // Replace with your actual Contact Form submission URL
-            URL: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdewSGiymPJhRS7YjfPabqSOHJ8CrIIyRNM2zGqsXICN4ZU1A/formResponse',
-            FIELDS: {
-                NAME: 'entry.1185216735',
-                EMAIL: 'entry.1838515827',
-                MESSAGE: 'entry.1965478200'
+                FIRST_NAME: 'entry.1738812687',
+                LAST_NAME: 'entry.441809842',
+                EMAIL: 'entry.48306933',
+                PHONE: 'entry.1719525943',
+                INSTITUTION: 'entry.1248646777',
+                TRAINING_PROGRAM: 'entry.1884316333',
+                COURSE: 'entry.727454542',
+                ADDITIONAL_INFO: 'entry.1804922025'
             }
         }
     },
@@ -137,46 +126,13 @@ const GoogleFormsHandler = {
             // Submission with fetch
             fetch(this.FORMS_CONFIG.ENROLLMENT.URL, {
                 method: 'POST',
-                mode: 'no-cors',
+                mode: 'no-cors', // This is correct for Google Forms
                 body: payload
             })
             .then(() => {
                 resolve({ 
                     status: 'success', 
                     message: 'Enrollment submitted successfully' 
-                });
-            })
-            .catch((error) => {
-                ErrorHandler.logDetailedError(error);
-                reject(error);
-            });
-        });
-    },
-
-    submitContactForm: function(formData) {
-        return new Promise((resolve, reject) => {
-            const payload = new FormData();
-
-            // Map contact form data
-            Object.keys(this.FORMS_CONFIG.CONTACT.FIELDS).forEach(key => {
-                const fieldName = this.FORMS_CONFIG.CONTACT.FIELDS[key];
-                const value = formData[key.toLowerCase()] || '';
-                
-                if (value) {
-                    payload.append(fieldName, Utils.sanitizeInput(value));
-                }
-            });
-
-            // Submission with fetch
-            fetch(this.FORMS_CONFIG.CONTACT.URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: payload
-            })
-            .then(() => {
-                resolve({ 
-                    status: 'success', 
-                    message: 'Contact form submitted successfully' 
                 });
             })
             .catch((error) => {
@@ -327,61 +283,6 @@ function initializeApplication() {
             } catch (error) {
                 ErrorHandler.logDetailedError(error);
                 ErrorHandler.displayError('Enrollment failed. Please try again.');
-            }
-        });
-    }
-
-    // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            if (!FormValidator.validateForm(contactForm)) {
-                return;
-            }
-
-            try {
-                // Collect contact form data
-                const formData = {
-                    name: contactForm.querySelector('#name').value,
-                    email: contactForm.querySelector('#email').value,
-                    message: contactForm.querySelector('#message').value
-                };
-
-                // Submit contact form
-                await GoogleFormsHandler.submitContactForm(formData);
-
-                // Show success modal
-                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                successModal.show();
-
-                // Track contact event
-                AnalyticsTracker.trackEvent('contact', formData);
-
-                // Reset form
-                contactForm.reset();
-            } catch (error) {
-                ErrorHandler.logDetailedError(error);
-                ErrorHandler.displayError('Message sending failed. Please try again.');
-            }
-        });
-    }
-
-    // Newsletter Signup (if exists)
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const emailInput = newsletterForm.querySelector('input[type="email"]');
-            
-            if (Utils.validateEmail(emailInput.value)) {
-                // Placeholder for newsletter signup logic
-                console.log('Newsletter signup:', emailInput.value);
-                alert('Thank you for subscribing!');
-                newsletterForm.reset();
-            } else {
-                emailInput.classList.add('is-invalid');
             }
         });
     }

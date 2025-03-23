@@ -75,8 +75,9 @@
 
         .cyber-icon {
             font-size: 3rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
         .curriculum-item {
@@ -98,8 +99,13 @@
         }
 
         .cyber-benefit-list li i {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .cyber-benefit-list li:hover i {
+            transform: scale(1.2);
         }
 
         .technology-stack {
@@ -113,11 +119,22 @@
             max-width: 100px;
             filter: grayscale(100%);
             transition: all 0.3s ease;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .technology-stack img.kali-linux {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .technology-stack img.metasploit {
+            background-color: rgba(255, 0, 0, 0.5);
         }
 
         .technology-stack img:hover {
             filter: grayscale(0%);
             transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .certification-section {
@@ -125,57 +142,65 @@
             padding: 50px 0;
         }
 
-        /* Hero Section Button Styles */
-.hero-section .btn-light {
-    position: relative;
-    background-color: white;
-    color: var(--primary-color);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border: none;
-    overflow: hidden;
-    z-index: 1;
-    transition: 
-        color var(--transition-speed) ease,
-        transform var(--transition-speed) ease;
-}
+        .hero-section .btn-light {
+            position: relative;
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            overflow: hidden;
+            z-index: 1;
+            transition: 
+                color var(--transition-speed) ease,
+                transform var(--transition-speed) ease;
+            animation: bounce 2s infinite;
+        }
 
-.hero-section .btn-light::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-primary);
-    transition: 
-        left var(--transition-speed) ease,
-        transform var(--transition-speed) ease;
-    z-index: -1;
-}
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
 
-.hero-section .btn-light:hover {
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+        .hero-section .btn-light::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: 
+                left var(--transition-speed) ease,
+                transform var(--transition-speed) ease;
+            z-index: -1;
+        }
 
-.hero-section .btn-light:hover::before {
-    left: 0;
-}
+        .hero-section .btn-light:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-.hero-section .btn-light:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
+        .hero-section .btn-light:hover::before {
+            left: 0;
+        }
 
-/* Responsive Button Adjustments */
-@media (max-width: 768px) {
-    .hero-section .btn-light {
-        padding: 12px 24px !important;
-        font-size: 0.9rem;
-    }
-}
+        .hero-section .btn-light:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section .btn-light {
+                padding: 12px 24px !important;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -212,13 +237,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Cyber Security Essentials</h1>
-            <p class="lead mb-5">Comprehensive Cybersecurity Training for Modern Professionals</p>
-            <a href="enroll.html" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-        </div>
-    </section>
+<section class="hero-section text-center text-light" 
+style="position: relative; 
+background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1920&auto=format&fit=crop'); 
+background-size: cover; 
+background-position: center; 
+background-repeat: no-repeat; 
+padding: 100px 0;">
+
+<!-- Dark Overlay for Enhanced Visibility -->
+<div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  /* Overlay to improve text contrast */
+"></div>
+
+<div class="container position-relative" style="z-index: 1;">
+    <h1 class="display-4 fw-bold mb-4">Cyber Security Essentials</h1>
+    <p class="lead mb-5">
+        Comprehensive Cybersecurity Training for Modern Professionals
+    </p>
+    <a href="enroll.html" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
+</div>
+</section>
+
+
 
     <!-- Course Overview -->
     <section class="py-5">
@@ -305,18 +351,79 @@
     </section>
 
     <!-- Technology Stack -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Tools and Technologies</h2>
-            <div class="technology-stack">
-                <img src="https://www.vectorlogo.zone/logos/kalilinux/kalilinux-icon.svg" alt="Kali Linux">
-                <img src="https://www.vectorlogo.zone/logos/wireshark/wireshark-icon.svg" alt="Wireshark">
-                <img src="https://www.vectorlogo.zone/logos/metasploit/metasploit-icon.svg" alt="Metasploit">
-                <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python">
-                <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
-            </div>
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Technology Stack</h2>
+        <div class="technology-stack">
+            
+            <!-- Wireshark Logo -->
+            <img src="https://www.vectorlogo.zone/logos/wireshark/wireshark-icon.svg" alt="Wireshark" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Splunk Logo -->
+            <img src="https://www.vectorlogo.zone/logos/splunk/splunk-icon.svg" alt="Splunk" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Python Logo -->
+            <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Docker Logo -->
+            <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- AWS Logo -->
+            <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Git Logo -->
+            <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Linux Logo -->
+            <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux" style="filter: none; transition: all 0.3s ease;">
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    .technology-stack img {
+        max-width: 100px;
+        filter: grayscale(100%);
+        transition: all 0.3s ease;
+    }
+
+    .technology-stack img:hover {
+        filter: none;
+        transform: scale(1.1);
+    }
+
+    /* Add specific colors for each technology */
+    .technology-stack img:nth-child(1) { /* Kali Linux */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(2) { /* Wireshark */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(3) { /* Metasploit */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(4) { /* Splunk */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(5) { /* Fortinet */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(6) { /* Python */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(7) { /* Docker */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(8) { /* AWS */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(9) { /* Git */
+        filter: grayscale(100%);
+    }
+    .technology-stack img:nth-child(10) { /* Linux */
+        filter: grayscale(100%);
+    }
+</style>
 
     <!-- Certification Section -->
     <section class="certification-section">

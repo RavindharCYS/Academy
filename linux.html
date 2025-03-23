@@ -218,13 +218,30 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Linux Administration</h1>
-            <p class="lead mb-5">Comprehensive System Administration and Server Management Course</p>
-            <a href="enroll.html" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-        </div>
-    </section>
+<section class="hero-section text-center text-light" 
+style="position: relative; 
+background-image: url('https://images.pexels.com/photos/2881232/pexels-photo-2881232.jpeg?auto=compress&cs=tinysrgb&w=1920'); 
+background-size: cover; 
+background-position: center; 
+background-repeat: no-repeat; 
+padding: 100px 0;">
+
+<!-- Dark Overlay for Enhanced Visibility -->
+<div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Overlay for better text visibility */
+"></div>
+
+<div class="container position-relative" style="z-index: 1;">
+    <h1 class="display-4 fw-bold mb-4">Linux Administration</h1>
+    <p class="lead mb-5">Comprehensive System Administration and Server Management Course</p>
+    <a href="enroll.html" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
+</div>
+</section>
 
     <!-- Course Overview -->
     <section class="py-5">
@@ -349,18 +366,41 @@
     </section>
 
     <!-- Technology Stack -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Tools and Technologies</h2>
-            <div class="technology-stack">
-                <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux">
-                <img src="https://www.vectorlogo.zone/logos/ubuntu/ubuntu-icon.svg" alt="Ubuntu">
-                <img src="https://www.vectorlogo.zone/logos/centos/centos-icon.svg" alt="CentOS">
-                <img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="Ansible">
-                <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker">
-            </div>
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Tools and Technologies</h2>
+        <div class="technology-stack">
+            <!-- Linux Logo -->
+            <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Ubuntu Logo -->
+            <img src="https://www.vectorlogo.zone/logos/ubuntu/ubuntu-icon.svg" alt="Ubuntu" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- CentOS Logo -->
+            <img src="https://www.vectorlogo.zone/logos/centos/centos-icon.svg" alt="CentOS" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Ansible Logo -->
+            <img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="Ansible" style="filter: none; transition: all 0.3s ease;">
+            
+            <!-- Docker Logo -->
+            <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" style="filter: none; transition: all 0.3s ease;">
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    .technology-stack img {
+        max-width: 100px;
+        filter: grayscale(100%);
+        transition: all 0.3s ease;
+        margin: 0 10px; /* Add some spacing between icons */
+    }
+
+    .technology-stack img:hover {
+        filter: none;
+        transform: scale(1.1);
+    }
+</style>
 
     <!-- Certification Section -->
     <section class="certification-section">
@@ -381,46 +421,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Testimonials -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Success Stories</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img src="student1.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Student">
-                            <h5>Sarah Thompson</h5>
-                            <p class="text-muted">System Administrator</p>
-                            <p>"The course provided practical skills I use daily."</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img src="student2.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Student">
-                            <h5>Michael Rodriguez</h5>
-                            <p class="text-muted">DevOps Engineer</p>
-                            <p>"Comprehensive and industry-relevant training."</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img src="student3.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Student">
-                            <h5>Emily Chen</h5>
-                            <p class="text-muted">Cloud Infrastructure Specialist</p>
-                            <p>"Transformed my understanding of Linux systems."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+   
     <!-- CTA Section -->
     <section class="cta-section text-center">
         <div class="container">

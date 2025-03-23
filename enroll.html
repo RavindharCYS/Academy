@@ -30,6 +30,9 @@
             --accent-color: #e74c3c;
             --bg-light: #f4f6f9;
             --text-dark: #2c3e50;
+            --border-radius: 15px;
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
         body {
@@ -37,12 +40,13 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .enrollment-container {
             background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
             padding: 40px;
             max-width: 700px;
             margin: 50px auto;
@@ -62,6 +66,7 @@
         .form-header h2 {
             color: var(--primary-color);
             font-weight: 700;
+            font-size: 2rem;
         }
 
         .form-header::after {
@@ -89,6 +94,7 @@
             padding: 10px 20px;
             border-radius: 50px;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
 
         .enrollment-type-btn.active {
@@ -97,9 +103,10 @@
         }
 
         .form-control, .form-select {
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             padding: 12px 15px;
             transition: all 0.3s ease;
+            border: 1px solid #ccc;
         }
 
         .form-control:focus, .form-select:focus {
@@ -120,6 +127,7 @@
             border-radius: 50px;
             padding: 12px 30px;
             transition: transform 0.3s ease;
+            font-weight: 600;
         }
 
         .btn-submit:hover {
@@ -181,106 +189,105 @@
             <div class="form-header">
                 <h2>Enrollment Form</h2>
             </div>
-
-            <!-- Enrollment Type Toggle -->
-            <div class="enrollment-type-toggle mb-4">
-                <button class="btn enrollment-type-btn active" data-type="training">
-                    Professional Training
-                </button>
-                <button class="btn enrollment-type-btn" data-type="courses">
-                    Specialized Courses
-                </button>
-            </div>
-
-            <!-- Enrollment Form -->
-            <form id="enrollmentForm" novalidate>
-                <!-- Personal Information Section -->
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" required>
-                        <div class="invalid-feedback">Please enter your first name</div>
+                        <!-- Enrollment Type Toggle -->
+                        <div class="enrollment-type-toggle mb-4">
+                            <button class="btn enrollment-type-btn active" data-type="training">
+                                Professional Training
+                            </button>
+                            <button class="btn enrollment-type-btn" data-type="courses">
+                                Specialized Courses
+                            </button>
+                        </div>
+            
+                        <!-- Enrollment Form -->
+                        <form id="enrollmentForm" novalidate>
+                            <!-- Personal Information Section -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    <div class="invalid-feedback">Please enter your first name</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    <div class="invalid-feedback">Please enter your last name</div>
+                                </div>
+                            </div>
+            
+                            <!-- Contact Information -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    <div class="invalid-feedback">Please enter a valid phone number</div>
+                                </div>
+                            </div>
+            
+                            <!-- Educational Information -->
+                            <div class="mb-3">
+                                <label for="institution" class="form-label">Current Institution/College</label>
+                                <input type="text" class="form-control" id="institution" name="institution" required>
+                                <div class="invalid-feedback">Please enter your current institution</div>
+                            </div>
+            
+                            <!-- Training Program Section -->
+                            <div id="trainingSection">
+                                <div class="mb-3">
+                                    <label for="trainingProgram" class="form-label">Select Training Program</label>
+                                    <select class="form-select" id="trainingProgram" name="trainingProgram" required>
+                                        <option value="">Choose a Training Program</option>
+                                        <option value="placement">Placement Training</option>
+                                        <option value="softskills">Soft Skill Development</option>
+                                        <option value="technical">Technical Training</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a training program</div>
+                                </div>
+                            </div>
+            
+                            <!-- Courses Section (Initially Hidden) -->
+                            <div id="coursesSection" style="display:none;">
+                                <div class="mb-3">
+                                    <label for="course" class="form-label">Select Course</label>
+                                    <select class="form-select" id="course" name="course">
+                                        <option value="">Choose a Course</option>
+                                        <option value="cyber" data-price="9,999">Cyber Security Essentials - ₹9,999</option>
+                                        <option value="linux" data-price="12,999">Linux Administration - ₹12,999</option>
+                                        <option value="fullstack" data-price="14,999">Full Stack Development - ₹14,999</option>
+                                    </select>
+                                    <div class="course-price-display" id="coursePriceDisplay"></div>
+                                    <div class="invalid-feedback">Please select a course</div>
+                                </div>
+                            </div>
+            
+                            <!-- Additional Information -->
+                            <div class="mb-3">
+                                <label for="additionalInfo" class="form-label">Additional Information (Optional)</label>
+                                <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any additional details you'd like to share"></textarea>
+                            </div>
+            
+                            <!-- Terms and Conditions -->
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the Terms and Conditions and Privacy Policy
+                                </label>
+                                <div class="invalid-feedback">You must agree to the terms and conditions</div>
+                            </div>
+            
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-submit w-100 mt-3">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Enrollment
+                            </button>
+                        </form>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" required>
-                        <div class="invalid-feedback">Please enter your last name</div>
-                    </div>
                 </div>
-
-                <!-- Contact Information -->
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                        <div class="invalid-feedback">Please enter a valid email address</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" required>
-                        <div class="invalid-feedback">Please enter a valid phone number</div>
-                    </div>
-                </div>
-
-                <!-- Educational Information -->
-                <div class="mb-3">
-                    <label for="institution" class="form-label">Current Institution/College</label>
-                    <input type="text" class="form-control" id="institution" name="institution" required>
-                    <div class="invalid-feedback">Please enter your current institution</div>
-                </div>
-
-                <!-- Training Program Section -->
-                <div id="trainingSection">
-                    <div class="mb-3">
-                        <label for="trainingProgram" class="form-label">Select Training Program</label>
-                        <select class="form-select" id="trainingProgram" name="trainingProgram" required>
-                            <option value="">Choose a Training Program</option>
-                            <option value="placement">Placement Training</option>
-                            <option value="softskills">Soft Skill Development</option>
-                            <option value="technical">Technical Training</option>
-                        </select>
-                        <div class="invalid-feedback">Please select a training program</div>
-                    </div>
-                </div>
-
-                <!-- Courses Section (Initially Hidden) -->
-                <div id="coursesSection" style="display:none;">
-                    <div class="mb-3">
-                        <label for="course" class="form-label">Select Course</label>
-                        <select class="form-select" id="course" name="course">
-                            <option value="">Choose a Course</option>
-                            <option value="cyber" data-price="9,999">Cyber Security Essentials - ₹9,999</option>
-                            <option value="linux" data-price="12,999">Linux Administration - ₹12,999</option>
-                            <option value="fullstack" data-price="14,999">Full Stack Development - ₹14,999</option>
-                        </select>
-                        <div class="course-price-display" id="coursePriceDisplay"></div>
-                        <div class="invalid-feedback">Please select a course</div>
-                    </div>
-                </div>
-
-                <!-- Additional Information -->
-                <div class="mb-3">
-                    <label for="additionalInfo" class="form-label">Additional Information (Optional)</label>
-                    <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any additional details you'd like to share"></textarea>
-                </div>
-
-                <!-- Terms and Conditions -->
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="termsCheck" required>
-                    <label class="form-check-label" for="termsCheck">
-                        I agree to the Terms and Conditions and Privacy Policy
-                    </label>
-                    <div class="invalid-feedback">You must agree to the terms and conditions</div>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-submit w-100 mt-3">
-                    <i class="fas fa-paper-plane me-2"></i>Submit Enrollment
-                </button>
-            </form>
-        </div>
-    </div>
-        <!-- Success Modal -->
+                        <!-- Success Modal -->
         <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -457,4 +464,4 @@
             });
         </script>
     </body>
-    </html>
+</html>

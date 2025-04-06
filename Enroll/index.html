@@ -80,28 +80,6 @@
             background-color: var(--primary-color);
         }
 
-        .enrollment-type-toggle {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .enrollment-type-btn {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            margin: 0 10px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .enrollment-type-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
         .form-control, .form-select {
             border-radius: var(--border-radius);
             padding: 12px 15px;
@@ -112,12 +90,6 @@
         .form-control:focus, .form-select:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
-        }
-
-        .course-price-display {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-top: 10px;
         }
 
         .btn-submit {
@@ -139,14 +111,6 @@
             .enrollment-container {
                 margin: 20px;
                 padding: 25px;
-            }
-
-            .enrollment-type-toggle {
-                flex-direction: column;
-            }
-
-            .enrollment-type-btn {
-                margin: 10px 0;
             }
         }
     </style>
@@ -192,28 +156,9 @@
             <div class="form-header">
                 <h2>Enrollment Form</h2>
             </div>
-            <!-- Enrollment Type Toggle -->
-            <div class="enrollment-type-toggle mb-4">
-                <button class="btn enrollment-type-btn active" data-type="training">
-                    Professional Training
-                </button>
-                <button class="btn enrollment-type-btn" data-type="courses">
-                    Specialized Courses
-                </button>
-            </div>
             <!-- Enrollment Form -->
-            <form id="enrollmentForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdYHn_l6N9o2E94Kjr2hgwuoX8POHEk4VH5UiZdv6fLqa0MSQ/formResponse" method="POST" target="_self" novalidate>
-                <!-- Hidden Inputs -->
-                <input type="hidden" name="entry.1738812687" id="firstName" required>
-                <input type="hidden" name="entry.441809842" id="lastName" required>
-                <input type="hidden" name="entry.48306933" id="email" required>
-                <input type="hidden" name="entry.1719525943" id="phone" required>
-                <input type="hidden" name="entry.1248646777" id="institution" required>
-                <input type="hidden" name="entry.1884316333" id="trainingProgram" required>
-                <input type="hidden" name="entry.727454542" id="course" required>
-                <input type="hidden" name="entry.1804922025" id="additionalInfo">
-                <input type="hidden" name="entry.1357856485" id="option">
-                                <!-- Personal Information Section -->
+            <form id="enrollmentForm" novalidate>
+                <!-- Personal Information Section -->
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstNameInput" class="form-label">First Name</label>
@@ -248,31 +193,66 @@
                     <div class="invalid-feedback">Please enter your current institution</div>
                 </div>
 
-                <!-- Training Program Section -->
-                <div id="trainingSection">
-                    <div class="mb-3">
-                        <label for="trainingProgramSelect" class="form-label">Select Training Program</label>
-                        <select class="form-select" id="trainingProgramSelect" name="trainingProgram" required>
-                            <option value="">Choose a Training Program</option>
-                            <option value="Placement Training">Placement Training</option>
-                            <option value="Soft Skill Development">Soft Skill Development</option>
-                            <option value="Technical Training">Technical Training</option>
-                        </select>
-                        <div class="invalid-feedback">Please select a training program</div>
+                <!-- Domain Selection -->
+                <div class="mb-3">
+                    <label class="form-label">Select Domain</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="domain" id="placementRadio" value="Placement Training" required>
+                        <label class="form-check-label" for="placementRadio">
+                            Placement Training
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="domain" id="coursesRadio" value="Courses" required>
+                        <label class="form-check-label" for="coursesRadio">
+                            Courses
+                        </label>
                     </div>
                 </div>
 
-                <!-- Courses Section (Initially Hidden) -->
-                <div id="coursesSection" style="display:none;">
-                    <div class="mb-3">
-                        <label for="courseSelect" class="form-label">Select Course</label>
-                        <select class="form-select" id="courseSelect" name="course" required>
-                            <option value="">Choose a Course</option>
-                            <option value="Cyber Security Essentials">Cyber Security Essentials</option>
-                            <option value="Linux Administration">Linux Administration</option>
-                            <option value="Full Stack Development">Full Stack Development</option>
-                        </select>
-                        <div class="invalid-feedback">Please select a course</div>
+                <!-- Placement Training Section -->
+                <div id="placementSection" class="mb-3" style="display: none;">
+                    <label class="form-label">Select Placement Training</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Aptitude" id="aptitudeCheck" name="training">
+                        <label class="form-check-label" for="aptitudeCheck">
+                            Aptitude
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Technical" id="technicalCheck" name="training">
+                        <label class="form-check-label" for="technicalCheck">
+                            Technical
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Soft Skill" id="softSkillCheck" name="training">
+                        <label class="form-check-label" for="softSkillCheck">
+                            Soft Skill
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Courses Section -->
+                <div id="coursesSection" class="mb-3" style="display: none;">
+                    <label class="form-label">Select Courses</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Cyber Security Essentials" id="cyberSecurityCheck" name="course">
+                        <label class="form-check-label" for="cyberSecurityCheck">
+                            Cyber Security Essentials
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Linux Administration" id="linuxAdminCheck" name="course">
+                        <label class="form-check-label" for="linuxAdminCheck">
+                            Linux Administration
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Full Stack Development" id="fullStackCheck" name="course">
+                        <label class="form-check-label" for="fullStackCheck">
+                            Full Stack Development
+                        </label>
                     </div>
                 </div>
 
@@ -300,36 +280,25 @@
     </div>
 
     <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true" inert>
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header border-0 justify-content-center">
-                    <h5 class="modal-title text-center" id="successModalLabel">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="successModalLabel">
                         <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
                         <div class="mt-3">Enrollment Successful!</div>
                     </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
                     <p class="lead">Thank you for choosing Success Meets Academy</p>
-                    <p>We've received your enrollment application. Our team will contact you shortly to confirm your registration.</p>
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <strong>Confirmation Details:</strong>
-                            <p id="confirmationDetails" class="text-muted"></p>
-                        </div>
-                        <div class="col-md-6">
-                            <strong>Next Steps:</strong>
-                            <ul class="list-unstyled text-muted">
-                                <li>Check your email</li>
-                                <li>Prepare documents</li>
-                                <li>Await further instructions</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <p>We've received your enrollment application. Here are your details:</p>
+                    <div id="confirmationDetails" class="text-muted mb-3"></div>
+                    <p>Our team will contact you shortly to confirm your registration.</p>
                 </div>
                 <div class="modal-footer border-0 justify-content-center">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                        Continue
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/'">
+                        Continue to Home Page
                     </button>
                 </div>
             </div>
@@ -350,58 +319,67 @@
     <!-- Custom Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Enrollment Type Toggle
-            const trainingBtn = document.querySelector('.enrollment-type-btn[data-type="training"]');
-            const coursesBtn = document.querySelector('.enrollment-type-btn[data-type="courses"]');
-            const trainingSection = document.getElementById('trainingSection');
+            emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+
+            const placementRadio = document.getElementById('placementRadio');
+            const coursesRadio = document.getElementById('coursesRadio');
+            const placementSection = document.getElementById('placementSection');
             const coursesSection = document.getElementById('coursesSection');
 
-            trainingBtn.addEventListener('click', () => {
-                trainingBtn.classList.add('active');
-                coursesBtn.classList.remove('active');
-                trainingSection.style.display = 'block';
-                coursesSection.style.display = 'none';
-                document.getElementById('trainingProgramSelect').setAttribute('required', 'required');
-                document.getElementById('courseSelect').removeAttribute('required');
+            placementRadio.addEventListener('change', function() {
+                if (placementRadio.checked) {
+                    placementSection.style.display = 'block';
+                    coursesSection.style.display = 'none';
+                }
             });
 
-            coursesBtn.addEventListener('click', () => {
-                coursesBtn.classList.add('active');
-                trainingBtn.classList.remove('active');
-                coursesSection.style.display = 'block';
-                trainingSection.style.display = 'none';
-                document.getElementById('courseSelect').setAttribute('required', 'required');
-                document.getElementById('trainingProgramSelect').removeAttribute('required');
+            coursesRadio.addEventListener('change', function() {
+                if (coursesRadio.checked) {
+                    coursesSection.style.display = 'block';
+                    placementSection.style.display = 'none';
+                }
             });
 
-            // Form Submission
             const enrollmentForm = document.getElementById('enrollmentForm');
             enrollmentForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
                 if (enrollmentForm.checkValidity()) {
-                    // Populate hidden inputs
-                    document.getElementById('firstName').value = document.getElementById('firstNameInput').value;
-                    document.getElementById('lastName').value = document.getElementById('lastNameInput').value;
-                    document.getElementById('email').value = document.getElementById('emailInput').value;
-                    document.getElementById('phone').value = document.getElementById('phoneInput').value;
-                    document.getElementById('institution').value = document.getElementById('institutionInput').value;
-                    document.getElementById('trainingProgram').value = document.getElementById('trainingProgramSelect').value;
-                    document.getElementById('course').value = document.getElementById('courseSelect').value;
-                    document.getElementById('additionalInfo').value = document.getElementById('additionalInfoInput').value;
-                    document.getElementById('option').value = document.getElementById('option').value;
+                    const formData = new FormData(enrollmentForm);
+                    const training = [];
+                    const courses = [];
 
-                    // Show success modal
-                    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                    const confirmationDetails = document.getElementById('confirmationDetails');
-                    
-                    confirmationDetails.innerHTML = `
-                        Name: ${document.getElementById('firstNameInput').value} ${document.getElementById('lastNameInput').value}<br>
-                        Email: ${document.getElementById('emailInput').value}
-                    `;
+                    formData.getAll('training').forEach(item => training.push(item));
+                    formData.getAll('course').forEach(item => courses.push(item));
 
-                    successModal.show();
-                    enrollmentForm.reset();
+                    const templateParams = {
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        institution: formData.get('institution'),
+                        domain: formData.get('domain'),
+                        training: training.join(', '),
+                        courses: courses.join(', '),
+                        additionalInfo: formData.get('additionalInfo')
+                    };
+
+                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                            const confirmationDetails = document.getElementById('confirmationDetails');
+                            
+                            confirmationDetails.innerHTML = `
+                                <strong>Name:</strong> ${templateParams.firstName} ${templateParams.lastName}<br>
+                                <strong>Additional Info:</strong> ${templateParams.additionalInfo || 'N/A'}
+                            `;
+
+                            successModal.show();
+                            enrollmentForm.reset();
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                        });
                 } else {
                     enrollmentForm.classList.add('was-validated');
                 }

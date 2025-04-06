@@ -157,7 +157,7 @@
                 <h2>Enrollment Form</h2>
             </div>
             <!-- Enrollment Form -->
-            <form id="enrollmentForm" novalidate>
+            <form id="enrollmentForm" action="https://formspree.io/f/xvgkvgrw" method="POST" novalidate>
                 <!-- Personal Information Section -->
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -314,13 +314,10 @@
 
     <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Custom Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
-
             const placementRadio = document.getElementById('placementRadio');
             const coursesRadio = document.getElementById('coursesRadio');
             const placementSection = document.getElementById('placementSection');
@@ -342,46 +339,22 @@
 
             const enrollmentForm = document.getElementById('enrollmentForm');
             enrollmentForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                if (enrollmentForm.checkValidity()) {
-                    const formData = new FormData(enrollmentForm);
-                    const training = [];
-                    const courses = [];
-
-                    formData.getAll('training').forEach(item => training.push(item));
-                    formData.getAll('course').forEach(item => courses.push(item));
-
-                    const templateParams = {
-                        firstName: formData.get('firstName'),
-                        lastName: formData.get('lastName'),
-                        email: formData.get('email'),
-                        phone: formData.get('phone'),
-                        institution: formData.get('institution'),
-                        domain: formData.get('domain'),
-                        training: training.join(', '),
-                        courses: courses.join(', '),
-                        additionalInfo: formData.get('additionalInfo')
-                    };
-
-                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                        .then(function(response) {
-                            console.log('SUCCESS!', response.status, response.text);
-                            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                            const confirmationDetails = document.getElementById('confirmationDetails');
-                            
-                            confirmationDetails.innerHTML = `
-                                <strong>Name:</strong> ${templateParams.firstName} ${templateParams.lastName}<br>
-                                <strong>Additional Info:</strong> ${templateParams.additionalInfo || 'N/A'}
-                            `;
-
-                            successModal.show();
-                            enrollmentForm.reset();
-                        }, function(error) {
-                            console.log('FAILED...', error);
-                        });
-                } else {
+                if (!enrollmentForm.checkValidity()) {
+                    e.preventDefault();
                     enrollmentForm.classList.add('was-validated');
+                } else {
+                    e.preventDefault(); // Prevent default form submission to handle it manually
+                    const formData = new FormData(enrollmentForm);
+                    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    const confirmationDetails = document.getElementById('confirmationDetails');
+
+                    confirmationDetails.innerHTML = `
+                        <strong>Name:</strong> ${formData.get('firstName')} ${formData.get('lastName')}<br>
+                        <strong>Additional Info:</strong> ${formData.get('additionalInfo') || 'N/A'}
+                    `;
+
+                    successModal.show();
+                    enrollmentForm.reset();
                 }
             });
         });

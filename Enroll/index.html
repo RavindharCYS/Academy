@@ -205,181 +205,166 @@
         }
     </style>
 </head>
-<body></body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo me-2">
-                <span>Success Meets Academy</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#programs">Programs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Enroll/" class="btn btn-primary ms-2">Enroll Now</a>
-                    </li>
-                </ul>
-            </div>
+<body>
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="spinner"></div>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="enrollment-container">
-            <!-- Form Header -->
-            <div class="form-header">
-                <h2>Enrollment Form</h2>
-                <p>Take the first step towards your successful career</p>
-            </div>
-
-            <!-- Enrollment Form -->
-            <form id="enrollmentForm" novalidate>
-                <!-- Personal Information -->
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="firstName" class="form-label">First Name*</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" required>
-                        <div class="invalid-feedback">Please enter your first name</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="lastName" class="form-label">Last Name*</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" required>
-                        <div class="invalid-feedback">Please enter your last name</div>
-                    </div>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Email Address*</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                        <div class="invalid-feedback">Please enter a valid email address</div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="phone" class="form-label">Phone Number*</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" 
-                               pattern="[0-9]{10}" required>
-                        <div class="invalid-feedback">Please enter a valid 10-digit phone number</div>
-                    </div>
-                </div>
-
-                <!-- Educational Information -->
-                <div class="mb-4">
-                    <label for="institution" class="form-label">Current Institution/College*</label>
-                    <input type="text" class="form-control" id="institution" name="institution" required>
-                    <div class="invalid-feedback">Please enter your current institution</div>
-                </div>
-
-                <!-- Program Selection -->
-                <div class="mb-4">
-                    <label class="form-label">Select Program Type*</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="programType" 
-                               id="placementTraining" value="placement" required>
-                        <label class="form-check-label" for="placementTraining">
-                            Placement Training
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="programType" 
-                               id="specializedCourse" value="course" required>
-                        <label class="form-check-label" for="specializedCourse">
-                            Specialized Course
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Placement Training Options -->
-                <div id="placementOptions" class="mb-4" style="display: none;">
-                    <label class="form-label">Select Training Modules</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="trainingModules" 
-                               value="aptitude" id="aptitude">
-                        <label class="form-check-label" for="aptitude">Aptitude Training</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="trainingModules" 
-                               value="technical" id="technical">
-                        <label class="form-check-label" for="technical">Technical Training</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="trainingModules" 
-                               value="softSkills" id="softSkills">
-                        <label class="form-check-label" for="softSkills">Soft Skills Development</label>
-                    </div>
-                </div>
-
-                <!-- Specialized Course Options -->
-                <div id="courseOptions" class="mb-4" style="display: none;">
-                    <label class="form-label">Select Course</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="courses" 
-                               value="cyberSecurity" id="cyberSecurity">
-                        <label class="form-check-label" for="cyberSecurity">Cyber Security Essentials</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="courses" 
-                               value="linuxAdmin" id="linuxAdmin">
-                        <label class="form-check-label" for="linuxAdmin">Linux Administration</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="courses" 
-                               value="fullStack" id="fullStack">
-                        <label class="form-check-label" for="fullStack">Full Stack Development</label>
-                    </div>
-                </div>
-
-                <!-- Additional Information -->
-                <div class="mb-4">
-                    <label for="additionalInfo" class="form-label">Additional Information</label>
-                    <textarea class="form-control" id="additionalInfo" name="additionalInfo" 
-                              rows="3" placeholder="Any specific requirements or questions?"></textarea>
-                </div>
-
-                <!-- Terms and Conditions -->
-                <div class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input" id="terms" required>
-                    <label class="form-check-label" for="terms">
-                        I agree to the Terms and Conditions and Privacy Policy
-                    </label>
-                    <div class="invalid-feedback">You must agree to the terms and conditions</div>
-                </div>
-
-                <!-- Error Message Display -->
-                <div id="formError" class="error-message mb-3"></div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-submit w-100" id="submitButton">
-                    <span class="button-text">
-                        <i class="fas fa-paper-plane me-2"></i>Submit Enrollment
-                    </span>
-                    <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo me-2">
+                    <span>Success Meets Academy</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            </form>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#programs">Programs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Enroll/" class="btn btn-primary ms-2">Enroll Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Main Content -->
+        <div class="container">
+            <div class="enrollment-container">
+                <!-- Form Header -->
+                <div class="form-header">
+                    <h2>Enrollment Form</h2>
+                    <p>Take the first step towards your successful career</p>
+                </div>
+    
+                <!-- Enrollment Form -->
+                <form id="enrollmentForm" novalidate>
+                    <!-- Personal Information -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName" class="form-label">First Name*</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            <div class="invalid-feedback">Please enter your first name</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName" class="form-label">Last Name*</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            <div class="invalid-feedback">Please enter your last name</div>
+                        </div>
+                    </div>
+    
+                    <!-- Contact Information -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email Address*</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback">Please enter a valid email address</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number*</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit phone number</div>
+                        </div>
+                    </div>
+    
+                    <!-- Educational Information -->
+                    <div class="mb-4">
+                        <label for="institution" class="form-label">Current Institution/College*</label>
+                        <input type="text" class="form-control" id="institution" name="institution" required>
+                        <div class="invalid-feedback">Please enter your current institution</div>
+                    </div>
+    
+                    <!-- Program Selection -->
+                    <div class="mb-4">
+                        <label class="form-label">Select Program Type*</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="programType" id="placementTraining" value="placement" required>
+                            <label class="form-check-label" for="placementTraining">Placement Training</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="programType" id="specializedCourse" value="course" required>
+                            <label class="form-check-label" for="specializedCourse">Specialized Course</label>
+                        </div>
+                    </div>
+    
+                    <!-- Placement Training Options -->
+                    <div id="placementOptions" class="mb-4" style="display: none;">
+                        <label class="form-label">Select Training Modules</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="trainingModules" value="aptitude" id="aptitude">
+                            <label class="form-check-label" for="aptitude">Aptitude Training</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="trainingModules" value="technical" id="technical">
+                            <label class="form-check-label" for="technical">Technical Training</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="trainingModules" value="softSkills" id="softSkills">
+                            <label class="form-check-label" for="softSkills">Soft Skills Development</label>
+                        </div>
+                    </div>
+    
+                    <!-- Specialized Course Options -->
+                    <div id="courseOptions" class="mb-4" style="display: none;">
+                        <label class="form-label">Select Course</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="courses" value="cyberSecurity" id="cyberSecurity">
+                            <label class="form-check-label" for="cyberSecurity">Cyber Security Essentials</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="courses" value="linuxAdmin" id="linuxAdmin">
+                            <label class="form-check-label" for="linuxAdmin">Linux Administration</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="courses" value="fullStack" id="fullStack">
+                            <label class="form-check-label" for="fullStack">Full Stack Development</label>
+                        </div>
+                    </div>
+    
+                    <!-- Additional Information -->
+                    <div class="mb-4">
+                        <label for="additionalInfo" class="form-label">Additional Information</label>
+                        <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any specific requirements or questions?"></textarea>
+                    </div>
+    
+                    <!-- Terms and Conditions -->
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the Terms and Conditions and Privacy Policy
+                        </label>
+                        <div class="invalid-feedback">You must agree to the terms and conditions</div>
+                    </div>
+    
+                    <!-- Error Message Display -->
+                    <div id="formError" class="error-message mb-3"></div>
+    
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-submit w-100" id="submitButton">
+                        <span class="button-text">
+                            <i class="fas fa-paper-plane me-2"></i>Submit Enrollment
+                        </span>
+                        <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-
-    <!-- Success Modal -->
+            <!-- Success Modal -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -403,169 +388,106 @@
             </div>
         </div>
     </div>
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-4 mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <h5>Success Meets Academy</h5>
-                        <p class="mb-0">Empowering careers through quality education</p>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h5>Success Meets Academy</h5>
+                    <p class="mb-0">Empowering careers through quality education</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="social-links">
-                            <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <p class="mt-2 mb-0">&copy; 2023 Success Meets Academy. All rights reserved.</p>
-                    </div>
+                    <p class="mt-2 mb-0">&copy; 2023 Success Meets Academy. All rights reserved.</p>
                 </div>
             </div>
-        </footer>
-    
-        <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Initialize EmailJS
-                emailjs.init("9ftym6UJsGCr-DrGs"); //  EmailJS user ID
-    
-                // Form elements
-                const form = document.getElementById('enrollmentForm');
-                const submitButton = document.getElementById('submitButton');
-                const loadingOverlay = document.getElementById('loadingOverlay');
-                const formError = document.getElementById('formError');
-                const placementOptions = document.getElementById('placementOptions');
-                const courseOptions = document.getElementById('courseOptions');
-    
-                // Program type selection handling
-                document.querySelectorAll('input[name="programType"]').forEach(radio => {
-                    radio.addEventListener('change', function() {
-                        if (this.value === 'placement') {
-                            placementOptions.style.display = 'block';
-                            courseOptions.style.display = 'none';
-                        } else {
-                            placementOptions.style.display = 'none';
-                            courseOptions.style.display = 'block';
-                        }
-                    });
-                });
-    
-                // Form validation function
-                function validateForm(formData) {
-                    const errors = [];
-    
-                    // Required field validation
-                    if (!formData.get('firstName').trim()) errors.push('First name is required');
-                    if (!formData.get('lastName').trim()) errors.push('Last name is required');
-                    
-                    // Email validation
-                    const email = formData.get('email').trim();
-                    if (!email) {
-                        errors.push('Email is required');
-                    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                        errors.push('Please enter a valid email address');
-                    }
-    
-                    // Phone validation
-                    const phone = formData.get('phone').trim();
-                    if (!phone) {
-                        errors.push('Phone number is required');
-                    } else if (!/^\d{10}$/.test(phone)) {
-                        errors.push('Please enter a valid 10-digit phone number');
-                    }
-    
-                    // Institution validation
-                    if (!formData.get('institution').trim()) errors.push('Institution name is required');
-    
-                    // Program type validation
-                    if (!formData.get('programType')) errors.push('Please select a program type');
-    
-                    // Terms validation
-                    if (!document.getElementById('terms').checked) {
-                        errors.push('Please accept the terms and conditions');
-                    }
-    
-                    return errors;
-                }
-    
-                // Form submission handler
-                form.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-    
-                    // Reset error display
-                    formError.style.display = 'none';
-                    formError.textContent = '';
-    
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize EmailJS
+            emailjs.init("9ftym6UJsGCr-DrGs");
+
+            const form = document.getElementById('enrollmentForm');
+            const submitButton = document.getElementById('submitButton');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (form.checkValidity()) {
                     const formData = new FormData(form);
-                    const errors = validateForm(formData);
-    
-                    if (errors.length > 0) {
-                        formError.textContent = errors.join('. ');
-                        formError.style.display = 'block';
-                        return;
-                    }
-    
+                    const training = [];
+                    const courses = [];
+
+                    formData.getAll('trainingModules').forEach(item => training.push(item));
+                    formData.getAll('courses').forEach(item => courses.push(item));
+
+                    const templateParams = {
+    to_name: formData.get('firstName') + ' ' + formData.get('lastName'),
+    from_name: "Success Meets Academy",
+    firstName: formData.get('firstName'),
+    lastName: formData.get('lastName'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    institution: formData.get('institution'),
+    programType: formData.get('programType'),
+    training: training.join(', ') || 'None',
+    courses: courses.join(', ') || 'None',
+    additionalInfo: formData.get('additionalInfo') || 'None provided'
+};
+
                     // Show loading state
                     submitButton.disabled = true;
-                    submitButton.querySelector('.button-text').classList.add('d-none');
-                    submitButton.querySelector('.spinner-border').classList.remove('d-none');
                     loadingOverlay.style.display = 'flex';
-    
-                    try {
-                        // Prepare email template parameters
-                        const templateParams = {
-                            firstName: formData.get('firstName'),
-                            lastName: formData.get('lastName'),
-                            email: formData.get('email'),
-                            phone: formData.get('phone'),
-                            institution: formData.get('institution'),
-                            programType: formData.get('programType'),
-                            trainingModules: Array.from(formData.getAll('trainingModules')).join(', '),
-                            courses: Array.from(formData.getAll('courses')).join(', '),
-                            additionalInfo: formData.get('additionalInfo') || 'None provided'
-                        };
-    
-                        // Send email using EmailJS
-                        const response = await emailjs.send(
-                            'service_bgs45lh', //  EmailJS service ID
-                            'template_0wd0m8s', // EmailJS template ID
-                            templateParams
-                        );
-    
-                        if (response.status === 200) {
-                            // Update enrollment details in success modal
-                            document.getElementById('enrollmentDetails').innerHTML = `
+
+                    emailjs.send('service_bgs45lh', 'template_f5ebn16', templateParams)
+                        .then(function(response) {
+                            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                            const confirmationDetails = document.getElementById('enrollmentDetails');
+                            
+                            confirmationDetails.innerHTML = `
                                 <strong>Name:</strong> ${templateParams.firstName} ${templateParams.lastName}<br>
                                 <strong>Email:</strong> ${templateParams.email}<br>
-                                <strong>Program:</strong> ${templateParams.programType === 'placement' ? 'Placement Training' : 'Specialized Course'}
+                                <strong>Program Type:</strong> ${templateParams.programType}<br>
+                                ${training.length ? `<strong>Training:</strong> ${templateParams.training}<br>` : ''}
+                                ${courses.length ? `<strong>Courses:</strong> ${templateParams.courses}<br>` : ''}
                             `;
-    
-                            // Show success modal
-                            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+
                             successModal.show();
-                            
-                            // Reset form
                             form.reset();
-                            placementOptions.style.display = 'none';
-                            courseOptions.style.display = 'none';
-                        }
-                    } catch (error) {
-                        console.error('Submission error:', error);
-                        formError.textContent = 'An error occurred while submitting the form. Please try again later.';
-                        formError.style.display = 'block';
-                    } finally {
-                        // Reset loading state
-                        submitButton.disabled = false;
-                        submitButton.querySelector('.button-text').classList.remove('d-none');
-                        submitButton.querySelector('.spinner-border').classList.add('d-none');
-                        loadingOverlay.style.display = 'none';
-                    }
+                        })
+                        .catch(function(error) {
+                            alert('Failed to send enrollment. Please try again.\nError: ' + error.text);
+                        })
+                        .finally(function() {
+                            submitButton.disabled = false;
+                            loadingOverlay.style.display = 'none';
+                        });
+                } else {
+                    form.classList.add('was-validated');
+                }
+            });
+
+            // Show/hide program options based on selection
+            document.querySelectorAll('input[name="programType"]').forEach((input) => {
+                input.addEventListener('change', function() {
+                    document.getElementById('placementOptions').style.display = this.value === 'placement' ? 'block' : 'none';
+                    document.getElementById('courseOptions').style.display = this.value === 'course' ? 'block' : 'none';
                 });
             });
-        </script>
-    </body>
-    </html>
+        });
+    </script>
+</body>
+</html>

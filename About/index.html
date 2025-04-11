@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJhY2tncm91bmR8ZW58MHx8fHwxNjYyMjY0NzY0&ixlib=rb-1.2.1&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .mission-vision {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-vision h3 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-vision p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 123, 255, 0.1);
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .values-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .values-list li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .values-list li i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .footer {
+            background-color: #1b1a1a;
+            color: white;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
+                Success Meets Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#programs" aria-label="Placement Training">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#courses" aria-label="Our Courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about" aria-label="About Us">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact" aria-label="Contact Us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Welcome to Success Meets Academy</h1>
+            <p class="lead">Empowering Professionals Through Quality Education</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <main id="main-content" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="display-6">About Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="mission-vision">
+                        <h3>Our Mission</h3>
+                        <p>To bridge the skill gap and empower professionals with cutting-edge knowledge and practical expertise through innovative training programs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="mission-vision">
+                        <h3>Our Vision</h3>
+                        <p>To be a leading training institution recognized for excellence in education and skill development, fostering a community of lifelong learners.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12" data-aos="fade-up">
+                    <h3>Our Values</h3>
+                    <ul class="values-list">
+                        <li><i class="fas fa-check-circle"></i>Integrity: Upholding the highest standards of honesty and accountability.</li>
+                        <li><i class="fas fa-check-circle"></i>Innovation: Embracing creativity and new ideas to enhance learning experiences.</li>
+                        <li><i class="fas fa-check-circle"></i>Excellence: Striving for the highest quality in all our programs and services.</li>
+                        <li><i class="fas fa-check-circle"></i>Collaboration: Working together with students, industry partners, and the community to achieve common goals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
+                disable: window.innerWidth < 768 // Disable on mobile
+            });
+        });
+    </script>
+</body>
+</html>

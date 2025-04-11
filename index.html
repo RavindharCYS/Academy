@@ -518,7 +518,7 @@
             // Image Fallback
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', (e) => {
-                    e.target.src = '/fallback.png';
+                    e.target.src = '/logo.jpeg';
                     e.target.alt = 'Placeholder Image';
                 });
             });

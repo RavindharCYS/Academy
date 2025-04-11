@@ -1555,3 +1555,8 @@ document.querySelector('.enroll-form').addEventListener('submit', function(e) {
     alert('Thank you for your interest! We will contact you soon.');
 });
 </script>
+<script>
+    if (window.location.pathname.endsWith("index.html")) {
+      window.location.replace("/");
+    }
+  </script>

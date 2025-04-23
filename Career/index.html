@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Transition Navigator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
+                Success Meets Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs" aria-label="Placement Training">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses" aria-label="Our Courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Career/" aria-label="Career">Career Transform</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" aria-label="About Us">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" aria-label="Contact Us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer to prevent content from being hidden under fixed navbar -->
+    <div style="height: 76px;"></div>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Navigate Your Path to an IT Career</h1>
+                <p>Discover the perfect transition roadmap from your current background to your dream IT role</p>
+                <a href="#navigator" class="btn primary-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Career Transition">
+            </div>
+        </div>
+    </section>
+
+    <section class="navigator" id="navigator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Career Transition Navigator</h2>
+                <p>Select your current background and desired IT role to get a personalized transition roadmap</p>
+            </div>
+            
+            <div class="navigator-form">
+                <div class="form-group">
+                    <label for="current-domain">Current Domain</label>
+                    <select id="current-domain" class="form-control">
+                        <option value="" disabled selected>Select your current domain</option>
+                        <optgroup label="Engineering">
+                            <option value="mechanical">Mechanical Engineering</option>
+                            <option value="civil">Civil Engineering</option>
+                            <option value="ece">Electronics & Communication</option>
+                            <option value="eee">Electrical Engineering</option>
+                            <option value="chemical">Chemical Engineering</option>
+                            <option value="aerospace">Aerospace Engineering</option>
+                            <option value="biomedical">Biomedical Engineering</option>
+                            <option value="industrial">Industrial Engineering</option>
+                            <option value="petroleum">Petroleum Engineering</option>
+                        </optgroup>
+                        <optgroup label="Arts & Humanities">
+                            <option value="ba-english">BA English</option>
+                            <option value="ba-history">BA History</option>
+                            <option value="ba-economics">BA Economics</option>
+                            <option value="ba-psychology">BA Psychology</option>
+                            <option value="ba-sociology">BA Sociology</option>
+                            <option value="ba-political">BA Political Science</option>
+                            <option value="ba-philosophy">BA Philosophy</option>
+                            <option value="ba-linguistics">BA Linguistics</option>
+                            <option value="ba-journalism">BA Journalism</option>
+                        </optgroup>
+                        <optgroup label="Commerce & Business">
+                            <option value="bcom">B.Com</option>
+                            <option value="bba">BBA</option>
+                            <option value="finance">Finance</option>
+                            <option value="accounting">Accounting</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="hr">Human Resources</option>
+                            <option value="economics">Economics</option>
+                            <option value="international-business">International Business</option>
+                        </optgroup>
+                        <optgroup label="Science">
+                            <option value="bsc-physics">BSc Physics</option>
+                            <option value="bsc-chemistry">BSc Chemistry</option>
+                            <option value="bsc-biology">BSc Biology</option>
+                            <option value="bsc-mathematics">BSc Mathematics</option>
+                            <option value="bsc-statistics">BSc Statistics</option>
+                            <option value="bsc-biochemistry">BSc Biochemistry</option>
+                            <option value="bsc-microbiology">BSc Microbiology</option>
+                            <option value="bsc-biotechnology">BSc Biotechnology</option>
+                            <option value="bsc-environmental">BSc Environmental Science</option>
+                        </optgroup>
+                        <optgroup label="CS/IT">
+                            <option value="bca">BCA</option>
+                            <option value="bsc-cs">BSc Computer Science</option>
+                            <option value="btech-cs">B.Tech Computer Science</option>
+                            <option value="btech-it">B.Tech Information Technology</option>
+                            <option value="software-engineer">Software Engineer</option>
+                        </optgroup>
+                        <optgroup label="Healthcare">
+                            <option value="mbbs">MBBS</option>
+                            <option value="bds">BDS</option>
+                            <option value="nursing">Nursing</option>
+                            <option value="pharmacy">Pharmacy</option>
+                            <option value="physiotherapy">Physiotherapy</option>
+                        </optgroup>
+                        <optgroup label="Other Domains">
+                            <option value="architecture">Architecture</option>
+                            <option value="law">Law</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="hospitality">Hospitality Management</option>
+                            <option value="fashion">Fashion Design</option>
+                            <option value="education">Education</option>
+                            <option value="media">Media & Communication</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="form-group">
+                    <label for="target-career">Target IT Career</label>
+                    <select id="target-career" class="form-control">
+                        <option value="" disabled selected>Select your target IT career</option>
+                        <optgroup label="Data & Analytics">
+                            <option value="data-analyst">Data Analyst</option>
+                            <option value="data-scientist">Data Scientist</option>
+                            <option value="data-engineer">Data Engineer</option>
+                            <option value="business-intelligence">Business Intelligence Analyst</option>
+                            <option value="machine-learning">Machine Learning Engineer</option>
+                        </optgroup>
+                        <optgroup label="Cloud & DevOps">
+                            <option value="cloud-engineer">Cloud Engineer</option>
+                            <option value="devops-engineer">DevOps Engineer</option>
+                            <option value="site-reliability">Site Reliability Engineer</option>
+                            <option value="cloud-architect">Cloud Architect</option>
+                            <option value="infrastructure-engineer">Infrastructure Engineer</option>
+                        </optgroup>
+                        <optgroup label="Software Development">
+                            <option value="frontend-developer">Frontend Developer</option>
+                            <option value="backend-developer">Backend Developer</option>
+                            <option value="full-stack">Full Stack Developer</option>
+                            <option value="mobile-developer">Mobile App Developer</option>
+                            <option value="game-developer">Game Developer</option>
+                        </optgroup>
+                        <optgroup label="Design & UX">
+                            <option value="ui-ux">UI/UX Designer</option>
+                            <option value="product-designer">Product Designer</option>
+                            <option value="interaction-designer">Interaction Designer</option>
+                            <option value="web-designer">Web Designer</option>
+                        </optgroup>
+                        <optgroup label="Security">
+                            <option value="security-analyst">Cybersecurity Analyst</option>
+                            <option value="security-engineer">Security Engineer</option>
+                            <option value="penetration-tester">Penetration Tester</option>
+                            <option value="security-architect">Security Architect</option>
+                        </optgroup>
+                        <optgroup label="Management & Analysis">
+                            <option value="business-analyst">Business Analyst</option>
+                            <option value="product-manager">Product Manager</option>
+                            <option value="project-manager">IT Project Manager</option>
+                            <option value="scrum-master">Scrum Master</option>
+                        </optgroup>
+                        <optgroup label="QA & Testing">
+                            <option value="qa-engineer">QA Engineer</option>
+                            <option value="automation-tester">Automation Tester</option>
+                            <option value="performance-tester">Performance Test Engineer</option>
+                        </optgroup>
+                        <optgroup label="Other IT Roles">
+                            <option value="digital-marketer">Digital Marketer</option>
+                            <option value="blockchain-developer">Blockchain Developer</option>
+                            <option value="ar-vr-developer">AR/VR Developer</option>
+                            <option value="iot-engineer">IoT Engineer</option>
+                            <option value="technical-writer">Technical Writer</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            
+            <button id="find-path" class="btn primary-btn">Find My Path <i class="fas fa-search"></i></button>
+        </div>
+    </section>
+
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Transition Roadmap</h2>
+                <p>Here's your personalized path to transition from <span id="from-domain">your current domain</span> to <span id="to-career">your target career</span></p>
+            </div>
+            
+            <div id="roadmap-container" class="roadmap">
+                <!-- Roadmap content will be dynamically generated based on selections -->
+            </div>
+            
+            <div class="estimated-time">
+                <h3>Estimated Transition Time</h3>
+                <div class="time-container">
+                    <div class="time-card">
+                        <h4>Fast Track</h4>
+                        <p id="fast-track-time" class="time">6 months</p>
+                        <p>Full-time dedication (40+ hours/week)</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Standard Track</h4>
+                        <p id="standard-track-time" class="time">12 months</p>
+                        <p>Part-time dedication (20 hours/week)</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Flexible Track</h4>
+                        <p id="flexible-track-time" class="time">18 months</p>
+                        <p>Casual pace (10 hours/week)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Navigator</h2>
+                <p>Designed to make your career transition smooth and effective</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Personalized Roadmaps</h3>
+                    <p>Get customized learning paths based on your background and target role</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Curated Resources</h3>
+                    <p>Access hand-picked courses, tutorials, and learning materials</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification Guidance</h3>
+                    <p>Discover the most valuable certifications for your target career</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Estimates</h3>
+                    <p>Plan your transition with realistic timeframes for different learning paces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-3">Success Meets Academy</h5>
+                    <p>Transforming careers through innovative training and skill development programs.</p>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Andagaloregate, Near Rasipuram, Namakkal
+                        </p>
+                        <p>
+                            <i class="fas fa-phone me-2"></i>
+                            +91 93609 94617 (or) +91 93454 22503
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope me-2"></i>
+                            successmeetsacademy@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#programs" class="text-white">Programs</a></li>
+                        <li><a href="#courses" class="text-white">Courses</a></li>
+                        <li><a href="#about" class="text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19ryQbVNLp/" class="text-white me-3" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/success-meets-technology-b0378734b/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/success_meets_foundation/" class="text-white" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="newsletter-signup mt-4">
+                        <h6 class="text-white mb-3">Subscribe to Our Newsletter</h6>
+                        <form id="newsletterForm" class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
+                Developed By <a href="https://www.linkedin.com/in/ravindhar-cy/" target="_blank">Ravindhar V</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

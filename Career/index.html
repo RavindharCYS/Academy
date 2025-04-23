@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Transition Navigator</title>
+    <title>Career Domain Transition Navigator</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Theme Toggle -->
+    
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
@@ -23,23 +26,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/#programs" aria-label="Placement Training">Programs</a>
+                        <a class="nav-link" href="#programs" aria-label="Placement Training">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#courses" aria-label="Our Courses">Courses</a>
+                        <a class="nav-link" href="#courses" aria-label="Our Courses">Courses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Career/" aria-label="Career">Career Transform</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about" aria-label="About Us">About</a>
+                        <a class="nav-link" href="#about" aria-label="About Us">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#contact" aria-label="Contact Us">Contact</a>
+                        <a class="nav-link" href="#contact" aria-label="Contact Us">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
                     </li>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -61,7 +67,8 @@
         </div>
     </section>
 
-    <section class="navigator" id="navigator">
+    <!-- Navigator Section -->
+    <section class="navigator py-5" id="navigator">
         <div class="container">
             <div class="section-header">
                 <h2>Career Transition Navigator</h2>
@@ -209,7 +216,8 @@
         </div>
     </section>
 
-    <section class="results" id="results">
+    <!-- Results Section -->
+    <section class="results py-5" id="results">
         <div class="container">
             <div class="section-header">
                 <h2>Your Transition Roadmap</h2>
@@ -243,7 +251,8 @@
         </div>
     </section>
 
-    <section class="features">
+    <!-- Features Section -->
+    <section class="features py-5" id="features">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose Our Navigator</h2>
@@ -287,69 +296,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5 mt-5">
+    <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="mb-3">Success Meets Academy</h5>
-                    <p>Transforming careers through innovative training and skill development programs.</p>
+                    <h5 class="mb-3">Career Domain Transition Navigator</h5>
+                    <p>Transforming careers through personalized roadmaps and skill development guidance.</p>
                     <div class="contact-info">
                         <p>
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            Andagaloregate, Near Rasipuram, Namakkal
-                        </p>
-                        <p>
-                            <i class="fas fa-phone me-2"></i>
-                            +91 93609 94617 (or) +91 93454 22503
-                        </p>
-                        <p>
                             <i class="fas fa-envelope me-2"></i>
-                            successmeetsacademy@gmail.com
+                            contact@careertransition.com
                         </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h5 class="mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#programs" class="text-white">Programs</a></li>
-                        <li><a href="#courses" class="text-white">Courses</a></li>
-                        <li><a href="/Career/" class="text-white">Career</a></li>
-                        <li><a href="#about" class="text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-white">Contact</a></li>
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#navigator" class="text-white">Navigator</a></li>
+                        <li><a href="#features" class="text-white">Features</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5 class="mb-3">Connect With Us</h5>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/19ryQbVNLp/" class="text-white me-3" target="_blank" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/success-meets-technology-b0378734b/" class="text-white me-3" target="_blank" aria-label="LinkedIn">
+                        <a href="#" class="text-white me-3" target="_blank" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://www.instagram.com/success_meets_foundation/" class="text-white" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="text-white me-3" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                    </div>
-                    <div class="newsletter-signup mt-4">
-                        <h6 class="text-white mb-3">Subscribe to Our Newsletter</h6>
-                        <form id="newsletterForm" class="d-flex">
-                            <input type="email" class="form-control me-2" placeholder="Enter your email" required>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
+                        <a href="#" class="text-white" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             <hr class="my-4 bg-secondary">
             <div class="text-center">
-                <p class="mb-0">&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
-                Developed By <a href="https://www.linkedin.com/in/ravindhar-cy/" target="_blank">Ravindhar V</a>
+                <p class="mb-0">&copy; 2023 Career Domain Transition Navigator. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>

@@ -136,6 +136,16 @@
         .icon-purple { color: #9b59b6; }
         .icon-teal { color: #1abc9c; }
     </style>
+        <!-- Link to Manifest -->
+        <link rel="manifest" href="/manifest.json">
+
+        <!-- Theme Color for Safari on iOS -->
+        <meta name="theme-color" content="#3498db">
+    
+        <!-- Add this if you haven't already for Apple devices -->
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
 </head>
 <body>
 
@@ -583,5 +593,25 @@
           window.location.replace("/");
         }
       </script>
+
+          <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then(registration => {
+                console.log('Service Worker registered successfully with scope:', registration.scope);
+              })
+              .catch(error => {
+                console.error('Service Worker registration failed:', error);
+              });
+          });
+        }
+      </script>
+      <script>
+          if (window.location.pathname.endsWith("index.html")) {
+            window.location.replace("/");
+          }
+        </script>
 </body>
 </html>

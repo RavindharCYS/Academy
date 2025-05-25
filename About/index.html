@@ -97,6 +97,75 @@
             color: white;
             padding: 40px 0;
         }
+        
+        /* Card styles */
+        .glassmorphic-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glassmorphic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .animated-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+            text-align: left;
+        }
+        
+        .feature-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: #0d6efd;
+        }
+        
+        .icon-blue {
+            color: #4285F4;
+        }
+        
+        .icon-red {
+            color: #EA4335;
+        }
+        
+        .icon-green {
+            color: #34A853;
+        }
+        
+        .icon-purple {
+            color: #7B68EE;
+        }
+        
+        .icon-orange {
+            color: #FBBC05;
+        }
+        
+        .icon-teal {
+            color: #009688;
+        }
     </style>
 </head>
 <body>
@@ -137,6 +206,7 @@
     </nav>
 
     <!-- Hero Section -->
+        <br>
     <header class="hero-section">
         <div class="container">
             <h1 class="display-4 fw-bold">Welcome to Success Meets Academy</h1>
@@ -178,6 +248,126 @@
         </div>
     </main>
 
+    <!-- Placement Training Section -->
+    <section id="programs" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="display-6">Placement Training</h2>
+            </div>
+            <div class="row">
+                <!-- Aptitude Training Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card glassmorphic-card" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain card-icon animated-icon icon-blue"></i>
+                            <h4 class="card-title">Aptitude Training</h4>
+                            <p class="card-text">Career guidance and job placement support</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Resume Building</li>
+                                <li><i class="fas fa-check"></i> Interview Preparation</li>
+                                <li><i class="fas fa-check"></i> Corporate Readiness</li>
+                            </ul>
+                            <a href="/Aptitude/" class="btn btn-primary mt-3">Explore Program</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Soft Skill Development Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card glassmorphic-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chalkboard-teacher card-icon animated-icon icon-green"></i>
+                            <h4 class="card-title">Soft Skill Development</h4>
+                            <p class="card-text">Enhance communication and leadership skills</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Communication Skills</li>
+                                <li><i class="fas fa-check"></i> Leadership Training</li>
+                                <li><i class="fas fa-check"></i> Personality Development</li>
+                            </ul>
+                            <a href="/SoftSkill/" class="btn btn-primary mt-3">Explore Program</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Technical Training Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card glassmorphic-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop-code card-icon animated-icon icon-orange"></i>
+                            <h4 class="card-title">Technical Training</h4>
+                            <p class="card-text">Advanced technical skill development</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Hands-on Learning</li>
+                                <li><i class="fas fa-check"></i> Industry Standards</li>
+                                <li><i class="fas fa-check"></i> Expert-Led Sessions</li>
+                            </ul>
+                            <a href="/Technical/" class="btn btn-primary mt-3">Explore Program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="bg-light py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="display-6">Our Specialized Courses</h2>
+            </div>
+            <div class="row">
+                <!-- Data Analytics Course -->
+                <div class="col-md-4 mb-4">
+                    <div class="card course-card glassmorphic-card" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line card-icon animated-icon icon-blue"></i>
+                            <h4 class="card-title">Data Analytics</h4>
+                            <p class="card-text">Transform raw data into actionable insights with comprehensive analytics training</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Statistical Analysis</li>
+                                <li><i class="fas fa-check"></i> Data Visualization</li>
+                                <li><i class="fas fa-check"></i> Predictive Modeling</li>
+                            </ul>
+                            <a href="/DataAnalytics/" class="btn btn-outline-primary mt-3">Explore Course</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design Course -->
+                <div class="col-md-4 mb-4">
+                    <div class="card course-card glassmorphic-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-body text-center">
+                            <i class="fas fa-paint-brush card-icon animated-icon icon-purple"></i>
+                            <h4 class="card-title">UI/UX Design Program</h4>
+                            <p class="card-text">Master the art of creating exceptional user experiences and intuitive interfaces</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> User Research</li>
+                                <li><i class="fas fa-check"></i> Interface Design</li>
+                                <li><i class="fas fa-check"></i> Interactive Prototyping</li>
+                            </ul>
+                            <a href="/UIUX/" class="btn btn-outline-primary mt-3">Explore Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full Stack Development Course -->
+                <div class="col-md-4 mb-4">
+                    <div class="card course-card glassmorphic-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code card-icon animated-icon icon-teal"></i>
+                            <h4 class="card-title">Full Stack Development</h4>
+                            <p class="card-text">Web development course covering frontend, backend, and full-stack development technologies</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Frontend Technologies</li>
+                                <li><i class="fas fa-check"></i> Backend Development</li>
+                                <li><i class="fas fa-check"></i> Database Management</li>
+                            </ul>
+                            <a href="/FullStack/" class="btn btn-outline-primary mt-3">Explore Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
@@ -203,24 +393,23 @@
                 <div class="col-md-4">
                     <h5 class="mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#programs" class="text-white">Programs</a></li>
-                        <li><a href="#courses" class="text-white">Courses</a></li>
+                        <li><a href="/#programs" class="text-white">Placement Training</a></li>
+                        <li><a href="/#courses" class="text-white">Courses</a></li>
                         <li><a href="/Career/" class="text-white">Career Transform</a></li>
-                        <li><a href="#about" class="text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-white">Contact</a></li>
+                        <li><a href="/#about" class="text-white">About Us</a></li>
+                        <li><a href="/#contact" class="text-white">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="mb-3">Connect With Us</h5>
-                    <div class="newsletter-signup mt-4">
-                        <h6 class="text-white mb-3">Subscribe to Our Newsletter</h6>
-                        <form id="newsletterForm" class="d-flex">
-                            <input type="email" class="form-control me-2" placeholder="Enter your email" required>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
+                    <h5 class="mb-3">Our Programs</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/Aptitude/" class="text-white">Aptitude Training</a></li>
+                        <li><a href="/SoftSkill/" class="text-white">Soft Skill Development</a></li>
+                        <li><a href="/Technical/" class="text-white">Technical Training</a></li>
+                        <li><a href="/DataAnalytics/" class="text-white">Data Analytics</a></li>
+                        <li><a href="/UIUX/" class="text-white">UI/UX Design</a></li>
+                        <li><a href="/FullStack/" class="text-white">Full Stack Development</a></li>
+                    </ul>
                 </div>
             </div>
             <hr class="my-4 bg-secondary">
@@ -249,6 +438,6 @@
         if (window.location.pathname.endsWith("index.html")) {
           window.location.replace("/");
         }
-      </script>
+    </script>
 </body>
 </html>

@@ -3,409 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soft Skill Development | Success Meets Academy</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Soft Skill Development Program | Success Meets Academy</title>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Elevate your career with our Soft Skill Development program. Master communication, leadership, and emotional intelligence to stand out in the workplace.">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Custom Styles -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
+        /* ------------------------- */
+        /* --- 1. Global Styles & Variables --- */
+        /* ------------------------- */
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --accent-color: #e74c3c;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f4f6f9;
-            --text-primary: #2c3e50;
-            --text-secondary: #34495e;
-            --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            --transition-speed: 0.3s;
-        }
-
-        .navbar {
-            backdrop-filter: blur(20px);
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 
-                0 4px 6px rgba(0, 0, 0, 0.05),
-                0 1px 3px rgba(0, 0, 0, 0.1);
-            transition: 
-                background-color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text-primary);
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-        }
-
-        .navbar-brand:hover {
-            color: var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        .nav-link {
-            position: relative;
-            color: var(--text-primary);
-            font-weight: 500;
-            margin: 0 10px;
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background-color: var(--primary-color);
-            transition: 
-                width var(--transition-speed) ease,
-                left var(--transition-speed) ease;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::before {
-            width: 100%;
-            left: 0;
-        }
-
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link.active::before {
-            width: 100%;
-            left: 0;
-        }
-
-        /* Responsive Navbar Adjustments */
-        @media (max-width: 992px) {
-            .navbar {
-                background-color: rgba(255, 255, 255, 0.98);
-            }
-
-            .nav-link {
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            .nav-link::before {
-                bottom: -3px;
-            }
+            --primary-color: #4A148C; /* A deep, professional purple */
+            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
+            --dark-color: #212529;
+            --body-color: #555;
+            --bg-light: #f8f9fa;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
+            font-family: var(--body-font); color: var(--body-color); line-height: 1.7;
+            padding-top: 80px; background-color: #fff;
         }
 
-        .hero-section {
-            background: var(--gradient-primary) url('header-image.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 120px 0;
-            position: relative;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); color: var(--dark-color); font-weight: 600; }
+        .section-padding { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title .subtitle { color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-top: 10px; }
+        .btn-brand { background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; border: 2px solid var(--primary-color); }
+        .btn-brand:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.3);
-        }
+        /* ------------------------- */
+        /* --- 2. Navigation Bar --- */
+        /* ------------------------- */
+        .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar .navbar-brand img { height: 45px; margin-right: 10px; }
+        .navbar-nav .nav-link { font-weight: 500; margin: 0 10px; position: relative; }
+        .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
+        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
 
-        .skill-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* ------------------------- */
+        /* --- 3. Hero Section --- */
+        /* ------------------------- */
+        .hero-course {
+            padding: 100px 0 0 0;
+            background-image: linear-gradient(rgba(74, 20, 140, 0.9), rgba(74, 20, 140, 0.8)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover; background-position: center; color: white; text-align: center;
         }
+        .hero-course h1 { color: white; font-weight: 700; }
+        .hero-course p { max-width: 700px; margin: 20px auto 40px; }
+        .course-facts-bar {
+            background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 20px 0; margin-top: 80px;
+        }
+        .fact-item { text-align: center; }
+        .fact-item .icon { font-size: 1.5rem; margin-right: 10px; color: var(--secondary-color); }
+        .fact-item span { font-weight: 500; }
 
-        .skill-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
+        /* ------------------------- */
+        /* --- 4. Content Sections --- */
+        /* ------------------------- */
+        .feature-card { text-align: center; padding: 30px; background-color: var(--bg-light); border-radius: var(--border-radius); height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .feature-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
 
-        .skill-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            transition: color var(--transition-speed) ease;
-        }
+        .learning-method-list li { display: flex; align-items: flex-start; margin-bottom: 15px; }
+        .learning-method-list .icon { font-size: 1.2rem; color: var(--primary-color); margin-right: 15px; margin-top: 5px; }
+        
+        .accordion-button:not(.collapsed) { background-color: var(--primary-color); color: white; }
+        .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(74, 20, 140, 0.25); }
+        .accordion-item { border-radius: var(--border-radius) !important; overflow: hidden; }
+        
+        .instructor-card { display: flex; align-items: center; background-color: var(--bg-light); padding: 30px; border-radius: var(--border-radius); }
+        .instructor-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-right: 30px; border: 4px solid var(--secondary-color); }
 
-        .skill-icon:hover {
-            color: var(--accent-color);
-        }
+        .career-outcomes-list .badge { padding: 10px 15px; font-size: 1rem; }
 
-        .workshop-item {
-            border-left: 3px solid var(--primary-color);
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        .cta-section {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .benefit-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .benefit-list li i {
-            color: var(--secondary-color);
-            margin-right: 15px;
-        }
-
-        /* Hero Section Button Styles */
-        .hero-section .btn-light {
-            position: relative;
-            background-color: white;
-            color: var(--primary-color);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: none;
-            overflow: hidden;
-            z-index: 1;
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-        }
-
-        .hero-section .btn-light::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: 
-                left var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-            z-index: -1;
-        }
-
-        .hero-section .btn-light:hover {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-section .btn-light:hover::before {
-            left: 0;
-        }
-
-        .hero-section .btn-light:active {
-            transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Responsive Button Adjustments */
-        @media (max-width: 768px) {
-            .hero-section .btn-light {
-                padding: 12px 24px !important;
-                font-size: 0.9rem;
-            }
-        }
+        /* ------------------------- */
+        /* --- 5. CTA & Footer --- */
+        /* ------------------------- */
+        .cta-section { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); color: white; padding: 80px 0; text-align: center; }
+        .cta-section h2, .cta-section p { color: white; }
+        .cta-section .btn-light { padding: 12px 30px; border-radius: 50px; font-weight: 600; color: var(--primary-color); }
+        footer { background-color: var(--dark-color); color: rgba(255,255,255,0.7); }
+        footer h5 { color: white; }
+        .footer-bottom a { color: var(--secondary-color); text-decoration: none; }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
-                Success Meets Academy
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="/"><img src="/logo.jpeg" alt="Success Meets Academy Logo"> Success Meets Academy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#programs" aria-label="Placement Training">Programs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#courses" aria-label="Our Courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#about" aria-label="About Us">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#contact" aria-label="Contact Us">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="/#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Career/">Career Transform</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/About/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a href="/Enroll/" class="btn btn-brand">Enroll Now</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-<section class="hero-section text-center text-light" 
-style="position: relative; 
-background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1920&auto=format&fit=crop'); 
-background-size: cover; 
-background-position: center; 
-background-repeat: no-repeat; 
-padding: 100px 0;">
-
-<!-- Dark Overlay for Enhanced Readability -->
-<div style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);  /* Overlay to improve text contrast */
-"></div>
-
-<div class="container position-relative" style="z-index: 1;">
-    <h1 class="display-4 fw-bold mb-4">Soft Skill Development Program</h1>
-    <p class="lead mb-5">
-        Transform Your Professional Potential Through Comprehensive Skill Enhancement
-    </p>
-    <a href="/Enroll/" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-</div>
-</section>
-
-
-    <!-- Program Overview -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="mb-4">Unlock Your Professional Potential</h2>
-                    <p class="lead">Our Soft Skill Development Program is designed to enhance your interpersonal skills, communication abilities, and professional demeanor.</p>
-                    <ul class="list-unstyled benefit-list">
-                        <li><i class="fas fa-check-circle"></i>Boost Confidence and Self-Awareness</li>
-                        <li><i class="fas fa-check-circle"></i>Improve Communication Effectiveness</li>
-                        <li><i class="fas fa-check-circle"></i>Develop Leadership Capabilities</li>
-                        <li><i class="fas fa-check-circle"></i>Enhance Emotional Intelligence</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="soft.jpg" alt="Soft Skills Development" class="img-fluid rounded shadow">
+    
+    <main>
+        <!-- Hero Section -->
+        <header class="hero-course">
+            <div class="container" data-aos="fade-in">
+                <p class="subtitle text-uppercase">Soft Skill Development Program</p>
+                <h1 class="display-4 fw-bold">Your Technical Skills Get the Interview. Your Soft Skills Get the Job.</h1>
+                <p class="lead">In today's competitive market, communication, leadership, and emotional intelligence are what separate good candidates from great ones. Master the skills that drive career growth.</p>
+                <a href="/Enroll/" class="btn btn-brand btn-lg">Elevate Your Career</a>
+            </div>
+            <div class="course-facts-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-clock icon"></i><span><strong>Duration:</strong> 4 Weeks</span></div>
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-users icon"></i><span><strong>For:</strong> All Levels</span></div>
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-laptop-code icon"></i><span><strong>Format:</strong> Live Workshops</span></div>
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-award icon"></i><span><strong>Certificate:</strong> Yes</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Key Skill Areas -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Key Skill Development Areas</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card skill-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-comments skill-icon" style="color: #e67e22;"></i>
-                            <h4>Communication Skills</h4>
-                            <p>Master verbal and non-verbal communication techniques for professional settings.</p>
+        <!-- What You Will Master Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Core Competencies</p>
+                    <h2>Become an Indispensable Professional</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="feature-card"><i class="fas fa-comments icon"></i><h4>Communicate with Impact</h4><p>Master the art of clear, confident, and persuasive communication in any professional setting.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="feature-card"><i class="fas fa-users-cog icon"></i><h4>Collaborate Seamlessly</h4><p>Enhance your teamwork, conflict resolution, and networking skills to become a valuable team player.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="feature-card"><i class="fas fa-brain icon"></i><h4>Lead with Empathy</h4><p>Develop your emotional intelligence to better understand colleagues, manage relationships, and lead effectively.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="feature-card"><i class="fas fa-lightbulb icon"></i><h4>Solve Problems Creatively</h4><p>Sharpen your critical thinking and adaptability to navigate challenges and drive innovative solutions.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Experience Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="section-title text-start mb-4">
+                            <p class="subtitle">Our Approach</p>
+                            <h2>Learn by Doing, Not Just Listening</h2>
                         </div>
+                        <p class="lead">Soft skills are built through practice. Our program moves beyond theory with highly interactive and engaging workshops designed to build real-world confidence.</p>
+                        <ul class="list-unstyled learning-method-list">
+                            <li><i class="fas fa-user-friends icon"></i><strong>Role-Playing Scenarios:</strong> Practice difficult conversations, negotiations, and presentations in a safe, supportive environment.</li>
+                            <li><i class="fas fa-comments icon"></i><strong>Group Discussions & Debates:</strong> Sharpen your ability to articulate ideas, listen actively, and contribute meaningfully to team discussions.</li>
+                            <li><i class="fas fa-briefcase icon"></i><strong>Mock Interviews & Feedback:</strong> Receive personalized feedback on your professional presence and interview techniques from experienced coaches.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" class="img-fluid rounded-3 shadow-lg" alt="Interactive workshop session">
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card skill-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-users skill-icon" style="color: #8e44ad;"></i>
-                            <h4>Interpersonal Skills</h4>
-                            <p>Develop effective relationship-building and networking capabilities.</p>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Program Structure</p>
+                    <h2>Workshop Modules</h2>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card skill-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-brain skill-icon" style="color: #27ae60;"></i>
-                            <h4>Emotional Intelligence</h4>
-                            <p>Enhance self-awareness and emotional management skills.</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion" id="curriculumAccordion">
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#m1">Module 1: Professional Communication Mastery</button></h2><div id="m1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Covers verbal and non-verbal communication, active listening, storytelling for business, and confident public speaking.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m2">Module 2: Leadership & Team Collaboration</button></h2><div id="m2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Focuses on team dynamics, giving and receiving feedback, conflict resolution, and understanding different leadership styles.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m3">Module 3: Emotional Intelligence at Work</button></h2><div id="m3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Develop self-awareness, empathy, and self-regulation. Learn to manage stress and build stronger professional relationships.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m4">Module 4: Corporate Readiness & Etiquette</button></h2><div id="m4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Covers professional networking, business email etiquette, time management, and building your personal brand in the workplace.</div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Workshop Details -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Workshop Modules</h2>
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <div class="workshop-item">
-                        <h4>Module 1: Communication Fundamentals</h4>
-                        <p>Effective communication strategies, active listening, and presentation skills</p>
-                    </div>
-                    <div class="workshop-item">
-                        <h4>Module 2: Leadership and Teamwork</h4>
-                        <p>Team dynamics, leadership styles, and collaborative work techniques</p>
-                    </div>
-                    <div class="workshop-item">
-                        <h4>Module 3: Emotional Intelligence</h4>
-                        <p>Self-awareness, empathy, and emotional regulation in professional environments</p>
-                    </div>
-                    <div class="workshop-item">
-                        <h4>Module 4: Professional Etiquette</h4>
-                        <p>Business communication, networking, and professional behavior</p>
+        <!-- Career Impact -->
+        <section class="section-padding bg-light career-outcomes-list">
+            <div class="container text-center" data-aos="fade-up">
+                <div class="section-title"><p class="subtitle">Tangible Results</p><h2>Career Impact</h2></div>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <span class="badge bg-primary">Faster Promotions</span><span class="badge bg-primary">Stronger Leadership Potential</span>
+                    <span class="badge bg-primary">Improved Team Collaboration</span><span class="badge bg-primary">Higher Salary Negotiation</span>
+                    <span class="badge bg-primary">Increased Job Satisfaction</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10" data-aos="fade-up">
+                        <div class="section-title"><p class="subtitle">Learn from the Best</p><h2>Meet Your Lead Coach</h2></div>
+                        <div class="instructor-card">
+                            <img src="https://i.pravatar.cc/400?img=32" alt="Instructor Emily White">
+                            <div>
+                                <h4>Emily White</h4><p class="text-primary fw-bold">Corporate Trainer & Leadership Coach</p>
+                                <p>With over 15 years of experience coaching executives and rising stars at top tech companies, Emily specializes in transforming potential into performance. Her interactive and empathetic approach helps professionals unlock their confidence and influence.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-
-    <!-- CTA Section -->
-    <section class="cta-section text-center">
-        <div class="container">
-            <h2 class="display-5 mb-4">Ready to Elevate Your Professional Skills?</h2>
-            <p class="lead mb-5">Join our Soft Skill Development Program and unlock your true potential</p>
-            <a href="/Enroll/" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-        </div>
-    </section>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container" data-aos="zoom-in">
+                <h2 class="display-5 fw-bold">Ready to Elevate Your Professional Presence?</h2>
+                <p class="lead my-4">Join our Soft Skill Development Program and gain the competitive edge that will define your career success.</p>
+                <a href="/Enroll/" class="btn btn-light btn-lg">Enroll & Unlock Your Potential</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Success Meets Academy</h5><p>Transforming careers through innovative training and skill development programs.</p></div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Quick Links</h5><ul class="list-unstyled"><li><a class="text-white" href="/#programs">Programs</a></li><li><a class="text-white" href="/#courses">Courses</a></li><li><a class="text-white" href="/About/">About Us</a></li><li><a class="text-white" href="/#contact">Contact</a></li></ul></div>
+                <div class="col-lg-4 col-md-6"><h5 class="mb-3">Contact Info</h5><p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p><p><i class="fas fa-phone me-2"></i> +91 93609 94617</p><p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p></div>
+            </div>
+            <div class="footer-bottom mt-5 text-center"><p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p><p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p></div>
         </div>
     </footer>
 
-    <!-- External Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom Script -->
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        if (window.location.pathname.endsWith("index.html")) {
-          window.location.replace("/");
-        }
-      </script>
+        document.addEventListener('DOMContentLoaded', () => { AOS.init({ duration: 1000, once: true, offset: 50 }); });
+    </script>
 </body>
 </html>

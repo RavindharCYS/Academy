@@ -3,237 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placement Training | Success Meets Academy</title>
-
-    <!-- Favicon -->
+    <title>Aptitude Training Program | Success Meets Academy</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Master quantitative, logical, and verbal skills with our expert-led Aptitude Training Program. Prepare to ace placement tests and secure your dream job.">
+    
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Sweet Alert -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles.css">
-
-    <!-- Custom Styles -->
     <style>
+        /* ------------------------- */
+        /* --- 1. Global Styles & Variables --- */
+        /* ------------------------- */
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --accent-color: #e74c3c;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f4f6f9;
-            --text-primary: #2c3e50;
-            --text-secondary: #34495e;
-            --gradient-primary: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            --transition-speed: 0.3s;
-        }
-
-        .navbar {
-            backdrop-filter: blur(20px);
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 
-                0 4px 6px rgba(0, 0, 0, 0.05),
-                0 1px 3px rgba(0, 0, 0, 0.1);
-            transition: 
-                background-color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text-primary);
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-        }
-
-        .navbar-brand:hover {
-            color: var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        .nav-link {
-            position: relative;
-            color: var(--text-primary);
-            font-weight: 500;
-            margin: 0 10px;
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background-color: var(--primary-color);
-            transition: 
-                width var(--transition-speed) ease,
-                left var(--transition-speed) ease;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::before {
-            width: 100%;
-            left: 0;
-        }
-
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link.active::before {
-            width: 100%;
-            left: 0;
-        }
-
-        /* Responsive Navbar Adjustments */
-        @media (max-width: 992px) {
-            .navbar {
-                background-color: rgba(255, 255, 255, 0.98);
-            }
-
-            .nav-link {
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            .nav-link::before {
-                bottom: -3px;
-            }
+            --primary-color: #4A148C; /* A deep, professional purple */
+            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
+            --dark-color: #212529;
+            --body-color: #555;
+            --bg-light: #f8f9fa;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
+            font-family: var(--body-font);
+            color: var(--body-color);
+            line-height: 1.7;
+            padding-top: 80px; /* Offset for fixed navbar */
+            background-color: #fff;
         }
 
-        .hero-section {
-            background: var(--gradient-primary) url('header-image.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 120px 0;
-            position: relative;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            color: var(--dark-color);
+            font-weight: 600;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.3);
-        }
-
-        .feature-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            transition: color var(--transition-speed) ease;
-        }
-
-        .feature-icon:hover {
-            color: var(--accent-color);
-        }
-
-        .timeline-item {
-            border-left: 3px solid var(--primary-color);
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        .cta-section {
-            background: var(--gradient-primary);
-            color: white;
+        .section-padding {
             padding: 80px 0;
         }
 
-        /* Hero Section Button Styles */
-        .hero-section .btn-light {
-            position: relative;
-            background-color: white;
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title .subtitle {
             color: var(--primary-color);
             font-weight: 600;
-            letter-spacing: 0.5px;
-            border: none;
-            overflow: hidden;
-            z-index: 1;
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 10px;
         }
 
-        .hero-section .btn-light::before {
+        .btn-brand {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        .btn-brand:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* ------------------------- */
+        /* --- 2. Navigation Bar --- */
+        /* ------------------------- */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .navbar-brand img {
+            margin-right: 10px;
+            height: 45px;
+        }
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: 
-                left var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-            z-index: -1;
-        }
-
-        .hero-section .btn-light:hover {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-section .btn-light:hover::before {
+            bottom: 0;
             left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
         }
 
-        .hero-section .btn-light:active {
-            transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        /* ------------------------- */
+        /* --- 3. Hero Section --- */
+        /* ------------------------- */
+        .hero-program {
+            padding: 100px 0;
+            background-image: linear-gradient(rgba(74, 20, 140, 0.85), rgba(74, 20, 140, 0.7)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-program h1 {
+            color: white;
+            font-weight: 700;
+        }
+        .hero-program p {
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* ------------------------- */
+        /* --- 4. Program Info --- */
+        /* ------------------------- */
+        .program-highlights .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .program-highlights .icon-box {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        /* ------------------------- */
+        /* --- 5. Curriculum Cards --- */
+        /* ------------------------- */
+        .curriculum-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .curriculum-card:hover {
+            transform: translateY(-10px);
+        }
+        .curriculum-card .icon-header {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .curriculum-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: left;
+        }
+        .curriculum-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .curriculum-card li::before {
+            content: '\f00c'; /* Font Awesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary-color);
+        }
+        
+        /* ------------------------- */
+        /* --- 6. Training Timeline --- */
+        /* ------------------------- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        .timeline-container.left { left: 0; }
+        .timeline-container.right { left: 50%; }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-container.right::after { left: -10px; }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--bg-light);
+            position: relative;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
         }
 
-        /* Responsive Button Adjustments */
-        @media (max-width: 768px) {
-            .hero-section .btn-light {
-                padding: 12px 24px !important;
-                font-size: 0.9rem;
-            }
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 20px; }
+            .timeline-container { width: 100%; padding-left: 60px; padding-right: 15px; }
+            .timeline-container.left, .timeline-container.right { left: 0; }
+            .timeline-container.right::after, .timeline-container.left::after { left: 11px; }
+        }
+
+        /* ------------------------- */
+        /* --- 7. Call to Action --- */
+        /* ------------------------- */
+        .cta-section {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2, .cta-section p {
+            color: white;
+        }
+        .cta-section .btn-light {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* ------------------------- */
+        /* --- 8. Footer --- */
+        /* ------------------------- */
+        footer {
+            background-color: var(--dark-color);
+            color: rgba(255,255,255,0.7);
+        }
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        footer .list-unstyled a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer .list-unstyled a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        .footer-bottom a {
+            color: var(--secondary-color);
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo">
                 Success Meets Academy
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -242,19 +318,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/#programs" aria-label="Placement Training">Programs</a>
+                        <a class="nav-link active" href="/#programs">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#courses" aria-label="Our Courses">Courses</a>
+                        <a class="nav-link" href="/#courses">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about" aria-label="About Us">About</a>
+                        <a class="nav-link" href="/About/">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#contact" aria-label="Contact Us">Contact</a>
+                        <a class="nav-link" href="/#contact">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
+                    <li class="nav-item ms-lg-3">
+                        <a href="/Enroll/" class="btn btn-brand">Enroll Now</a>
                     </li>
                 </ul>
             </div>
@@ -262,139 +338,213 @@
     </nav>
 
     <!-- Hero Section -->
-<section class="hero-section text-center text-light" 
-style="position: relative; 
-background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop'); 
-background-size: cover; 
-background-position: center; 
-background-repeat: no-repeat; 
-padding: 100px 0;">
+    <header class="hero-program">
+        <div class="container" data-aos="fade-in">
+            <h1 class="display-4 fw-bold">Master the Aptitude Tests That Stand Between You and Your Dream Job</h1>
+            <p class="lead">Our comprehensive program sharpens your quantitative, logical, and verbal skills to help you ace any placement exam with confidence.</p>
+            <a href="/Enroll/" class="btn btn-brand mt-4">Enroll in Program</a>
+        </div>
+    </header>
 
-<!-- Dark Overlay for Improved Visibility -->
-<div style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay for better text contrast */
-"></div>
-
-<div class="container position-relative" style="z-index: 1;">
-    <h1 class="display-4 fw-bold mb-4">Aptitude Training Program</h1>
-    <p class="lead mb-5">Comprehensive Career Guidance and Job Placement Support</p>
-    <a href="/Enroll/" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-</div>
-</section>
-
-        <!-- Program Overview -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="mb-4">Program Highlights</h2>
-                <p class="lead">Our Placement Training Program is designed to bridge the gap between academic learning and professional success.</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Personalized Career Counseling</li>
-                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Resume Building Workshops</li>
-                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Interview Preparation</li>
-                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Corporate Readiness Training</li>
-                </ul>
+    <main>
+        <!-- Program Overview Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 program-highlights" data-aos="fade-right">
+                        <div class="section-title text-start mb-4">
+                            <p class="subtitle">Program Overview</p>
+                            <h2>Why Our Aptitude Training is a Game-Changer</h2>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="icon-box"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <h5>Crack Any Problem</h5>
+                                <p>Develop powerful problem-solving techniques and shortcuts to solve complex questions quickly and accurately.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <h5>Think Logically</h5>
+                                <p>Enhance your logical and analytical reasoning abilities to tackle puzzles, patterns, and critical thinking challenges.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="icon-box"><i class="fas fa-comments"></i></div>
+                            <div>
+                                <h5>Communicate with Clarity</h5>
+                                <p>Strengthen your verbal ability and comprehension skills to excel in language-based sections of any test.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop" class="img-fluid rounded-3 shadow-lg" alt="Students working together">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Placement Training Overview" class="img-fluid rounded shadow">
+        </section>
+        
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Curriculum</p>
+                    <h2>What You'll Master</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="curriculum-card text-center">
+                            <i class="fas fa-calculator icon-header"></i>
+                            <h4>Quantitative Aptitude</h4>
+                            <ul>
+                                <li>Number Systems</li>
+                                <li>Percentages & Averages</li>
+                                <li>Time, Speed & Distance</li>
+                                <li>Data Interpretation</li>
+                                <li>Permutations & Combinations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="curriculum-card text-center">
+                             <i class="fas fa-sitemap icon-header"></i>
+                            <h4>Logical Reasoning</h4>
+                            <ul>
+                                <li>Coding & Decoding</li>
+                                <li>Blood Relations</li>
+                                <li>Seating Arrangements</li>
+                                <li>Syllogisms & Puzzles</li>
+                                <li>Direction Sense</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="curriculum-card text-center">
+                            <i class="fas fa-book-open icon-header"></i>
+                            <h4>Verbal Ability</h4>
+                            <ul>
+                                <li>Reading Comprehension</li>
+                                <li>Grammar & Vocabulary</li>
+                                <li>Sentence Correction</li>
+                                <li>Para Jumbles</li>
+                                <li>Synonyms & Antonyms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Our Process</p>
+                    <h2>Our Proven Training Approach</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-container left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h4>Phase 1: Foundation Building</h4>
+                            <p>We start with the fundamentals, ensuring you have a strong grasp of core concepts across all topics.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h4>Phase 2: Skill Application</h4>
+                            <p>Learn shortcuts, tricks, and strategies to apply your knowledge effectively and solve problems with speed.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h4>Phase 3: Mock Tests & Analysis</h4>
+                            <p>Take full-length mock tests simulating real exam conditions, followed by detailed performance analysis.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h4>Phase 4: Final Polish & Confidence Boost</h4>
+                            <p>Focus on your weak areas and finalize your strategy, building the confidence to walk into any exam hall prepared.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who is this for? -->
+        <section class="section-padding bg-light">
+            <div class="container text-center" data-aos="fade-up">
+                <div class="section-title">
+                    <p class="subtitle">Ideal Candidates</p>
+                    <h2>Who Is This Program For?</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6 mb-3"><p><i class="fas fa-user-graduate me-2 text-primary"></i> Final-year college students preparing for placements.</p></div>
+                            <div class="col-md-6 mb-3"><p><i class="fas fa-briefcase me-2 text-primary"></i> Job seekers aiming for roles in IT, banking, and consulting.</p></div>
+                            <div class="col-md-6 mb-3"><p><i class="fas fa-book me-2 text-primary"></i> Aspirants of competitive exams (CAT, GMAT, etc.).</p></div>
+                            <div class="col-md-6 mb-3"><p><i class="fas fa-sync-alt me-2 text-primary"></i> Anyone looking to sharpen their analytical skills.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container" data-aos="zoom-in">
+                <h2 class="display-5 fw-bold">Ready to Unlock Your Career Potential?</h2>
+                <p class="lead my-4">Don't let aptitude tests be a barrier. Enroll today and take the first confident step towards your dream job.</p>
+                <a href="/Enroll/" class="btn btn-light btn-lg">Enroll Now & Get Started</a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Success Meets Academy</h5>
+                    <p>Transforming careers through innovative training and skill development programs.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/#programs">Programs</a></li>
+                        <li><a href="/#courses">Courses</a></li>
+                        <li><a href="/About/">About Us</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 93609 94617</p>
+                    <p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5 text-center">
+                <p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p>
+                <p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p>
             </div>
         </div>
-    </div>
-</section>
-    
-        <!-- Key Features -->
-        <section class="bg-light py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">Key Features of Our Placement Program</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card feature-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-file-alt feature-icon" style="color: #e67e22;"></i>
-                                <h4>Resume Development</h4>
-                                <p>Craft a professional resume that highlights your skills and achievements.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card feature-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-users feature-icon" style="color: #8e44ad;"></i>
-                                <h4>Mock Interviews</h4>
-                                <p>Simulate real-world interview scenarios with expert feedback.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card feature-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-briefcase feature-icon" style="color: #27ae60;"></i>
-                                <h4>Job Placement Assistance</h4>
-                                <p>Connect with potential employers and job opportunities.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Program Timeline -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">Program Timeline</h2>
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="timeline-item">
-                            <h4>Week 1-2: Career Assessment</h4>
-                            <p>Comprehensive skills evaluation and career counseling</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Week 3-4: Resume and Profile Building</h4>
-                            <p>Professional resume creation and LinkedIn profile optimization</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Week 5-6: Interview Preparation</h4>
-                            <p>Mock interviews, communication skills, and confidence building</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Week 7-8: Job Placement</h4>
-                            <p>Corporate connections, job referrals, and placement support</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- CTA Section -->
-        <section class="cta-section text-center">
-            <div class="container">
-                <h2 class="display-5 mb-4">Ready to Kickstart Your Career?</h2>
-                <p class="lead mb-5">Join our Placement Training Program and transform your professional journey</p>
-                <a href="/Enroll/" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-            </div>
-        </section>
-    
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p>&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
-            </div>
-        </footer>
-    
-        <!-- External Libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Custom Script -->
-        <script src="script.js"></script>
-        <script>
-            if (window.location.pathname.endsWith("index.html")) {
-              window.location.replace("/");
-            }
-          </script>
-    </body>
-    </html>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 120,
+            });
+        });
+    </script>
+</body>
+</html>

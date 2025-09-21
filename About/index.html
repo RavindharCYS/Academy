@@ -1,171 +1,289 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3DPC78G9B1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3DPC78G9B1');
-</script>
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Success Meets Academy</title>
+    
+    <!-- Meta Tags for SEO & Sharing -->
+    <meta name="description" content="Learn about the mission, vision, and values of Success Meets Academy. Meet our team of expert instructors dedicated to your career success.">
+    <meta name="keywords" content="about us, our mission, our team, success meets academy, tech education">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
-        body {
-            opacity: 1 !important;
-            visibility: visible !important;
+        /* ------------------------- */
+        /* --- 1. Global Styles & Variables --- */
+        /* ------------------------- */
+        :root {
+            --primary-color: #4A148C; /* A deep, professional purple */
+            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
+            --dark-color: #212529;
+            --body-color: #555;
+            --bg-light: #f8f9fa;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         }
 
-        .hero-section {
-            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJhY2tncm91bmR8ZW58MHx8fHwxNjYyMjY0NzY0&ixlib=rb-1.2.1&q=80&w=1920');
+        body {
+            font-family: var(--body-font);
+            color: var(--body-color);
+            line-height: 1.7;
+            padding-top: 80px; /* Offset for fixed navbar */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title .subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .btn-brand {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        .btn-brand:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* ------------------------- */
+        /* --- 2. Navigation Bar --- */
+        /* ------------------------- */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .navbar-brand img {
+            margin-right: 10px;
+            height: 45px;
+        }
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* ------------------------- */
+        /* --- 3. Hero Section --- */
+        /* ------------------------- */
+        .hero-about {
+            padding: 100px 0;
+            background-image: linear-gradient(rgba(74, 20, 140, 0.85), rgba(74, 20, 140, 0.7)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0;
             text-align: center;
         }
+        .hero-about h1 {
+            color: white;
+            font-weight: 700;
+        }
 
-        .mission-vision {
-            border-radius: 10px;
+        /* ------------------------- */
+        /* --- 4. Mission & Vision --- */
+        /* ------------------------- */
+        .mission-vision-box {
+            display: flex;
+            align-items: flex-start;
             padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .mission-vision-box:hover {
+            transform: translateY(-5px);
+        }
+        .mission-vision-box .icon-box {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+            min-width: 50px;
+        }
+
+        /* ------------------------- */
+        /* --- 5. Core Values --- */
+        /* ------------------------- */
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            background-color: #fff;
+            height: 100%;
+        }
+        .value-card:hover {
+            box-shadow: var(--shadow);
+            border-color: transparent;
+            transform: translateY(-5px);
+        }
+        .value-card .icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
             margin-bottom: 20px;
+        }
+
+        /* ------------------------- */
+        /* --- 6. Meet the Team --- */
+        /* ------------------------- */
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team-member .img-wrapper {
             position: relative;
             overflow: hidden;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
         }
-
-        .mission-vision h3 {
-            position: relative;
-            z-index: 1;
+        .team-member img {
+            width: 100%;
+            transition: transform 0.4s ease;
         }
-
-        .mission-vision p {
-            position: relative;
-            z-index: 1;
+        .team-member:hover img {
+            transform: scale(1.1);
         }
-
-        .mission-vision::before {
-            content: '';
+        .team-member .overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 123, 255, 0.1);
-            z-index: 0;
-            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(74, 20, 140, 0.7), transparent);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
+        .team-member:hover .overlay {
+            opacity: 1;
         }
-
-        .values-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .values-list li {
-            padding: 10px 0;
-            font-size: 1.1rem;
-        }
-
-        .values-list li i {
-            color: #007bff;
-            margin-right: 10px;
-        }
-
-        .footer {
-            background-color: #1b1a1a;
+        .team-member .social-links a {
             color: white;
-            padding: 40px 0;
+            font-size: 1.2rem;
+            margin: 0 8px;
         }
-        
-        /* Card styles */
-        .glassmorphic-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .glassmorphic-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .animated-icon:hover {
-            transform: scale(1.2);
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding-left: 0;
+        .team-member h5 {
             margin-top: 15px;
-            text-align: left;
+            margin-bottom: 5px;
         }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 25px;
+
+        /* ------------------------- */
+        /* --- 7. Call to Action --- */
+        /* ------------------------- */
+        .cta-section {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            border-radius: var(--border-radius);
         }
-        
-        .feature-list li i {
-            position: absolute;
-            left: 0;
-            top: 5px;
-            color: #0d6efd;
+        .cta-section h2, .cta-section p {
+            color: white;
         }
-        
-        .icon-blue {
-            color: #4285F4;
+        .cta-section .btn-light {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary-color);
         }
-        
-        .icon-red {
-            color: #EA4335;
+
+        /* ------------------------- */
+        /* --- 8. Footer --- */
+        /* ------------------------- */
+        footer {
+            background-color: var(--dark-color);
+            color: rgba(255,255,255,0.7);
         }
-        
-        .icon-green {
-            color: #34A853;
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
         }
-        
-        .icon-purple {
-            color: #7B68EE;
+        footer .list-unstyled a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        
-        .icon-orange {
-            color: #FBBC05;
+        footer .list-unstyled a:hover {
+            color: white;
         }
-        
-        .icon-teal {
-            color: #009688;
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
         }
+        .footer-bottom a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
@@ -174,7 +292,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo">
                 Success Meets Academy
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -183,22 +301,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/#programs" aria-label="Placement Training">Programs</a>
+                        <a class="nav-link" href="/#programs">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#courses" aria-label="Our Courses">Courses</a>
+                        <a class="nav-link" href="/#courses">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Career/" aria-label="Career">Career Transform</a>
+                        <a class="nav-link active" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about" aria-label="About Us">About</a>
+                        <a class="nav-link" href="/#contact">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#contact" aria-label="Contact Us">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
+                    <li class="nav-item ms-lg-3">
+                        <a href="/Enroll/" class="btn btn-brand">Enroll Now</a>
                     </li>
                 </ul>
             </div>
@@ -206,238 +321,212 @@
     </nav>
 
     <!-- Hero Section -->
-        <br>
-    <header class="hero-section">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Welcome to Success Meets Academy</h1>
-            <p class="lead">Empowering Professionals Through Quality Education</p>
+    <header class="hero-about">
+        <div class="container" data-aos="fade-in">
+            <h1 class="display-4 fw-bold">Our Story, Your Success</h1>
+            <p class="lead">Discover the passion, mission, and people behind Success Meets Academy.</p>
         </div>
     </header>
 
-    <!-- About Section -->
-    <main id="main-content" class="py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-6">About Us</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6" data-aos="fade-right">
-                    <div class="mission-vision">
-                        <h3>Our Mission</h3>
-                        <p>To bridge the skill gap and empower professionals with cutting-edge knowledge and practical expertise through innovative training programs.</p>
+    <main>
+        <!-- Our Story Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="section-title text-start mb-4">
+                            <p class="subtitle">Who We Are</p>
+                            <h2>Pioneering the Future of Tech Education</h2>
+                        </div>
+                        <p class="lead">Success Meets Academy was founded on a simple yet powerful idea: education should directly translate to career success.</p>
+                        <p>Frustrated by the disconnect between traditional academic learning and the fast-paced demands of the tech industry, our founders envisioned an academy that would bridge this gap. We are a team of industry veterans, passionate educators, and career coaches dedicated to empowering the next generation of tech professionals with practical, in-demand skills.</p>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-3 shadow-lg" alt="A team collaborating on a project">
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <div class="mission-vision">
-                        <h3>Our Vision</h3>
-                        <p>To be a leading training institution recognized for excellence in education and skill development, fostering a community of lifelong learners.</p>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <div class="mission-vision-box">
+                            <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+                            <div>
+                                <h3>Our Mission</h3>
+                                <p>To bridge the skill gap by providing innovative, industry-aligned training programs that empower professionals with the cutting-edge knowledge and practical expertise needed to thrive in their careers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mission-vision-box">
+                            <div class="icon-box"><i class="fas fa-eye"></i></div>
+                            <div>
+                                <h3>Our Vision</h3>
+                                <p>To be a leading global institution for skill development, recognized for our commitment to excellence, innovation, and fostering a vibrant community of successful, lifelong learners.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-12" data-aos="fade-up">
-                    <h3>Our Values</h3>
-                    <ul class="values-list">
-                        <li><i class="fas fa-check-circle"></i>Integrity: Upholding the highest standards of honesty and accountability.</li>
-                        <li><i class="fas fa-check-circle"></i>Innovation: Embracing creativity and new ideas to enhance learning experiences.</li>
-                        <li><i class="fas fa-check-circle"></i>Excellence: Striving for the highest quality in all our programs and services.</li>
-                        <li><i class="fas fa-check-circle"></i>Collaboration: Working together with students, industry partners, and the community to achieve common goals.</li>
-                    </ul>
+        </section>
+        
+        <!-- Our Values Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Our Principles</p>
+                    <h2>Our Core Values</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                        <div class="value-card">
+                            <i class="fas fa-fist-raised icon"></i>
+                            <h4>Integrity</h4>
+                            <p>Upholding the highest standards of honesty and ethical conduct in all our actions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-card">
+                            <i class="fas fa-lightbulb icon"></i>
+                            <h4>Innovation</h4>
+                            <p>Embracing creativity and new ideas to continuously enhance the learning experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-card">
+                             <i class="fas fa-star icon"></i>
+                            <h4>Excellence</h4>
+                            <p>Committing to the highest quality in our curriculum, teaching, and student support.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-card">
+                             <i class="fas fa-users icon"></i>
+                            <h4>Collaboration</h4>
+                            <p>Fostering a community where students, instructors, and partners work together for success.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Meet the Team Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Our Experts</p>
+                    <h2>Meet Our Instructors</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="team-member">
+                            <div class="img-wrapper">
+                                <img src="https://i.pravatar.cc/400?img=68" alt="Team Member 1">
+                                <div class="overlay">
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>Johnathan Doe</h5>
+                            <p>Lead Instructor, Full Stack Development</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="team-member">
+                            <div class="img-wrapper">
+                                <img src="https://i.pravatar.cc/400?img=49" alt="Team Member 2">
+                                <div class="overlay">
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>Jane Smith</h5>
+                            <p>Senior Instructor, Data Analytics</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="team-member">
+                             <div class="img-wrapper">
+                                <img src="https://i.pravatar.cc/400?img=33" alt="Team Member 3">
+                                <div class="overlay">
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>Emily White</h5>
+                            <p>Creative Lead, UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="cta-section" data-aos="zoom-in">
+                    <h2 class="display-5 fw-bold">Ready to Transform Your Career?</h2>
+                    <p class="lead my-4">Join hundreds of successful graduates who started their journey with us. Explore our courses and find the perfect path for you.</p>
+                    <a href="/#courses" class="btn btn-light btn-lg">Explore Our Courses</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Placement Training Section -->
-    <section id="programs" class="py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-6">Placement Training</h2>
-            </div>
-            <div class="row">
-                <!-- Aptitude Training Card -->
-                <div class="col-md-4 mb-4">
-                    <div class="card program-card glassmorphic-card" data-aos="fade-up">
-                        <div class="card-body text-center">
-                            <i class="fas fa-brain card-icon animated-icon icon-blue"></i>
-                            <h4 class="card-title">Aptitude Training</h4>
-                            <p class="card-text">Career guidance and job placement support</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Resume Building</li>
-                                <li><i class="fas fa-check"></i> Interview Preparation</li>
-                                <li><i class="fas fa-check"></i> Corporate Readiness</li>
-                            </ul>
-                            <a href="/Aptitude/" class="btn btn-primary mt-3">Explore Program</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Soft Skill Development Card -->
-                <div class="col-md-4 mb-4">
-                    <div class="card program-card glassmorphic-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-body text-center">
-                            <i class="fas fa-chalkboard-teacher card-icon animated-icon icon-green"></i>
-                            <h4 class="card-title">Soft Skill Development</h4>
-                            <p class="card-text">Enhance communication and leadership skills</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Communication Skills</li>
-                                <li><i class="fas fa-check"></i> Leadership Training</li>
-                                <li><i class="fas fa-check"></i> Personality Development</li>
-                            </ul>
-                            <a href="/SoftSkill/" class="btn btn-primary mt-3">Explore Program</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Technical Training Card -->
-                <div class="col-md-4 mb-4">
-                    <div class="card program-card glassmorphic-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="card-body text-center">
-                            <i class="fas fa-laptop-code card-icon animated-icon icon-orange"></i>
-                            <h4 class="card-title">Technical Training</h4>
-                            <p class="card-text">Advanced technical skill development</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Hands-on Learning</li>
-                                <li><i class="fas fa-check"></i> Industry Standards</li>
-                                <li><i class="fas fa-check"></i> Expert-Led Sessions</li>
-                            </ul>
-                            <a href="/Technical/" class="btn btn-primary mt-3">Explore Program</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="bg-light py-5">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="display-6">Our Specialized Courses</h2>
-            </div>
-            <div class="row">
-                <!-- Data Analytics Course -->
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card glassmorphic-card" data-aos="fade-up">
-                        <div class="card-body text-center">
-                            <i class="fas fa-chart-line card-icon animated-icon icon-blue"></i>
-                            <h4 class="card-title">Data Analytics</h4>
-                            <p class="card-text">Transform raw data into actionable insights with comprehensive analytics training</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Statistical Analysis</li>
-                                <li><i class="fas fa-check"></i> Data Visualization</li>
-                                <li><i class="fas fa-check"></i> Predictive Modeling</li>
-                            </ul>
-                            <a href="/DataAnalytics/" class="btn btn-outline-primary mt-3">Explore Course</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UI/UX Design Course -->
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card glassmorphic-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-body text-center">
-                            <i class="fas fa-paint-brush card-icon animated-icon icon-purple"></i>
-                            <h4 class="card-title">UI/UX Design Program</h4>
-                            <p class="card-text">Master the art of creating exceptional user experiences and intuitive interfaces</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> User Research</li>
-                                <li><i class="fas fa-check"></i> Interface Design</li>
-                                <li><i class="fas fa-check"></i> Interactive Prototyping</li>
-                            </ul>
-                            <a href="/UIUX/" class="btn btn-outline-primary mt-3">Explore Course</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Full Stack Development Course -->
-                <div class="col-md-4 mb-4">
-                    <div class="card course-card glassmorphic-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="card-body text-center">
-                            <i class="fas fa-code card-icon animated-icon icon-teal"></i>
-                            <h4 class="card-title">Full Stack Development</h4>
-                            <p class="card-text">Web development course covering frontend, backend, and full-stack development technologies</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Frontend Technologies</li>
-                                <li><i class="fas fa-check"></i> Backend Development</li>
-                                <li><i class="fas fa-check"></i> Database Management</li>
-                            </ul>
-                            <a href="/FullStack/" class="btn btn-outline-primary mt-3">Explore Course</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5 mt-5">
+    <footer class="py-5 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-3">Success Meets Academy</h5>
                     <p>Transforming careers through innovative training and skill development programs.</p>
-                    <div class="contact-info">
-                        <p>
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            Andagaloregate, Near Rasipuram, Namakkal
-                        </p>
-                        <p>
-                            <i class="fas fa-phone me-2"></i>
-                            +91 93609 94617 (or) +91 93454 22503
-                        </p>
-                        <p>
-                            <i class="fas fa-envelope me-2"></i>
-                            successmeetsacademy@gmail.com
-                        </p>
-                    </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <h5 class="mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/#programs" class="text-white">Placement Training</a></li>
-                        <li><a href="/#courses" class="text-white">Courses</a></li>
-                        <li><a href="/Career/" class="text-white">Career Transform</a></li>
-                        <li><a href="/#about" class="text-white">About Us</a></li>
-                        <li><a href="/#contact" class="text-white">Contact</a></li>
+                        <li><a href="/#programs">Programs</a></li>
+                        <li><a href="/#courses">Courses</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="/#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3">Our Programs</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="/Aptitude/" class="text-white">Aptitude Training</a></li>
-                        <li><a href="/SoftSkill/" class="text-white">Soft Skill Development</a></li>
-                        <li><a href="/Technical/" class="text-white">Technical Training</a></li>
-                        <li><a href="/DataAnalytics/" class="text-white">Data Analytics</a></li>
-                        <li><a href="/UIUX/" class="text-white">UI/UX Design</a></li>
-                        <li><a href="/FullStack/" class="text-white">Full Stack Development</a></li>
-                    </ul>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 93609 94617</p>
+                    <p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p>
                 </div>
             </div>
-            <hr class="my-4 bg-secondary">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
-                Developed By <a href="https://www.linkedin.com/in/ravindhar-cy/" target="_blank">Ravindhar V</a>
+            <div class="footer-bottom mt-5 text-center">
+                <p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p>
+                <p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- External Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({
-                duration: 800,
+                duration: 1000,
                 once: true,
-                disable: window.innerWidth < 768 // Disable on mobile
+                offset: 120,
             });
         });
     </script>
-    <script>
-        if (window.location.pathname.endsWith("index.html")) {
-          window.location.replace("/");
-        }
-    </script>
+
 </body>
 </html>

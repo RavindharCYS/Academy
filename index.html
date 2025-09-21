@@ -2,30 +2,392 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Meets Academy | Transform Your Career</title>
+    
+    <!-- Meta Tags for SEO & Sharing -->
+    <meta name="description" content="Empowering professionals with cutting-edge training in Data Analytics, UI/UX Design, Full Stack Development, and more. Join Success Meets Academy to transform your career.">
+    <meta name="keywords" content="placement training, data analytics, ui/ux design, full stack development, career transformation, skill development">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Success Meets Academy</title>
+    
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Custom CSS -->
     <style>
-        body { opacity: 1 !important; visibility: visible !important; }
-        img:not([src]) { background-color: #f0f0f0; min-height: 200px; display: flex; align-items: center; justify-content: center; content: 'Image Not Found'; }
-        .program-card, .course-card { border: none; border-radius: 15px; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
-        .program-card:hover, .course-card:hover { transform: translateY(-10px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
-        .card-icon { font-size: 3rem; margin-bottom: 20px; }
-        .icon-blue { color: #3498db; } .icon-green { color: #2ecc71; } .icon-orange { color: #e67e22; } .icon-red { color: #e74c3c; } .icon-purple { color: #9b59b6; } .icon-teal { color: #1abc9c; }
+        /* ------------------------- */
+        /* --- 1. Global Styles & Variables --- */
+        /* ------------------------- */
+        :root {
+            --primary-color: #4A148C; /* A deep, professional purple */
+            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
+            --dark-color: #212529;
+            --body-color: #555;
+            --bg-light: #f8f9fa;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--body-color);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title .subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .btn-brand {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        .btn-brand:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        .btn-outline-brand {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        .btn-outline-brand:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* ------------------------- */
+        /* --- 2. Navigation Bar --- */
+        /* ------------------------- */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .navbar-brand img {
+            margin-right: 10px;
+            height: 45px;
+        }
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* ------------------------- */
+        /* --- 3. Hero Section --- */
+        /* ------------------------- */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(74, 20, 140, 0.8), rgba(74, 20, 140, 0.6)), url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: white;
+        }
+        .hero-section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 40px;
+        }
+
+        /* ------------------------- */
+        /* --- 4. Feature/Why Us Section --- */
+        /* ------------------------- */
+        .feature-box {
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .feature-box:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+        .feature-box .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* ------------------------- */
+        /* --- 5. Program & Course Cards --- */
+        /* ------------------------- */
+        .course-card {
+            border: 1px solid #e9e9e9;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            background-color: white;
+            height: 100%;
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        .course-card .card-header {
+            padding: 30px;
+            text-align: center;
+            background-color: var(--bg-light);
+        }
+        .course-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+        .course-card .card-body {
+            padding: 30px;
+        }
+        .course-card .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .course-card .feature-list li {
+            margin-bottom: 10px;
+        }
+        .course-card .feature-list i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        /* ------------------------- */
+        /* --- 6. About Section --- */
+        /* ------------------------- */
+        .about-section .counter-box {
+            text-align: center;
+            padding: 20px;
+        }
+        .about-section .counter-box h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* ------------------------- */
+        /* --- 7. Testimonials Section --- */
+        /* ------------------------- */
+        .testimonial-card {
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        .testimonial-card .quote-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+        }
+        .testimonial-card .name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        .testimonial-card .role {
+            font-size: 0.9rem;
+            color: var(--body-color);
+        }
+        
+        /* ------------------------- */
+        /* --- 8. Technology Stack --- */
+        /* ------------------------- */
+        .tech-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            height: 120px;
+        }
+        .tech-icon-item:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+        .tech-icon-item img {
+            height: 50px;
+            max-width: 100%;
+        }
+        .tech-icon-item p {
+            margin-top: 15px;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ------------------------- */
+        /* --- 9. Contact Section --- */
+        /* ------------------------- */
+        #contact .form-control {
+            border-radius: 50px;
+            padding: 12px 20px;
+        }
+        #contact .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        #contact textarea.form-control {
+            border-radius: 20px;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        .contact-info-item .icon {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+
+        /* ------------------------- */
+        /* --- 10. Footer --- */
+        /* ------------------------- */
+        footer {
+            background-color: var(--dark-color);
+            color: rgba(255,255,255,0.7);
+        }
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        footer .list-unstyled a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer .list-unstyled a:hover {
+            color: white;
+        }
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        .footer-bottom a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
+            <a class="navbar-brand text-white" href="#">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo">
                 Success Meets Academy
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,22 +396,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#programs" aria-label="Placement Training">Programs</a>
+                        <a class="nav-link text-white" href="#programs">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#courses" aria-label="Our Courses">Courses</a>
+                        <a class="nav-link text-white" href="#courses">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Career/" aria-label="Career">Career Transform</a>
+                        <a class="nav-link text-white" href="/Career/">Career Transform</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about" aria-label="About Us">About</a>
+                        <a class="nav-link text-white" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact" aria-label="Contact Us">Contact</a>
+                        <a class="nav-link text-white" href="#contact">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
+                    <li class="nav-item ms-lg-3">
+                        <a href="/Enroll/" class="btn btn-brand">Enroll Now</a>
                     </li>
                 </ul>
             </div>
@@ -57,248 +419,321 @@
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main>
+
         <!-- Hero Section -->
-        <header class="hero-section text-center text-light" 
-        style="position: relative; background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1920&auto=format&fit=crop'); 
-        background-size: cover; 
-        background-position: center;">
-            <!-- Dark Overlay for Better Text Visibility -->
-            <div style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.6);  /* Darker overlay for better contrast */
-            "></div>
-            <div class="container position-relative" style="z-index: 1;">
-                <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">
-                    Transform Your Career with Success Meets Academy
+        <header class="hero-section text-center">
+            <div class="container">
+                <p class="lead" data-aos="fade-up">WELCOME TO SUCCESS MEETS ACADEMY</p>
+                <h1 class="display-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    Your Gateway to a Thriving Tech Career
                 </h1>
-                <p class="lead mb-5" data-aos="fade-up" data-aos-delay="200">
-                    Empowering Professionals Through Cutting-Edge Training and Skill Development
+                <p data-aos="fade-up" data-aos-delay="400">
+                    We bridge the gap between academia and industry with cutting-edge training, empowering you for success.
                 </p>
-                <a href="#programs" class="btn btn-light btn-lg px-5 py-3 rounded-pill" data-aos="fade-up" data-aos-delay="400">
-                    Explore Programs
+                <a href="#programs" class="btn btn-brand mt-4" data-aos="fade-up" data-aos-delay="600">
+                    Explore Our Programs
                 </a>
             </div>
         </header>
-                <!-- Placement Training Section -->
-                <section id="programs" class="py-5">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2 class="display-6">Placement Training</h2>
-                        </div>
-                        <div class="row">
-                            <!-- Aptitude Training Card -->
-                            <div class="col-md-4 mb-4">
-                                <div class="card program-card glassmorphic-card" data-aos="fade-up">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-brain card-icon animated-icon icon-blue"></i>
-                                        <h4 class="card-title">Aptitude Training</h4>
-                                        <p class="card-text">Career guidance and job placement support</p>
-                                        <ul class="feature-list">
-                                            <li><i class="fas fa-check"></i> Resume Building</li>
-                                            <li><i class="fas fa-check"></i> Interview Preparation</li>
-                                            <li><i class="fas fa-check"></i> Corporate Readiness</li>
-                                        </ul>
-                                        <a href="/Aptitude/" class="btn btn-primary mt-3">Explore Program</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Soft Skill Development Card -->
-                            <div class="col-md-4 mb-4">
-                                <div class="card program-card glassmorphic-card" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-chalkboard-teacher card-icon animated-icon icon-green"></i>
-                                        <h4 class="card-title">Soft Skill Development</h4>
-                                        <p class="card-text">Enhance communication and leadership skills</p>
-                                        <ul class="feature-list">
-                                            <li><i class="fas fa-check"></i> Communication Skills</li>
-                                            <li><i class="fas fa-check"></i> Leadership Training</li>
-                                            <li><i class="fas fa-check"></i> Personality Development</li>
-                                        </ul>
-                                        <a href="/SoftSkill/" class="btn btn-primary mt-3">Explore Program</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Technical Training Card -->
-                            <div class="col-md-4 mb-4">
-                                <div class="card program-card glassmorphic-card" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-laptop-code card-icon animated-icon icon-orange"></i>
-                                        <h4 class="card-title">Technical Training</h4>
-                                        <p class="card-text">Advanced technical skill development</p>
-                                        <ul class="feature-list">
-                                            <li><i class="fas fa-check"></i> Hands-on Learning</li>
-                                            <li><i class="fas fa-check"></i> Industry Standards</li>
-                                            <li><i class="fas fa-check"></i> Expert-Led Sessions</li>
-                                        </ul>
-                                        <a href="/Technical/" class="btn btn-primary mt-3">Explore Program</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
         
-                <!-- Courses Section -->
-                <section id="courses" class="bg-light py-5">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2 class="display-6">Our Specialized Courses</h2>
-                        </div>
-                        <div class="row">
-                            <!-- Data Analytics Course -->
-<div class="col-md-4 mb-4">
-    <div class="card course-card glassmorphic-card" data-aos="fade-up">
-        <div class="card-body text-center">
-            <i class="fas fa-chart-line card-icon animated-icon icon-blue"></i>
-            <h4 class="card-title">Data Analytics</h4>
-            <p class="card-text">Transform raw data into actionable insights with comprehensive analytics training</p>
-            <ul class="feature-list">
-                <li><i class="fas fa-check"></i> Statistical Analysis</li>
-                <li><i class="fas fa-check"></i> Data Visualization</li>
-                <li><i class="fas fa-check"></i> Predictive Modeling</li>
-            </ul>
-            <a href="/DataAnalytics/" class="btn btn-outline-primary mt-3">Explore Course</a>
-        </div>
-    </div>
-</div>
-
-<!-- UI/UX Design Course -->
-<div class="col-md-4 mb-4">
-    <div class="card course-card glassmorphic-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="card-body text-center">
-            <i class="fas fa-paint-brush card-icon animated-icon icon-purple"></i>
-            <h4 class="card-title">UI/UX Design Program</h4>
-            <p class="card-text">Master the art of creating exceptional user experiences and intuitive interfaces</p>
-            <ul class="feature-list">
-                <li><i class="fas fa-check"></i> User Research</li>
-                <li><i class="fas fa-check"></i> Interface Design</li>
-                <li><i class="fas fa-check"></i> Interactive Prototyping</li>
-            </ul>
-            <a href="/UIUX/" class="btn btn-outline-primary mt-3">Explore Course</a>
-        </div>
-    </div>
-</div>
-                            <!-- Full Stack Development Course -->
-                            <div class="col-md-4 mb-4">
-                                <div class="card course-card glassmorphic-card" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="card-body text-center">
-                                        <i class="fas fa-code card-icon animated-icon icon-teal"></i>
-                                        <h4 class="card-title">Full Stack Development</h4>
-                                        <p class="card-text">Web development course covering frontend, backend, and full-stack development technologies</p>
-                                        <ul class="feature-list">
-                                            <li><i class="fas fa-check"></i> Frontend Technologies</li>
-                                            <li><i class="fas fa-check"></i> Backend Development</li>
-                                            <li><i class="fas fa-check"></i> Database Management</li>
-                                        </ul>
-                                        <a href="/FullStack/" class="btn btn-outline-primary mt-3">Explore Course</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-        
-                <!-- About Section -->
-                <section id="about" class="py-5">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-6" data-aos="fade-right">
-                                <h2 class="display-6 mb-4">About Success Meets Academy</h2>
-                                <p class="lead">We are a premier training institution dedicated to transforming careers through high-quality, industry-aligned training programs.</p>
-                                <p>Our mission is to bridge the skill gap and empower professionals with cutting-edge knowledge and practical expertise.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2">
-                                        <i class="fas fa-check-circle text-primary me-2"></i>
-                                        Expert-Led Training
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="fas fa-check-circle text-primary me-2"></i>
-                                        Industry-Relevant Curriculum
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="fas fa-check-circle text-primary me-2"></i>
-                                        Hands-on Learning Experience
-                                    </li>
-                                </ul>
-                                <a href="About/" class="btn btn-primary mt-3">Learn More</a>
-                            </div>
-                            <div class="col-md-6" data-aos="fade-left">
-                                <img src="about-main.jpg" alt="Success Meets Academy" class="img-fluid rounded shadow">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                        <!-- Technology Stack -->
-        <section class="bg-light py-5">
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="section-padding">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="display-6">Technologies We Cover</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="feature-box">
+                            <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h4>Expert-Led Training</h4>
+                            <p>Learn from industry veterans with years of real-world experience and a passion for teaching.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-box">
+                            <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+                            <h4>Career-Focused Curriculum</h4>
+                            <p>Our courses are designed in collaboration with industry partners to ensure you learn the most in-demand skills.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-box">
+                             <div class="icon-box"><i class="fas fa-rocket"></i></div>
+                            <h4>Placement Support</h4>
+                            <p>From resume building to mock interviews, we provide comprehensive support to launch your career.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="technology-stack d-flex flex-wrap justify-content-center">
-                    <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" class="tech-icon" data-aos="fade-up">
-                    <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript" class="tech-icon" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" class="tech-icon" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" class="tech-icon" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="Linux" class="tech-icon" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" class="tech-icon" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="Angular" class="tech-icon" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt="Vue.js" class="tech-icon" data-aos="fade-up" data-aos-delay="700">
-                    <img src="https://www.vectorlogo.zone/logos/php/php-icon.svg" alt="PHP" class="tech-icon" data-aos="fade-up" data-aos-delay="800">
-                    <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="TypeScript" class="tech-icon" data-aos="fade-up" data-aos-delay="1000">
-                    <img src="https://www.vectorlogo.zone/logos/swift/swift-icon.svg" alt="Swift" class="tech-icon" data-aos="fade-up" data-aos-delay="1100">
-                    <img src="https://www.vectorlogo.zone/logos/golang/golang-icon.svg" alt="Go" class="tech-icon" data-aos="fade-up" data-aos-delay="1300">
-                    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="MySQL" class="tech-icon" data-aos="fade-up" data-aos-delay="1400">
-                    <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL" class="tech-icon" data-aos="fade-up" data-aos-delay="1500">
+            </div>
+        </section>
+
+        <!-- Placement Training Section -->
+        <section id="programs" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Our Programs</p>
+                    <h2>Placement Training</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <i class="fas fa-brain icon"></i>
+                                <h4 class="mt-3">Aptitude Training</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Sharpen your logical reasoning and problem-solving skills to ace placement tests.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Quantitative Analysis</li>
+                                    <li><i class="fas fa-check-circle"></i> Logical Reasoning</li>
+                                    <li><i class="fas fa-check-circle"></i> Verbal Ability</li>
+                                </ul>
+                                <a href="/Aptitude/" class="btn btn-outline-brand mt-3">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <i class="fas fa-comments icon"></i>
+                                <h4 class="mt-3">Soft Skill Development</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Enhance your communication, leadership, and teamwork abilities for corporate success.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Communication Skills</li>
+                                    <li><i class="fas fa-check-circle"></i> Leadership Training</li>
+                                    <li><i class="fas fa-check-circle"></i> Corporate Readiness</li>
+                                </ul>
+                                <a href="/SoftSkill/" class="btn btn-outline-brand mt-3">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <i class="fas fa-laptop-code icon"></i>
+                                <h4 class="mt-3">Technical Training</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Gain hands-on experience with the latest technologies and programming languages.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Hands-on Projects</li>
+                                    <li><i class="fas fa-check-circle"></i> Industry Standards</li>
+                                    <li><i class="fas fa-check-circle"></i> Expert-Led Sessions</li>
+                                </ul>
+                                <a href="/Technical/" class="btn btn-outline-brand mt-3">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Our Courses</p>
+                    <h2>Specialized Tech Tracks</h2>
+                </div>
+                <div class="row">
+                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <i class="fas fa-code icon"></i>
+                                <h4 class="mt-3">Full Stack Development</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Master both front-end and back-end technologies to build complete web applications.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> HTML, CSS, JavaScript</li>
+                                    <li><i class="fas fa-check-circle"></i> React, Node.js, Express</li>
+                                    <li><i class="fas fa-check-circle"></i> Database Management</li>
+                                </ul>
+                                <a href="/FullStack/" class="btn btn-outline-brand mt-3">Explore Course</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <i class="fas fa-chart-line icon"></i>
+                                <h4 class="mt-3">Data Analytics</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Transform raw data into actionable insights with our comprehensive analytics training.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> Python for Data Science</li>
+                                    <li><i class="fas fa-check-circle"></i> Data Visualization (Tableau)</li>
+                                    <li><i class="fas fa-check-circle"></i> Predictive Modeling</li>
+                                </ul>
+                                <a href="/DataAnalytics/" class="btn btn-outline-brand mt-3">Explore Course</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <i class="fas fa-drafting-compass icon"></i>
+                                <h4 class="mt-3">UI/UX Design</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Master the art of creating intuitive and beautiful user experiences for web and mobile.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle"></i> User Research & Personas</li>
+                                    <li><i class="fas fa-check-circle"></i> Wireframing & Prototyping</li>
+                                    <li><i class="fas fa-check-circle"></i> Figma & Adobe XD</li>
+                                </ul>
+                                <a href="/UIUX/" class="btn btn-outline-brand mt-3">Explore Course</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding about-section bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="About Success Meets Academy" class="img-fluid rounded shadow-lg">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="section-title text-start">
+                             <p class="subtitle">About Us</p>
+                             <h2>Crafting Future Leaders</h2>
+                        </div>
+                        <p class="lead">We are a premier training institution dedicated to transforming careers through high-quality, industry-aligned training programs.</p>
+                        <p>Our mission is to bridge the skill gap and empower professionals with cutting-edge knowledge and practical expertise to excel in the competitive tech landscape.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="counter-box">
+                                    <h3>50+</h3>
+                                    <p>Courses Offered</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="counter-box">
+                                    <h3>1000+</h3>
+                                    <p>Students Trained</p>
+                                </div>
+                            </div>
+                             <div class="col-md-4">
+                                <div class="counter-box">
+                                    <h3>95%</h3>
+                                    <p>Placement Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Testimonials</p>
+                    <h2>What Our Students Say</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="mt-3">"The Full Stack course was incredible. The hands-on projects gave me the confidence to build real applications and land my dream job."</p>
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Student Photo">
+                            <p class="name">Priya Sharma</p>
+                            <p class="role">Software Engineer at TechCorp</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="mt-3">"Success Meets Academy completely transformed my career path. The instructors are experts and genuinely care about your success."</p>
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Student Photo">
+                            <p class="name">Arjun Singh</p>
+                            <p class="role">Data Analyst at Datawise</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p class="mt-3">"The placement support is top-notch. They helped me with my resume, conducted mock interviews, and connected me with great companies."</p>
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Student Photo">
+                            <p class="name">Anjali Verma</p>
+                            <p class="role">UI/UX Designer at CreativeMinds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Our Toolkit</p>
+                    <h2>Technologies We Cover</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up"><div class="tech-icon-item"><img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python"><p>Python</p></div></div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="50"><div class="tech-icon-item"><img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript"><p>JavaScript</p></div></div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100"><div class="tech-icon-item"><img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React"><p>React</p></div></div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="150"><div class="tech-icon-item"><img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js"><p>Node.js</p></div></div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200"><div class="tech-icon-item"><img src="httpshttps://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker"><p>Docker</p></div></div>
+                    <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="250"><div class="tech-icon-item"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="MySQL"><p>MySQL</p></div></div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-light py-5">
+        <section id="contact" class="section-padding">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="display-6">Contact Us</h2>
-                </div>
                 <div class="row">
-                    <div class="col-md-6" data-aos="fade-right">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="section-title text-start">
+                            <p class="subtitle">Get In Touch</p>
+                            <h2>Have Questions?</h2>
+                        </div>
                         <form id="contactForm" novalidate>
                             <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                                <div class="invalid-feedback">Please enter your full name.</div>
+                                <input type="text" class="form-control" id="name" placeholder="Your Full Name" required>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
-                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email Address" required>
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label">Your Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                                <div class="invalid-feedback">Please enter your message.</div>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="submit" class="btn btn-brand">Send Message</button>
                         </form>
                     </div>
-                    <div class="col-md-6" data-aos="fade-left">
-                        <div class="contact-info">
-                            <h4 class="mb-4">Get in Touch</h4>
-                            <div class="mb-3">
-                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
-                                <span>Andagaloregate, Near Rasipuram, Namakkal, Tamil Nadu - 637018</span>
+                    <div class="col-lg-5 offset-lg-1" data-aos="fade-left">
+                         <div class="section-title text-start">
+                            <p class="subtitle">Contact Information</p>
+                            <h2>Connect With Us</h2>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Andagaloregate, Near Rasipuram, Namakkal, Tamil Nadu - 637018</p>
                             </div>
-                            <div class="mb-3">
-                                <i class="fas fa-phone me-2 text-primary"></i>
-                                <span>+91 93609 94617 (or) +91 93604 05503</span>
+                        </div>
+                         <div class="contact-info-item">
+                            <div class="icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p>+91 93609 94617<br>+91 93604 05503</p>
                             </div>
-                            <div class="mb-3">
-                                <i class="fas fa-envelope me-2 text-primary"></i>
-                                <span>successmeetsacademy@gmail.com</span>
+                        </div>
+                         <div class="contact-info-item">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p>successmeetsacademy@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -306,64 +741,55 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-5 mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5 class="mb-3">Success Meets Academy</h5>
-                        <p>Transforming careers through innovative training and skill development programs.</p>
-                        <div class="contact-info">
-                            <p>
-                                <i class="fas fa-map-marker-alt me-2"></i>
-                                Andagaloregate, Near Rasipuram, Namakkal
-                            </p>
-                            <p>
-                                <i class="fas fa-phone me-2"></i>
-                                +91 93609 94617 (or) +91 93604 05503
-                            </p>
-                            <p>
-                                <i class="fas fa-envelope me-2"></i>
-                                successmeetsacademy@gmail.com
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="mb-3">Quick Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#programs" class="text-white">Programs</a></li>
-                            <li><a href="#courses" class="text-white">Courses</a></li>
-                            <li><a href="/Career/" class="text-white">Career Transform</a></li>
-                            <li><a href="#about" class="text-white">About Us</a></li>
-                            <li><a href="#contact" class="text-white">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="mb-3">Connect With Us</h5>
-
-                        <div class="newsletter-signup mt-4">
-                            <h6 class="text-white mb-3">Subscribe to Our Newsletter</h6>
-                            <form id="newsletterForm" class="d-flex">
-                                <input type="email" id="newsletterEmail" class="form-control me-2" placeholder="Enter your email" required>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </form>
-                        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Success Meets Academy</h5>
+                    <p>Transforming careers through innovative training and skill development programs.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <hr class="my-4 bg-secondary">
-                <div class="text-center">
-                    <p class="mb-0">© 2023 Success Meets Academy. All Rights Reserved.</p>
-                    Developed By <a href="https://www.linkedin.com/in/ravindhar-cy/" target="_blank">Ravindhar V</a>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-3">Contact</h5>
+                     <p><i class="fas fa-phone me-2 text-white"></i> +91 93609 94617</p>
+                     <p><i class="fas fa-envelope me-2 text-white"></i> successmeetsacademy@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Newsletter</h5>
+                    <p>Stay updated with our latest courses and offers.</p>
+                    <form id="newsletterForm" class="d-flex">
+                        <input type="email" id="newsletterEmail" class="form-control me-2" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-brand"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </footer>
+            <div class="footer-bottom mt-5 text-center">
+                <p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p>
+                <p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p>
+            </div>
+        </div>
+    </footer>
 
-    </main>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Firebase SDKs -->
@@ -371,35 +797,46 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
     <script>
-        // Initialize Firebase
+        // --- SECURITY WARNING ---
+        // Exposing Firebase API keys in client-side code is a major security risk.
+        // Anyone can see these keys and potentially misuse your Firebase project.
+        // In a production environment, you should use environment variables and server-side functions
+        // (like Firebase Cloud Functions) to handle database interactions securely.
         const firebaseConfig = {
-  apiKey: "AIzaSyByyvBBlzSary6QoHgPX0AcQCVyLXYuoKk",
-  authDomain: "successmeetsacademydata.firebaseapp.com",
-  projectId: "successmeetsacademydata",
-  storageBucket: "successmeetsacademydata.firebasestorage.app",
-  messagingSenderId: "444995824282",
-  appId: "1:444995824282:web:07953b8989c4ab5b1c0d23",
-  measurementId: "G-JECQPN4XFX"
-};
+            apiKey: "AIzaSyByyvBBlzSary6QoHgPX0AcQCVyLXYuoKk", // Replace with your actual key if needed for testing
+            authDomain: "successmeetsacademydata.firebaseapp.com",
+            projectId: "successmeetsacademydata",
+            storageBucket: "successmeetsacademydata.firebasestorage.app",
+            messagingSenderId: "444995824282",
+            appId: "1:444995824282:web:07953b8989c4ab5b1c0d23",
+            measurementId: "G-JECQPN4XFX"
+        };
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore(); // Make db instance available
+        const db = firebase.firestore();
 
         document.addEventListener('DOMContentLoaded', () => {
-            try {
-                AOS.init({
-                    duration: 800,
-                    once: true,
-                    disable: window.innerWidth < 768 
-                });
-            } catch (error) {
-                console.error('AOS Initialization Error:', error);
-            }
+            // Initialize AOS (Animate on Scroll)
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 120,
+            });
 
-            document.querySelectorAll('img').forEach(img => {
-                img.addEventListener('error', (e) => {
-                    e.target.src = '/logo.jpeg';
-                    e.target.alt = 'Placeholder Image';
-                });
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            const navBrand = document.querySelector('.navbar-brand');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                    navBrand.classList.remove('text-white');
+                    navLinks.forEach(link => link.classList.remove('text-white'));
+                } else {
+                    navbar.classList.remove('scrolled');
+                    navBrand.classList.add('text-white');
+                    navLinks.forEach(link => link.classList.add('text-white'));
+                }
             });
 
             // Contact Form Handler
@@ -407,35 +844,32 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
-                    if (contactForm.checkValidity()) {
-                        const submitButton = contactForm.querySelector('button[type="submit"]');
-                        const originalButtonText = submitButton.innerHTML;
-                        submitButton.innerHTML = 'Sending...';
-                        submitButton.disabled = true;
-
-                        const name = contactForm.querySelector('#name').value;
-                        const email = contactForm.querySelector('#email').value;
-                        const message = contactForm.querySelector('#message').value;
-
-                        try {
-                            await db.collection('contacts').add({
-                                name: name,
-                                email: email,
-                                message: message,
-                                submittedAt: firebase.firestore.FieldValue.serverTimestamp()
-                            });
-                            alert('Message sent successfully! We will get back to you soon.');
-                            contactForm.reset();
-                            contactForm.classList.remove('was-validated');
-                        } catch (error) {
-                            console.error("Error adding contact document: ", error);
-                            alert('Failed to send message. Please try again later.');
-                        } finally {
-                            submitButton.innerHTML = originalButtonText;
-                            submitButton.disabled = false;
-                        }
-                    } else {
+                    if (!contactForm.checkValidity()) {
+                        e.stopPropagation();
                         contactForm.classList.add('was-validated');
+                        return;
+                    }
+
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                    submitButton.disabled = true;
+
+                    try {
+                        await db.collection('contacts').add({
+                            name: contactForm.querySelector('#name').value,
+                            email: contactForm.querySelector('#email').value,
+                            message: contactForm.querySelector('#message').value,
+                            submittedAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                        alert('Message sent successfully! We will get back to you soon.');
+                        contactForm.reset();
+                        contactForm.classList.remove('was-validated');
+                    } catch (error) {
+                        console.error("Error adding contact document: ", error);
+                        alert('Failed to send message. Please try again later.');
+                    } finally {
+                        submitButton.innerHTML = 'Send Message';
+                        submitButton.disabled = false;
                     }
                 });
             }
@@ -448,16 +882,15 @@
                     const emailInput = newsletterForm.querySelector('#newsletterEmail');
                     const email = emailInput.value;
                     const submitButton = newsletterForm.querySelector('button[type="submit"]');
-                    const originalButtonContent = submitButton.innerHTML;
                     
-                    if (email && emailInput.checkValidity()) { 
+                    if (email && emailInput.checkValidity()) {
                         submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
                         submitButton.disabled = true;
 
                         try {
                             await db.collection('newsletterSubscriptions').add({
                                 email: email,
-                                pageSource: "Homepage", 
+                                pageSource: "Homepage",
                                 subscribedAt: firebase.firestore.FieldValue.serverTimestamp()
                             });
                             alert('Successfully subscribed to the newsletter!');
@@ -466,53 +899,13 @@
                             console.error("Error subscribing to newsletter: ", error);
                             alert('Failed to subscribe. Please try again.');
                         } finally {
-                            submitButton.innerHTML = originalButtonContent;
+                            submitButton.innerHTML = '<i class="fas fa-paper-plane"></i>';
                             submitButton.disabled = false;
                         }
-                    } else {
-                        if(!email) alert("Please enter your email address for the newsletter.");
-                        else alert("Please enter a valid email address for the newsletter.");
-                        emailInput.focus();
                     }
                 });
             }
-
-            document.querySelectorAll('a[href="#"]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    alert('This link is currently unavailable.');
-                });
-            });
-        });
-
-        window.addEventListener('error', (event) => {
-            console.error('Unhandled error:', {
-                message: event.message,
-                filename: event.filename,
-                lineno: event.lineno,
-                error: event.error
-            });
         });
     </script>
-    <script>
-        if (window.location.pathname.endsWith("index.html")) {
-          window.location.replace("/");
-        }
-      </script>
-
-          <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
-              .then(registration => {
-                console.log('Service Worker registered successfully with scope:', registration.scope);
-              })
-              .catch(error => {
-                console.error('Service Worker registration failed:', error);
-              });
-          });
-        }
-      </script>
 </body>
 </html>

@@ -4,443 +4,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX Design Program | Success Meets Academy</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Become a job-ready UI/UX Designer. Master user research, wireframing, prototyping, and visual design with Figma and Adobe XD in our hands-on course.">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Custom Styles -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <style>
+        /* ------------------------- */
+        /* --- 1. Global Styles & Variables --- */
+        /* ------------------------- */
         :root {
-            --primary-color: #7B68EE;
-            --secondary-color: #FF6B6B;
-            --accent-color: #8A2BE2;
-            
-            --bg-primary: #ffffff;
-            --bg-secondary: #f4f6f9;
-            
-            --text-primary: #2c3e50;
-            --text-secondary: #34495e;
-            
-            --gradient-primary: linear-gradient(135deg, #7B68EE 0%, #FF6B6B 100%);
-            
-            --transition-speed: 0.3s;
+            --primary-color: #4A148C; /* A deep, professional purple */
+            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
+            --dark-color: #212529;
+            --body-color: #555;
+            --bg-light: #f8f9fa;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
+            font-family: var(--body-font); color: var(--body-color); line-height: 1.7;
+            padding-top: 80px; background-color: #fff;
         }
 
-        .hero-section {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 120px 0;
-            position: relative;
-        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); color: var(--dark-color); font-weight: 600; }
+        .section-padding { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title .subtitle { color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-top: 10px; }
+        .btn-brand { background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; border: 2px solid var(--primary-color); }
+        .btn-brand:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.3);
-        }
+        /* ------------------------- */
+        /* --- 2. Navigation Bar --- */
+        /* ------------------------- */
+        .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar .navbar-brand img { height: 45px; margin-right: 10px; }
+        .navbar-nav .nav-link { font-weight: 500; margin: 0 10px; position: relative; }
+        .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
+        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
 
-        .design-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* ------------------------- */
+        /* --- 3. Hero Section --- */
+        /* ------------------------- */
+        .hero-course {
+            padding: 100px 0 0 0;
+            background-image: linear-gradient(rgba(74, 20, 140, 0.9), rgba(74, 20, 140, 0.8)), url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover; background-position: center; color: white; text-align: center;
         }
+        .hero-course h1 { color: white; font-weight: 700; }
+        .hero-course p { max-width: 700px; margin: 20px auto 40px; }
+        .course-facts-bar {
+            background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 20px 0; margin-top: 80px;
+        }
+        .fact-item { text-align: center; }
+        .fact-item .icon { font-size: 1.5rem; margin-right: 10px; color: var(--secondary-color); }
+        .fact-item span { font-weight: 500; }
 
-        .design-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
+        /* ------------------------- */
+        /* --- 4. Content Sections --- */
+        /* ------------------------- */
+        .feature-card { text-align: center; padding: 30px; background-color: var(--bg-light); border-radius: var(--border-radius); height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .feature-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
 
-        .design-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+        .tech-stack-grid .tech-item { display: flex; flex-direction: column; align-items: center; padding: 20px; background-color: var(--bg-light); border-radius: var(--border-radius); }
+        .tech-stack-grid .tech-item img { height: 50px; margin-bottom: 15px; }
+        
+        .accordion-button:not(.collapsed) { background-color: var(--primary-color); color: white; }
+        .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(74, 20, 140, 0.25); }
+        .accordion-item { border-radius: var(--border-radius) !important; overflow: hidden; }
 
-        .curriculum-item {
-            border-left: 3px solid var(--primary-color);
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
+        .project-card { border-radius: var(--border-radius); box-shadow: var(--shadow); overflow: hidden; transition: transform 0.3s ease; height: 100%; }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-card .card-img-top { aspect-ratio: 16/10; object-fit: cover; }
+        .project-card .card-body { padding: 30px; }
 
-        .cta-section {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 80px 0;
-        }
+        .instructor-card { display: flex; align-items: center; background-color: var(--bg-light); padding: 30px; border-radius: var(--border-radius); }
+        .instructor-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-right: 30px; border: 4px solid var(--secondary-color); }
 
-        .design-benefit-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
+        .career-outcomes-list .badge { padding: 10px 15px; font-size: 1rem; }
 
-        .design-benefit-list li i {
-            color: var(--accent-color);
-            margin-right: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .design-benefit-list li:hover i {
-            transform: scale(1.2);
-        }
-
-        .technology-stack {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .technology-stack img {
-            max-width: 100px;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .technology-stack img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .certification-section {
-            background-color: var(--bg-secondary);
-            padding: 50px 0;
-        }
-
-        .hero-section .btn-light {
-            position: relative;
-            background-color: white;
-            color: var(--primary-color);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: none;
-            overflow: hidden;
-            z-index: 1;
-            transition: 
-                color var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .hero-section .btn-light::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: 
-                left var(--transition-speed) ease,
-                transform var(--transition-speed) ease;
-            z-index: -1;
-        }
-
-        .hero-section .btn-light:hover {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-section .btn-light:hover::before {
-            left: 0;
-        }
-
-        .hero-section .btn-light:active {
-            transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .hero-section .btn-light {
-                padding: 12px 24px !important;
-                font-size: 0.9rem;
-            }
-        }
+        /* ------------------------- */
+        /* --- 5. CTA & Footer --- */
+        /* ------------------------- */
+        .cta-section { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); color: white; padding: 80px 0; text-align: center; }
+        .cta-section h2, .cta-section p { color: white; }
+        .cta-section .btn-light { padding: 12px 30px; border-radius: 50px; font-weight: 600; color: var(--primary-color); }
+        footer { background-color: var(--dark-color); color: rgba(255,255,255,0.7); }
+        footer h5 { color: white; }
+        .footer-bottom a { color: var(--secondary-color); text-decoration: none; }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/logo.jpeg" alt="Success Meets Academy Logo" height="50" class="animated-logo">
-                Success Meets Academy
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="/"><img src="/logo.jpeg" alt="Success Meets Academy Logo"> Success Meets Academy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#programs" aria-label="Placement Training">Programs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#courses" aria-label="Our Courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#about" aria-label="About Us">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#contact" aria-label="Contact Us">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Enroll/" class="btn btn-primary ms-2" aria-label="Enroll Now">Enroll Now</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Career/">Career Transform</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/About/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a href="/Enroll/" class="btn btn-brand">Enroll Now</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section text-center text-light" 
-    style="position: relative; 
-    background-image: url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1920&auto=format&fit=crop'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    padding: 100px 0;">
-
-    <!-- Dark Overlay for Enhanced Visibility -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);  /* Overlay to improve text contrast */
-    "></div>
-
-    <div class="container position-relative" style="z-index: 1;">
-        <h1 class="display-4 fw-bold mb-4">UI/UX Design Program</h1>
-        <p class="lead mb-5">
-            Master the Art of Creating Exceptional User Experiences
-        </p>
-        <a href="/Enroll/" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-    </div>
-    </section>
-
-    <!-- Course Overview -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="mb-4">Comprehensive UI/UX Design Training</h2>
-                    <p class="lead">Our UI/UX Design Program provides you with the skills to create beautiful, intuitive interfaces and memorable user experiences that solve real problems.</p>
-                    <ul class="list-unstyled design-benefit-list">
-                        <li><i class="fas fa-check-circle"></i>Portfolio-Ready Design Projects</li>
-                        <li><i class="fas fa-check-circle"></i>User Research & Testing Methods</li>
-                        <li><i class="fas fa-check-circle"></i>Interactive Prototyping Skills</li>
-                        <li><i class="fas fa-check-circle"></i>Industry-Recognized Certification</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format&fit=crop" alt="UI/UX Design Training" class="img-fluid rounded shadow">
+    
+    <main>
+        <!-- Hero Section -->
+        <header class="hero-course">
+            <div class="container" data-aos="fade-in">
+                <p class="subtitle text-uppercase">UI/UX Design Program</p>
+                <h1 class="display-4 fw-bold">Design Products People Love to Use</h1>
+                <p class="lead">Go beyond pixels and learn the art and science of creating intuitive, beautiful, and user-centered digital experiences that solve real-world problems.</p>
+                <a href="/Enroll/" class="btn btn-brand btn-lg">Become a UI/UX Designer</a>
+            </div>
+            <div class="course-facts-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-clock icon"></i><span><strong>Duration:</strong> 4 Months</span></div>
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-signal icon"></i><span><strong>Skill Level:</strong> Beginner</span></div>
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-drafting-compass icon"></i><span><strong>Tools:</strong> Figma, Adobe XD</span></div>
+                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-award icon"></i><span><strong>Certificate:</strong> Yes</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Key Focus Areas -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">UI/UX Design Focus Areas</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card design-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-users design-icon"></i>
-                            <h4>User Research</h4>
-                            <p>Personas, user journeys, and conducting effective user interviews and usability tests.</p>
-                        </div>
-                    </div>
+        <!-- What You Will Master Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Core Competencies</p>
+                    <h2>What You Will Master</h2>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card design-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-paint-brush design-icon"></i>
-                            <h4>Interface Design</h4>
-                            <p>Visual design principles, typography, color theory, and creating design systems.</p>
-                        </div>
-                    </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="feature-card"><i class="fas fa-users icon"></i><h4>Understand Your Users</h4><p>Master user research, interviews, and personas to build deep empathy and uncover true user needs.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="feature-card"><i class="fas fa-palette icon"></i><h4>Craft Beautiful Interfaces</h4><p>Learn visual design principles, color theory, typography, and create pixel-perfect UIs with design systems.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="feature-card"><i class="fas fa-object-group icon"></i><h4>Build Seamless Interactions</h4><p>Go from wireframes to high-fidelity, interactive prototypes that feel like real products.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="feature-card"><i class="fas fa-vial icon"></i><h4>Validate Your Designs</h4><p>Conduct usability testing, analyze feedback, and iterate on your designs based on real user data.</p></div></div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card design-card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-laptop-code design-icon"></i>
-                            <h4>Prototyping & Interaction</h4>
-                            <p>Creating interactive wireframes and high-fidelity prototypes with micro-interactions.</p>
+            </div>
+        </section>
+
+        <!-- Design Tools Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Tools of the Trade</p>
+                    <h2>Master the Industry-Standard Design Tools</h2>
+                </div>
+                <div class="row g-4 tech-stack-grid justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up"><div class="tech-item"><img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma"><strong>Figma</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="50"><div class="tech-item"><img src="https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg" alt="Adobe XD"><strong>Adobe XD</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100"><div class="tech-item"><img src="https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg" alt="Sketch"><strong>Sketch</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="150"><div class="tech-item"><img src="https://www.vectorlogo.zone/logos/invisionapp/invisionapp-icon.svg" alt="InVision"><strong>InVision</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200"><div class="tech-item"><img src="https://www.vectorlogo.zone/logos/miro/miro-icon.svg" alt="Miro"><strong>Miro</strong></div></div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="250"><div class="tech-item"><img src="https://www.vectorlogo.zone/logos/zeplinio/zeplinio-icon.svg" alt="Zeplin"><strong>Zeplin</strong></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Course Structure</p>
+                    <h2>Your Journey Through the Design Process</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion" id="curriculumAccordion">
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#m1">Module 1: Foundations of UX & Design Thinking</button></h2><div id="m1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Understand the core principles of user-centered design, learn the Design Thinking framework, and define user problems.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m2">Module 2: User Research & Strategy</button></h2><div id="m2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Conduct user interviews, create personas and journey maps, and build a solid information architecture.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m3">Module 3: Wireframing & Prototyping</button></h2><div id="m3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Translate your research into low-fidelity wireframes and build interactive, clickable prototypes to test user flows.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m4">Module 4: Visual Design & UI Fundamentals</button></h2><div id="m4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Master color theory, typography, and layout principles. Learn to create design systems and apply branding to your interfaces.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m5">Module 5: Usability Testing & Handoff</button></h2><div id="m5" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Plan and conduct usability tests, analyze feedback for iteration, and prepare your final designs for developer handoff.</div></div></div>
+                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m6">Module 6: Capstone Project & Portfolio Building</button></h2><div id="m6" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Apply the entire design process to a real-world project, culminating in a portfolio-ready case study to showcase your skills.</div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Curriculum Details -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Comprehensive Curriculum</h2>
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <div class="curriculum-item">
-                        <h4>Module 1: Foundations of UX Design</h4>
-                        <p>Introduction to UX principles, design thinking methodology, and the user-centered design process</p>
-                    </div>
-                    <div class="curriculum-item">
-                        <h4>Module 2: User Research & Information Architecture</h4>
-                        <p>Research methods, user interviews, journey mapping, and structuring information effectively</p>
-                    </div>
-                    <div class="curriculum-item">
-                        <h4>Module 3: Visual Design & UI Elements</h4>
-                        <p>Visual hierarchy, design systems, typography, color theory, and creating cohesive interfaces</p>
-                    </div>
-                    <div class="curriculum-item">
-                        <h4>Module 4: Interactive Prototyping & Usability Testing</h4>
-                        <p>Creating interactive prototypes, animations, conducting usability tests, and design iterations</p>
+        <!-- Portfolio Projects Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <p class="subtitle">Build Your Portfolio</p>
+                    <h2>Hands-On Design Projects</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up"><div class="card project-card"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Analytics Dashboard"><div class="card-body"><h5>SaaS Analytics Dashboard</h5><p>Design a complex, data-rich dashboard for a business intelligence tool, focusing on clear information hierarchy and data visualization.</p></div></div></div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="card project-card"><img src="https://images.unsplash.com/photo-1581006852262-5b98a8583b28?q=80&w=1964&auto=format&fit=crop" class="card-img-top" alt="Mobile App"><div class="card-body"><h5>Mobile Wellness App</h5><p>Research, design, and prototype a mobile app from scratch, focusing on user onboarding, engagement, and accessibility.</p></div></div></div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="card project-card"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="E-commerce Website"><div class="card-body"><h5>E-commerce Website Redesign</h5><p>Conduct a heuristic evaluation of an existing e-commerce site and redesign the user flow and interface for a better shopping experience.</p></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10" data-aos="fade-up">
+                        <div class="section-title"><p class="subtitle">Learn from the Best</p><h2>Meet Your Lead Instructor</h2></div>
+                        <div class="instructor-card">
+                            <img src="https://i.pravatar.cc/400?img=33" alt="Instructor Anjali Verma">
+                            <div>
+                                <h4>Anjali Verma</h4><p class="text-primary fw-bold">Lead Product Designer @ CreativeMinds</p>
+                                <p>With a decade of experience designing award-winning digital products for global brands, Anjali is an expert in user-centered design methodologies. She is passionate about mentoring new designers and helping them build beautiful, functional, and impactful products.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Technology Stack -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Design Tools We Cover</h2>
-            <div class="technology-stack">
-                <!-- Figma Logo -->
-                <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" style="filter: none; transition: all 0.3s ease;">
-                
-                <!-- Adobe XD Logo -->
-                <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg" alt="Adobe XD" style="filter: none; transition: all 0.3s ease;">
-                
-                <!-- Sketch Logo -->
-                <img src="https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg" alt="Sketch" style="filter: none; transition: all 0.3s ease;">
-                
-                <!-- InVision Logo -->
-                <img src="https://www.vectorlogo.zone/logos/invisionapp/invisionapp-icon.svg" alt="InVision" style="filter: none; transition: all 0.3s ease;">
-                
-                <!-- Zeplin Logo -->
-                <img src="https://www.vectorlogo.zone/logos/zeplinio/zeplinio-icon.svg" alt="Zeplin" style="filter: none; transition: all 0.3s ease;">
-                
-                <!-- Adobe Photoshop Logo -->
-                <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="Adobe Illustrator" style="filter: none; transition: all 0.3s ease;">
-            </div>
-        </div>
-    </section>
-
-    <style>
-        .technology-stack img {
-            max-width: 100px;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-
-        .technology-stack img:hover {
-            filter: none;
-            transform: scale(1.1);
-        }
-
-        /* Add specific colors for each technology */
-        .technology-stack img:nth-child(1) { /* Figma */
-            filter: grayscale(100%);
-        }
-        .technology-stack img:nth-child(2) { /* Adobe XD */
-            filter: grayscale(100%);
-        }
-        .technology-stack img:nth-child(3) { /* Sketch */
-            filter: grayscale(100%);
-        }
-        .technology-stack img:nth-child(4) { /* InVision */
-            filter: grayscale(100%);
-        }
-        .technology-stack img:nth-child(5) { /* Principle */
-            filter: grayscale(100%);
-        }
-        .technology-stack img:nth-child(6) { /* Zeplin */
-            filter: grayscale(100%);
-        }
-        .technology-stack img:nth-child(7) { /* Adobe Illustrator */
-            filter: grayscale(100%);
-        }
-    </style>
-
-    <!-- Certification Section -->
-    <section class="certification-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="mb-4">Industry-Recognized Certification</h2>
-                    <p class="lead">Upon completion of the program, receive a globally recognized certification that validates your UI/UX design expertise.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-certificate text-primary me-2"></i>Internationally Accredited</li>
-                        <li><i class="fas fa-trophy text-primary me-2"></i>Career Advancement Credential</li>
-                        <li><i class="fas fa-globe text-primary me-2"></i>Recognized by Top Design Agencies</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="certification-badge.png" alt="UI/UX Design Certification" class="img-fluid" style="max-width: 300px;">
+        <!-- Career Outcomes -->
+        <section class="section-padding bg-light career-outcomes-list">
+            <div class="container text-center" data-aos="fade-up">
+                <div class="section-title"><p class="subtitle">Your Future Career</p><h2>Career Outcomes</h2></div>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <span class="badge bg-primary">UI/UX Designer</span><span class="badge bg-primary">Product Designer</span>
+                    <span class="badge bg-primary">UX Researcher</span><span class="badge bg-primary">UI Designer</span>
+                    <span class="badge bg-primary">Interaction Designer</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section text-center">
-        <div class="container">
-            <h2 class="display-5 mb-4">Become a Professional UI/UX Designer</h2>
-            <p class="lead mb-5">Join our UI/UX Design Program and transform your creative passion into a rewarding career</p>
-            <a href="/Enroll/" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Enroll Now</a>
-        </div>
-    </section>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container" data-aos="zoom-in">
+                <h2 class="display-5 fw-bold">Ready to Start Designing the Future?</h2>
+                <p class="lead my-4">Enroll now to turn your passion for creativity and problem-solving into a highly rewarding career in design.</p>
+                <a href="/Enroll/" class="btn btn-light btn-lg">Enroll & Start Designing</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2023 Success Meets Academy. All Rights Reserved.</p>
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Success Meets Academy</h5><p>Transforming careers through innovative training and skill development programs.</p></div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Quick Links</h5><ul class="list-unstyled"><li><a class="text-white" href="/#programs">Programs</a></li><li><a class="text-white" href="/#courses">Courses</a></li><li><a class="text-white" href="/About/">About Us</a></li><li><a class="text-white" href="/#contact">Contact</a></li></ul></div>
+                <div class="col-lg-4 col-md-6"><h5 class="mb-3">Contact Info</h5><p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p><p><i class="fas fa-phone me-2"></i> +91 93609 94617</p><p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p></div>
+            </div>
+            <div class="footer-bottom mt-5 text-center"><p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p><p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p></div>
         </div>
     </footer>
 
-    <!-- External Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom Script -->
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        if (window.location.pathname.endsWith("index.html")) {
-          window.location.replace("/");
-        }
+        document.addEventListener('DOMContentLoaded', () => { AOS.init({ duration: 1000, once: true, offset: 50 }); });
     </script>
 </body>
 </html>

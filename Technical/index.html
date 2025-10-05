@@ -3,126 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Training Foundation Program | Success Meets Academy</title>
+    <title>Technical Foundation Program | Success Meets Academy</title>
     
-    <!-- Meta Tags for SEO -->
     <meta name="description" content="Build a rock-solid technical foundation. Our program covers core programming, systems architecture, and development tools to prepare you for any specialized tech career.">
-    
-    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <style>
-        /* ------------------------- */
-        /* --- 1. Global Styles & Variables --- */
-        /* ------------------------- */
-        :root {
-            --primary-color: #4A148C; /* A deep, professional purple */
-            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
-            --dark-color: #212529;
-            --body-color: #555;
-            --bg-light: #f8f9fa;
-            --heading-font: 'Poppins', sans-serif;
-            --body-font: 'Poppins', sans-serif;
-            --border-radius: 12px;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-        }
-
-        body {
-            font-family: var(--body-font); color: var(--body-color); line-height: 1.7;
-            padding-top: 80px; background-color: #fff;
-        }
-
-        h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); color: var(--dark-color); font-weight: 600; }
-        .section-padding { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title .subtitle { color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-top: 10px; }
-        .btn-brand { background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; border: 2px solid var(--primary-color); }
-        .btn-brand:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
-        .btn-outline-brand { background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); padding: 10px 25px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; }
-        .btn-outline-brand:hover { background-color: var(--primary-color); color: white; }
-
-        /* ------------------------- */
-        /* --- 2. Navigation Bar --- */
-        /* ------------------------- */
-        .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .navbar .navbar-brand img { height: 45px; margin-right: 10px; }
-        .navbar-nav .nav-link { font-weight: 500; margin: 0 10px; position: relative; }
-        .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
-        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
-
-        /* ------------------------- */
-        /* --- 3. Hero Section --- */
-        /* ------------------------- */
-        .hero-course {
-            padding: 100px 0 0 0;
-            background-image: linear-gradient(rgba(74, 20, 140, 0.9), rgba(74, 20, 140, 0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover; background-position: center; color: white; text-align: center;
-        }
-        .hero-course h1 { color: white; font-weight: 700; }
-        .hero-course p { max-width: 700px; margin: 20px auto 40px; }
-        .course-facts-bar {
-            background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 20px 0; margin-top: 80px;
-        }
-        .fact-item { text-align: center; }
-        .fact-item .icon { font-size: 1.5rem; margin-right: 10px; color: var(--secondary-color); }
-        .fact-item span { font-weight: 500; }
-
-        /* ------------------------- */
-        /* --- 4. Content Sections --- */
-        /* ------------------------- */
-        .feature-card { text-align: center; padding: 30px; background-color: var(--bg-light); border-radius: var(--border-radius); height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
-        .feature-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
-
-        .learning-method-list li { display: flex; align-items: flex-start; margin-bottom: 15px; }
-        .learning-method-list .icon { font-size: 1.2rem; color: var(--primary-color); margin-right: 15px; margin-top: 5px; }
-        
-        .accordion-button:not(.collapsed) { background-color: var(--primary-color); color: white; }
-        .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(74, 20, 140, 0.25); }
-        .accordion-item { border-radius: var(--border-radius) !important; overflow: hidden; }
-        
-        .instructor-card { display: flex; align-items: center; background-color: var(--bg-light); padding: 30px; border-radius: var(--border-radius); }
-        .instructor-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-right: 30px; border: 4px solid var(--secondary-color); }
-        
-        .next-step-card {
-            background-color: white; border-radius: var(--border-radius); box-shadow: var(--shadow);
-            padding: 30px; text-align: center; height: 100%; transition: transform 0.3s ease;
-        }
-        .next-step-card:hover { transform: translateY(-10px); }
-        .next-step-card .icon { font-size: 3rem; color: var(--secondary-color); margin-bottom: 20px; }
-
-        /* ------------------------- */
-        /* --- 5. CTA & Footer --- */
-        /* ------------------------- */
-        .cta-section { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); color: white; padding: 80px 0; text-align: center; }
-        .cta-section h2, .cta-section p { color: white; }
-        .cta-section .btn-light { padding: 12px 30px; border-radius: 50px; font-weight: 600; color: var(--primary-color); }
-        footer { background-color: var(--dark-color); color: rgba(255,255,255,0.7); }
-        footer h5 { color: white; }
-        .footer-bottom a { color: var(--secondary-color); text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="/logo.jpeg" alt="Success Meets Academy Logo"> Success Meets Academy</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo">
+                Success Meets Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="/#programs">Programs</a></li>
@@ -138,20 +46,23 @@
     
     <main>
         <!-- Hero Section -->
-        <header class="hero-course">
-            <div class="container" data-aos="fade-in">
+        <header class="hero-subpage" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop');">
+            <div class="container text-center" data-aos="fade-in">
                 <p class="subtitle text-uppercase">Technical Foundation Program</p>
                 <h1 class="display-4 fw-bold">Build the Foundation for a Lifelong Career in Tech</h1>
                 <p class="lead">Before you can build skyscrapers, you need to master the foundation. This program equips you with the universal technical principles that power every specialization in the industry.</p>
-                <a href="/Enroll/" class="btn btn-brand btn-lg">Build Your Foundation</a>
-            </div>
-            <div class="course-facts-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-clock icon"></i><span><strong>Duration:</strong> 8 Weeks</span></div>
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-signal icon"></i><span><strong>Skill Level:</strong> Beginner</span></div>
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-laptop-code icon"></i><span><strong>Format:</strong> Live Online</span></div>
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-award icon"></i><span><strong>Certificate:</strong> Yes</span></div>
+                <div class="hero-facts">
+                    <div class="fact-item">
+                        <i class="fas fa-clock icon"></i>
+                        <span><strong>Duration:</strong> 8 Weeks</span>
+                    </div>
+                    <div class="fact-item">
+                        <i class="fas fa-signal icon"></i>
+                        <span><strong>Skill Level:</strong> Beginner</span>
+                    </div>
+                    <div class="fact-item">
+                        <i class="fas fa-laptop-code icon"></i>
+                        <span><strong>Format:</strong> Live Online</span>
                     </div>
                 </div>
             </div>
@@ -165,36 +76,40 @@
                     <h2>Your Launchpad into Any Tech Role</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="feature-card"><i class="fas fa-language icon"></i><h4>Speak the Language</h4><p>Understand the core concepts of programming, networks, and databases that are common across all tech jobs.</p></div></div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="feature-card"><i class="fas fa-brain icon"></i><h4>Think Like an Engineer</h4><p>Develop a structured, logical problem-solving mindset that is crucial for tackling complex technical challenges.</p></div></div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="feature-card"><i class="fas fa-layer-group icon"></i><h4>Prepare to Specialize</h4><p>Build the strong base needed to accelerate your learning in advanced fields like AI, cloud, or full-stack development.</p></div></div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="feature-card"><i class="fas fa-user-tie icon"></i><h4>Ace Technical Interviews</h4><p>Gain the confidence to answer fundamental interview questions that trip up even experienced candidates.</p></div></div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                        <div class="card feature-box">
+                            <div class="icon-box"><i class="fas fa-language"></i></div>
+                            <h4>Speak the Language</h4>
+                            <p>Understand the core concepts of programming, networks, and databases that are common across all tech jobs.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card feature-box">
+                            <div class="icon-box"><i class="fas fa-brain"></i></div>
+                            <h4>Think Like an Engineer</h4>
+                            <p>Develop a structured, logical problem-solving mindset that is crucial for tackling complex technical challenges.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card feature-box">
+                            <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+                            <h4>Prepare to Specialize</h4>
+                            <p>Build the strong base needed to accelerate your learning in advanced fields like AI, cloud, or full-stack development.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card feature-box">
+                            <div class="icon-box"><i class="fas fa-user-tie"></i></div>
+                            <h4>Ace Technical Interviews</h4>
+                            <p>Gain the confidence to answer fundamental interview questions that trip up even experienced candidates.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <!-- Learning Methodology -->
-        <section class="section-padding bg-light">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6" data-aos="fade-right">
-                         <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-3 shadow-lg" alt="Interactive training session">
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="section-title text-start mb-4"><p class="subtitle">Our Approach</p><h2>A Hands-On Path to Understanding</h2></div>
-                        <p class="lead">We believe technical knowledge sticks when it's applied. Our program is built on active, hands-on learning.</p>
-                        <ul class="list-unstyled learning-method-list">
-                            <li><i class="fas fa-laptop-code icon"></i><strong>Live Coding Sessions:</strong> Follow along with instructors as they solve problems and build applications in real-time.</li>
-                            <li><i class="fas fa-flask icon"></i><strong>Practical Labs & Exercises:</strong> Solidify your understanding with targeted exercises after every major concept.</li>
-                            <li><i class="fas fa-project-diagram icon"></i><strong>Mini-Projects:</strong> Apply multiple concepts together by building small, functional projects.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Curriculum Section -->
-        <section class="section-padding">
+        <section class="section-padding bg-light">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <p class="subtitle">Program Structure</p>
@@ -203,9 +118,42 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
                         <div class="accordion" id="curriculumAccordion">
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#m1">Pillar 1: Programming & Logic</button></h2><div id="m1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Master the universal principles of coding. We cover variables, control flow, functions, and object-oriented concepts using Python, along with essential data structures and algorithms.</div></div></div>
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m2">Pillar 2: Systems & Architecture</button></h2><div id="m2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Understand how everything fits together. Learn the basics of operating systems (Linux), computer networking (TCP/IP), and how databases (SQL) store and retrieve information.</div></div></div>
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m3">Pillar 3: Development Lifecycle & Tools</button></h2><div id="m3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Learn how modern software is built. Get hands-on with the command line, manage your code with Git and GitHub, and understand the basics of the software development lifecycle (Agile).</div></div></div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pillar1">
+                                        Pillar 1: Programming & Logic
+                                    </button>
+                                </h2>
+                                <div id="pillar1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Master the universal principles of coding. We cover variables, control flow, functions, and object-oriented concepts using Python, along with essential data structures and algorithms.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pillar2">
+                                        Pillar 2: Systems & Architecture
+                                    </button>
+                                </h2>
+                                <div id="pillar2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Understand how everything fits together. Learn the basics of operating systems (Linux), computer networking (TCP/IP), and how databases (SQL) store and retrieve information.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pillar3">
+                                        Pillar 3: Development Lifecycle & Tools
+                                    </button>
+                                </h2>
+                                <div id="pillar3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Learn how modern software is built. Get hands-on with the command line, manage your code with Git and GitHub, and understand the basics of the software development lifecycle (Agile).
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -213,44 +161,55 @@
         </section>
 
         <!-- Your Next Step Section -->
-        <section class="section-padding bg-light">
+        <section class="section-padding">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <p class="subtitle">Career Pathways</p>
                     <h2>Your Next Step After This Program</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up"><div class="next-step-card"><i class="fas fa-code icon"></i><h4>Full Stack Development</h4><p>With a solid foundation, you'll be perfectly prepared to master the MERN stack and build complete web applications.</p><a href="/FullStack/" class="btn btn-outline-brand mt-3">View Program</a></div></div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="next-step-card"><i class="fas fa-chart-bar icon"></i><h4>Data Analytics</h4><p>Your new programming and database skills will give you a massive head start in learning to analyze data and build models.</p><a href="/DataAnalytics/" class="btn btn-outline-brand mt-3">View Program</a></div></div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="next-step-card"><i class="fas fa-cloud icon"></i><h4>Cloud & DevOps</h4><p>Understanding systems and networks is the first step to specializing in cloud infrastructure, automation, and deployment.</p><a href="/#courses" class="btn btn-outline-brand mt-3">Coming Soon</a></div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Instructor Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10" data-aos="fade-up">
-                        <div class="section-title"><p class="subtitle">Learn from the Best</p><h2>Meet Your Lead Trainer</h2></div>
-                        <div class="instructor-card">
-                            <img src="https://i.pravatar.cc/400?img=12" alt="Instructor Arjun Singh">
-                            <div>
-                                <h4>Arjun Singh</h4><p class="text-primary fw-bold">Senior Software Engineer & Tech Mentor</p>
-                                <p>Arjun has spent over a decade architecting software solutions and mentoring junior engineers. He is passionate about demystifying complex technical topics and building foundational knowledge that lasts a lifetime.</p>
-                            </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-code fs-1 text-secondary mb-3"></i>
+                            <h4>Full Stack Development</h4>
+                            <p>With a solid foundation, you'll be perfectly prepared to master the MERN stack and build complete web applications.</p>
+                            <a href="/FullStack/" class="btn btn-outline-brand mt-3">View Program</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-chart-bar fs-1 text-secondary mb-3"></i>
+                            <h4>Data Analytics</h4>
+                            <p>Your new programming and database skills will give you a massive head start in learning to analyze data and build models.</p>
+                            <a href="/DataAnalytics/" class="btn btn-outline-brand mt-3">View Program</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-cloud fs-1 text-secondary mb-3"></i>
+                            <h4>Cloud & DevOps</h4>
+                            <p>Understanding systems and networks is the first step to specializing in cloud infrastructure, automation, and deployment.</p>
+                            <a href="/#courses" class="btn btn-outline-brand mt-3 disabled">Coming Soon</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container" data-aos="zoom-in">
-                <h2 class="display-5 fw-bold">Stop Feeling Overwhelmed. Start Building Your Foundation.</h2>
-                <p class="lead my-4">Enroll in the Technical Foundation Program and gain the confidence and skills to succeed in any tech career you choose.</p>
-                <a href="/Enroll/" class="btn btn-light btn-lg">Enroll & Begin Your Journey</a>
+        <section class="section-padding">
+            <div class="container">
+                <div class="card bg-primary text-white p-5" data-aos="zoom-in">
+                    <div class="row align-items-center">
+                        <div class="col-lg-9">
+                            <h2 class="text-white">Stop Feeling Overwhelmed. Start Building.</h2>
+                            <p class="lead mb-0">Enroll in the Technical Foundation Program and gain the confidence to succeed in any tech career you choose.</p>
+                        </div>
+                        <div class="col-lg-3 text-lg-end mt-4 mt-lg-0">
+                            <a href="/Enroll/" class="btn btn-light btn-lg text-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -259,19 +218,51 @@
     <footer class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Success Meets Academy</h5><p>Transforming careers through innovative training and skill development programs.</p></div>
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Quick Links</h5><ul class="list-unstyled"><li><a class="text-white" href="/#programs">Programs</a></li><li><a class="text-white" href="/#courses">Courses</a></li><li><a class="text-white" href="/About/">About Us</a></li><li><a class="text-white" href="/#contact">Contact</a></li></ul></div>
-                <div class="col-lg-4 col-md-6"><h5 class="mb-3">Contact Info</h5><p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p><p><i class="fas fa-phone me-2"></i> +91 93609 94617</p><p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p></div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>Success Meets Academy</h5>
+                    <p>Transforming careers through innovative training and skill development programs.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/#programs">Programs</a></li>
+                        <li><a href="/#courses">Courses</a></li>
+                        <li><a href="/About/">About Us</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 93609 94617</p>
+                    <p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p>
+                </div>
             </div>
-            <div class="footer-bottom mt-5 text-center"><p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p><p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p></div>
+            <div class="footer-bottom mt-5 text-center">
+                <p>&copy; 2024 Success Meets Academy. All Rights Reserved.</p>
+                <p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => { AOS.init({ duration: 1000, once: true, offset: 50 }); });
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     </script>
+    <script src="/script.js"></script>
 </body>
 </html>

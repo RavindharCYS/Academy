@@ -3,119 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soft Skill Development Program | Success Meets Academy</title>
+    <title>Aptitude Training Program | Success Meets Academy</title>
     
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="Elevate your career with our Soft Skill Development program. Master communication, leadership, and emotional intelligence to stand out in the workplace.">
-    
-    <!-- Favicons -->
+    <meta name="description" content="Master quantitative, logical, and verbal skills with our expert-led Aptitude Training Program. Prepare to ace placement tests and secure your dream job.">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <style>
-        /* ------------------------- */
-        /* --- 1. Global Styles & Variables --- */
-        /* ------------------------- */
-        :root {
-            --primary-color: #4A148C; /* A deep, professional purple */
-            --secondary-color: #00BCD4; /* A vibrant cyan for accents */
-            --dark-color: #212529;
-            --body-color: #555;
-            --bg-light: #f8f9fa;
-            --heading-font: 'Poppins', sans-serif;
-            --body-font: 'Poppins', sans-serif;
-            --border-radius: 12px;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-        }
-
-        body {
-            font-family: var(--body-font); color: var(--body-color); line-height: 1.7;
-            padding-top: 80px; background-color: #fff;
-        }
-
-        h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); color: var(--dark-color); font-weight: 600; }
-        .section-padding { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title .subtitle { color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-top: 10px; }
-        .btn-brand { background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; border: 2px solid var(--primary-color); }
-        .btn-brand:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
-
-        /* ------------------------- */
-        /* --- 2. Navigation Bar --- */
-        /* ------------------------- */
-        .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .navbar .navbar-brand img { height: 45px; margin-right: 10px; }
-        .navbar-nav .nav-link { font-weight: 500; margin: 0 10px; position: relative; }
-        .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
-        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
-
-        /* ------------------------- */
-        /* --- 3. Hero Section --- */
-        /* ------------------------- */
-        .hero-course {
-            padding: 100px 0 0 0;
-            background-image: linear-gradient(rgba(74, 20, 140, 0.9), rgba(74, 20, 140, 0.8)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover; background-position: center; color: white; text-align: center;
-        }
-        .hero-course h1 { color: white; font-weight: 700; }
-        .hero-course p { max-width: 700px; margin: 20px auto 40px; }
-        .course-facts-bar {
-            background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 20px 0; margin-top: 80px;
-        }
-        .fact-item { text-align: center; }
-        .fact-item .icon { font-size: 1.5rem; margin-right: 10px; color: var(--secondary-color); }
-        .fact-item span { font-weight: 500; }
-
-        /* ------------------------- */
-        /* --- 4. Content Sections --- */
-        /* ------------------------- */
-        .feature-card { text-align: center; padding: 30px; background-color: var(--bg-light); border-radius: var(--border-radius); height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
-        .feature-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
-
-        .learning-method-list li { display: flex; align-items: flex-start; margin-bottom: 15px; }
-        .learning-method-list .icon { font-size: 1.2rem; color: var(--primary-color); margin-right: 15px; margin-top: 5px; }
-        
-        .accordion-button:not(.collapsed) { background-color: var(--primary-color); color: white; }
-        .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(74, 20, 140, 0.25); }
-        .accordion-item { border-radius: var(--border-radius) !important; overflow: hidden; }
-        
-        .instructor-card { display: flex; align-items: center; background-color: var(--bg-light); padding: 30px; border-radius: var(--border-radius); }
-        .instructor-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-right: 30px; border: 4px solid var(--secondary-color); }
-
-        .career-outcomes-list .badge { padding: 10px 15px; font-size: 1rem; }
-
-        /* ------------------------- */
-        /* --- 5. CTA & Footer --- */
-        /* ------------------------- */
-        .cta-section { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); color: white; padding: 80px 0; text-align: center; }
-        .cta-section h2, .cta-section p { color: white; }
-        .cta-section .btn-light { padding: 12px 30px; border-radius: 50px; font-weight: 600; color: var(--primary-color); }
-        footer { background-color: var(--dark-color); color: rgba(255,255,255,0.7); }
-        footer h5 { color: white; }
-        .footer-bottom a { color: var(--secondary-color); text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="/logo.jpeg" alt="Success Meets Academy Logo"> Success Meets Academy</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/">
+                <img src="/logo.jpeg" alt="Success Meets Academy Logo">
+                Success Meets Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="/#programs">Programs</a></li>
@@ -128,111 +43,116 @@
             </div>
         </div>
     </nav>
-    
+
+    <!-- Hero Section -->
+    <header class="hero-subpage" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop');">
+        <div class="container text-center" data-aos="fade-in">
+            <h1 class="display-4 fw-bold">Master the Aptitude Tests That Stand Between You and Your Dream Job</h1>
+            <p class="lead">Our comprehensive program sharpens your quantitative, logical, and verbal skills to help you ace any placement exam with confidence.</p>
+            <div class="hero-facts">
+                <div class="fact-item">
+                    <i class="fas fa-clock icon"></i>
+                    <span><strong>Duration:</strong> 6 Weeks</span>
+                </div>
+                <div class="fact-item">
+                    <i class="fas fa-users icon"></i>
+                    <span><strong>For:</strong> Students & Job Seekers</span>
+                </div>
+                <div class="fact-item">
+                    <i class="fas fa-laptop-code icon"></i>
+                    <span><strong>Format:</strong> Live Online</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <main>
-        <!-- Hero Section -->
-        <header class="hero-course">
-            <div class="container" data-aos="fade-in">
-                <p class="subtitle text-uppercase">Soft Skill Development Program</p>
-                <h1 class="display-4 fw-bold">Your Technical Skills Get the Interview. Your Soft Skills Get the Job.</h1>
-                <p class="lead">In today's competitive market, communication, leadership, and emotional intelligence are what separate good candidates from great ones. Master the skills that drive career growth.</p>
-                <a href="/Enroll/" class="btn btn-brand btn-lg">Elevate Your Career</a>
-            </div>
-            <div class="course-facts-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-clock icon"></i><span><strong>Duration:</strong> 4 Weeks</span></div>
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-users icon"></i><span><strong>For:</strong> All Levels</span></div>
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-laptop-code icon"></i><span><strong>Format:</strong> Live Workshops</span></div>
-                        <div class="col-md-3 col-6 fact-item"><i class="fas fa-award icon"></i><span><strong>Certificate:</strong> Yes</span></div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- What You Will Master Section -->
+        <!-- Program Overview Section -->
         <section class="section-padding">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <p class="subtitle">Core Competencies</p>
-                    <h2>Become an Indispensable Professional</h2>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up"><div class="feature-card"><i class="fas fa-comments icon"></i><h4>Communicate with Impact</h4><p>Master the art of clear, confident, and persuasive communication in any professional setting.</p></div></div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="feature-card"><i class="fas fa-users-cog icon"></i><h4>Collaborate Seamlessly</h4><p>Enhance your teamwork, conflict resolution, and networking skills to become a valuable team player.</p></div></div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="feature-card"><i class="fas fa-brain icon"></i><h4>Lead with Empathy</h4><p>Develop your emotional intelligence to better understand colleagues, manage relationships, and lead effectively.</p></div></div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="feature-card"><i class="fas fa-lightbulb icon"></i><h4>Solve Problems Creatively</h4><p>Sharpen your critical thinking and adaptability to navigate challenges and drive innovative solutions.</p></div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Learning Experience Section -->
-        <section class="section-padding bg-light">
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="section-title text-start mb-4">
-                            <p class="subtitle">Our Approach</p>
-                            <h2>Learn by Doing, Not Just Listening</h2>
+                            <p class="subtitle">Program Overview</p>
+                            <h2>Why Our Aptitude Training is a Game-Changer</h2>
                         </div>
-                        <p class="lead">Soft skills are built through practice. Our program moves beyond theory with highly interactive and engaging workshops designed to build real-world confidence.</p>
-                        <ul class="list-unstyled learning-method-list">
-                            <li><i class="fas fa-user-friends icon"></i><strong>Role-Playing Scenarios:</strong> Practice difficult conversations, negotiations, and presentations in a safe, supportive environment.</li>
-                            <li><i class="fas fa-comments icon"></i><strong>Group Discussions & Debates:</strong> Sharpen your ability to articulate ideas, listen actively, and contribute meaningfully to team discussions.</li>
-                            <li><i class="fas fa-briefcase icon"></i><strong>Mock Interviews & Feedback:</strong> Receive personalized feedback on your professional presence and interview techniques from experienced coaches.</li>
-                        </ul>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-brain fa-fw me-3 fs-4 text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Crack Any Problem</h5>
+                                <p>Develop powerful problem-solving techniques and shortcuts to solve complex questions quickly and accurately.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-lightbulb fa-fw me-3 fs-4 text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Think Logically</h5>
+                                <p>Enhance your logical and analytical reasoning abilities to tackle puzzles, patterns, and critical thinking challenges.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-comments fa-fw me-3 fs-4 text-primary"></i>
+                            </div>
+                            <div>
+                                <h5>Communicate with Clarity</h5>
+                                <p>Strengthen your verbal ability and comprehension skills to excel in language-based sections of any test.</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" class="img-fluid rounded-3 shadow-lg" alt="Interactive workshop session">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop" class="img-fluid rounded-3 shadow-lg" alt="Students working together">
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- Curriculum Section -->
-        <section class="section-padding">
+        <section id="curriculum" class="section-padding bg-light">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <p class="subtitle">Program Structure</p>
-                    <h2>Workshop Modules</h2>
+                    <p class="subtitle">Curriculum</p>
+                    <h2>What You'll Master</h2>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
-                        <div class="accordion" id="curriculumAccordion">
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#m1">Module 1: Professional Communication Mastery</button></h2><div id="m1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Covers verbal and non-verbal communication, active listening, storytelling for business, and confident public speaking.</div></div></div>
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m2">Module 2: Leadership & Team Collaboration</button></h2><div id="m2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Focuses on team dynamics, giving and receiving feedback, conflict resolution, and understanding different leadership styles.</div></div></div>
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m3">Module 3: Emotional Intelligence at Work</button></h2><div id="m3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Develop self-awareness, empathy, and self-regulation. Learn to manage stress and build stronger professional relationships.</div></div></div>
-                            <div class="accordion-item mb-3"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m4">Module 4: Corporate Readiness & Etiquette</button></h2><div id="m4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion"><div class="accordion-body">Covers professional networking, business email etiquette, time management, and building your personal brand in the workplace.</div></div></div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-calculator fs-1 text-secondary mb-3"></i>
+                            <h4>Quantitative Aptitude</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check me-2 text-primary"></i>Number Systems & Algebra</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Percentages & Averages</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Time, Speed & Distance</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Data Interpretation</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Career Impact -->
-        <section class="section-padding bg-light career-outcomes-list">
-            <div class="container text-center" data-aos="fade-up">
-                <div class="section-title"><p class="subtitle">Tangible Results</p><h2>Career Impact</h2></div>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <span class="badge bg-primary">Faster Promotions</span><span class="badge bg-primary">Stronger Leadership Potential</span>
-                    <span class="badge bg-primary">Improved Team Collaboration</span><span class="badge bg-primary">Higher Salary Negotiation</span>
-                    <span class="badge bg-primary">Increased Job Satisfaction</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Instructor Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10" data-aos="fade-up">
-                        <div class="section-title"><p class="subtitle">Learn from the Best</p><h2>Meet Your Lead Coach</h2></div>
-                        <div class="instructor-card">
-                            <img src="https://i.pravatar.cc/400?img=32" alt="Instructor Emily White">
-                            <div>
-                                <h4>Emily White</h4><p class="text-primary fw-bold">Corporate Trainer & Leadership Coach</p>
-                                <p>With over 15 years of experience coaching executives and rising stars at top tech companies, Emily specializes in transforming potential into performance. Her interactive and empathetic approach helps professionals unlock their confidence and influence.</p>
-                            </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-sitemap fs-1 text-secondary mb-3"></i>
+                            <h4>Logical Reasoning</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check me-2 text-primary"></i>Coding & Decoding</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Blood Relations</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Seating Arrangements</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Syllogisms & Puzzles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card p-4 text-center">
+                            <i class="fas fa-book-open fs-1 text-secondary mb-3"></i>
+                            <h4>Verbal Ability</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check me-2 text-primary"></i>Reading Comprehension</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Grammar & Vocabulary</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Sentence Correction</li>
+                                <li><i class="fas fa-check me-2 text-primary"></i>Para Jumbles</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -240,32 +160,72 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container" data-aos="zoom-in">
-                <h2 class="display-5 fw-bold">Ready to Elevate Your Professional Presence?</h2>
-                <p class="lead my-4">Join our Soft Skill Development Program and gain the competitive edge that will define your career success.</p>
-                <a href="/Enroll/" class="btn btn-light btn-lg">Enroll & Unlock Your Potential</a>
+        <section class="section-padding">
+            <div class="container">
+                <div class="card bg-primary text-white p-5" data-aos="zoom-in">
+                    <div class="row align-items-center">
+                        <div class="col-lg-9">
+                            <h2 class="text-white">Ready to Unlock Your Career Potential?</h2>
+                            <p class="lead mb-0">Don't let aptitude tests be a barrier. Enroll today and take the first confident step towards your dream job.</p>
+                        </div>
+                        <div class="col-lg-3 text-lg-end mt-4 mt-lg-0">
+                            <a href="/Enroll/" class="btn btn-light btn-lg text-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
+    
     <!-- Footer -->
     <footer class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Success Meets Academy</h5><p>Transforming careers through innovative training and skill development programs.</p></div>
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3">Quick Links</h5><ul class="list-unstyled"><li><a class="text-white" href="/#programs">Programs</a></li><li><a class="text-white" href="/#courses">Courses</a></li><li><a class="text-white" href="/About/">About Us</a></li><li><a class="text-white" href="/#contact">Contact</a></li></ul></div>
-                <div class="col-lg-4 col-md-6"><h5 class="mb-3">Contact Info</h5><p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p><p><i class="fas fa-phone me-2"></i> +91 93609 94617</p><p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p></div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>Success Meets Academy</h5>
+                    <p>Transforming careers through innovative training and skill development programs.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/#programs">Programs</a></li>
+                        <li><a href="/#courses">Courses</a></li>
+                        <li><a href="/About/">About Us</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 93609 94617</p>
+                    <p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p>
+                </div>
             </div>
-            <div class="footer-bottom mt-5 text-center"><p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p><p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p></div>
+            <div class="footer-bottom mt-5 text-center">
+                <p>&copy; 2024 Success Meets Academy. All Rights Reserved.</p>
+                <p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => { AOS.init({ duration: 1000, once: true, offset: 50 }); });
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     </script>
+    <script src="/script.js"></script>
 </body>
 </html>

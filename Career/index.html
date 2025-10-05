@@ -5,126 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Transition Navigator | Success Meets Academy</title>
     
-    <!-- Meta Tags for SEO -->
     <meta name="description" content="Get a personalized roadmap to transition from any background into a high-demand IT career like Data Analyst, Full Stack Developer, or UI/UX Designer.">
-    
-    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <style>
-        /* ------------------------- */
-        /* --- 1. Global Styles & Variables --- */
-        /* ------------------------- */
-        :root {
-            --primary-color: #4A148C;
-            --secondary-color: #00BCD4;
-            --dark-color: #212529;
-            --body-color: #555;
-            --bg-light: #f8f9fa;
-            --heading-font: 'Poppins', sans-serif;
-            --body-font: 'Poppins', sans-serif;
-            --border-radius: 12px;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-        }
-
-        body {
-            font-family: var(--body-font);
-            color: var(--body-color);
-            background: #fff;
-            padding-top: 80px; /* Offset for fixed navbar */
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--heading-font);
-            color: var(--dark-color);
-            font-weight: 600;
-        }
-        .section-padding { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title .subtitle { color: var(--primary-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-top: 10px; }
-        .btn-brand { background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; border: 2px solid var(--primary-color); }
-        .btn-brand:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
-
-        /* ------------------------- */
-        /* --- 2. Navigation Bar --- */
-        /* ------------------------- */
-        .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .navbar .navbar-brand img { height: 45px; margin-right: 10px; }
-        .navbar-nav .nav-link { font-weight: 500; margin: 0 10px; position: relative; }
-        .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
-        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
-
-        /* ------------------------- */
-        /* --- 3. Hero & Navigator --- */
-        /* ------------------------- */
-        .hero-career-navigator {
-            padding: 80px 0;
-            background: linear-gradient(to right, var(--bg-light) 50%, var(--primary-color) 50%);
-        }
-        .hero-career-navigator .hero-image img {
-            border-radius: var(--border-radius); box-shadow: var(--shadow);
-            object-fit: cover; height: 100%;
-        }
-        .navigator-tool {
-            background-color: #fff; padding: 40px; border-radius: var(--border-radius);
-            box-shadow: var(--shadow); margin-top: -80px; position: relative; z-index: 10;
-        }
-        .form-control, .form-select { padding: 12px 15px; border-radius: 8px; }
-        .form-control:focus, .form-select:focus {
-            box-shadow: 0 0 0 0.25rem rgba(74, 20, 140, 0.25); border-color: var(--primary-color);
-        }
-
-        /* ------------------------- */
-        /* --- 4. Roadmap Output --- */
-        /* ------------------------- */
-        #results { display: none; /* Initially hidden */ }
-        .roadmap-output {
-            border: 1px solid #eee; border-radius: var(--border-radius);
-            padding: 40px; background-color: #fff;
-        }
-        .roadmap-step {
-            display: flex; align-items: flex-start; margin-bottom: 30px;
-            padding-bottom: 30px; border-bottom: 1px dashed #ddd;
-        }
-        .roadmap-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .roadmap-step .step-icon {
-            font-size: 1.8rem; color: var(--primary-color); background-color: var(--bg-light);
-            width: 60px; height: 60px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; flex-shrink: 0; margin-right: 20px;
-        }
-        .roadmap-step h5 { color: var(--primary-color); margin-bottom: 5px; }
-        .roadmap-step .badge { margin-right: 8px; margin-bottom: 8px; }
-        .cta-card {
-            background-color: var(--bg-light); border: 2px dashed var(--secondary-color);
-            padding: 30px; border-radius: var(--border-radius); text-align: center;
-        }
-
-        /* ------------------------- */
-        /* --- 5. FAQ & Footer --- */
-        /* ------------------------- */
-        .accordion-button:not(.collapsed) { background-color: var(--primary-color); color: white; }
-        .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(74, 20, 140, 0.25); }
-        footer { background-color: var(--dark-color); color: rgba(255,255,255,0.7); }
-        .footer-bottom a { color: var(--secondary-color); text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/"><img src="/logo.jpeg" alt="Success Meets Academy Logo"> Success Meets Academy</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
@@ -143,54 +41,37 @@
     
     <main>
         <!-- Hero Section -->
-        <header class="hero-career-navigator">
+        <header class="section-padding bg-light">
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <p class="subtitle text-primary fw-bold">CAREER TRANSFORM</p>
+                        <p class="subtitle">CAREER TRANSFORM</p>
                         <h1 class="display-4 fw-bold mb-3">Unlock Your Future in Tech, No Matter Your Background.</h1>
                         <p class="lead">Feeling stuck? Our Career Navigator builds a personalized, step-by-step blueprint to guide your transition into a high-demand IT role. Start planning your new career today.</p>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
-                        <div class="hero-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" alt="People planning a career path on a glass wall" class="img-fluid">
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" alt="People planning a career path on a glass wall" class="img-fluid rounded-3 shadow-lg">
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Navigator Tool Section -->
-        <section class="navigator-section">
+        <section class="section-padding" style="padding-top: 0;">
             <div class="container">
-                <div class="navigator-tool" data-aos="fade-up" id="navigator">
+                <div class="card p-4 p-md-5 shadow-lg" data-aos="fade-up" id="navigator">
                     <h3 class="text-center mb-4">Build Your Personalized Roadmap</h3>
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-center justify-content-center">
                         <div class="col-lg-5">
                             <label for="current-domain" class="form-label fw-bold">Your Current Background</label>
                             <select id="current-domain" class="form-select">
-                                <optgroup label="Engineering">
-                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                    <option value="Civil Engineering">Civil Engineering</option>
-                                    <option value="Electronics & Communication">Electronics & Communication</option>
-                                </optgroup>
-                                <optgroup label="Commerce & Business">
-                                    <option value="B.Com">B.Com</option>
-                                    <option value="BBA">BBA</option>
-                                </optgroup>
-                                <optgroup label="Arts & Humanities">
-                                    <option value="BA English">BA English</option>
-                                    <option value="BA Economics">BA Economics</option>
-                                </optgroup>
-                                <optgroup label="Science">
-                                    <option value="BSc Physics">BSc Physics</option>
-                                    <option value="BSc Mathematics">BSc Mathematics</option>
-                                </optgroup>
+                                <optgroup label="Engineering"><option value="Mechanical Engineering">Mechanical Engineering</option><option value="Civil Engineering">Civil Engineering</option><option value="Electronics & Communication">Electronics & Communication</option></optgroup>
+                                <optgroup label="Commerce & Business"><option value="B.Com">B.Com</option><option value="BBA">BBA</option></optgroup>
+                                <optgroup label="Arts & Humanities"><option value="BA English">BA English</option><option value="BA Economics">BA Economics</option></optgroup>
+                                <optgroup label="Science"><option value="BSc Physics">BSc Physics</option><option value="BSc Mathematics">BSc Mathematics</option></optgroup>
                             </select>
                         </div>
-                        <div class="col-lg-2 text-center d-none d-lg-block">
-                             <i class="fas fa-arrow-right fa-2x text-primary mt-4"></i>
-                        </div>
+                        <div class="col-lg-1 text-center d-none d-lg-block"><i class="fas fa-arrow-right fa-2x text-primary mt-4"></i></div>
                         <div class="col-lg-5">
                             <label for="target-career" class="form-label fw-bold">Your Target IT Career</label>
                             <select id="target-career" class="form-select">
@@ -208,7 +89,7 @@
         </section>
         
         <!-- Results Section -->
-        <section class="section-padding" id="results">
+        <section class="section-padding bg-light" id="results" style="display: none;">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <p class="subtitle">Your Path Forward</p>
@@ -220,78 +101,29 @@
                 </div>
             </div>
         </section>
-
-        <!-- FAQ Section -->
-        <section class="section-padding bg-light">
-            <div class="container">
-                <div class="section-title" data-aos="fade-up">
-                    <p class="subtitle">Common Questions</p>
-                    <h2>Your Concerns, Addressed.</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="accordion" id="faqAccordion">
-                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">Is it really possible to switch to IT from a non-technical background?</button></h2><div id="c1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Absolutely. The tech industry values skills over degrees. Many successful IT professionals come from diverse fields. The key is a structured learning path, a strong portfolio of projects, and a passion for problem-solving—all of which our roadmap helps you build.</div></div></div>
-                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">I have no coding experience. Will I be able to cope?</button></h2><div id="c2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes! Our roadmaps are designed for beginners. We start with the absolute fundamentals and build up your skills progressively. Our recommended courses focus on hands-on learning to build your confidence from day one.</div></div></div>
-                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">How long will the transition realistically take?</button></h2><div id="c3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">This depends on your dedication. A focused, full-time learner can become job-ready in 4-6 months. Part-time learners often take 8-12 months. Our blueprint provides a clear structure, but your consistency is the most important factor.</div></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
     <footer class="py-5">
         <div class="container">
              <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3 text-white">Success Meets Academy</h5><p>Transforming careers through innovative training and skill development programs.</p></div>
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5 class="mb-3 text-white">Quick Links</h5><ul class="list-unstyled"><li><a href="/#programs">Programs</a></li><li><a href="/#courses">Courses</a></li><li><a href="#">Career Transform</a></li><li><a href="/About/">About</a></li><li><a href="/#contact">Contact</a></li></ul></div>
-                <div class="col-lg-4 col-md-6"><h5 class="mb-3 text-white">Contact Info</h5><p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p><p><i class="fas fa-phone me-2"></i> +91 93609 94617</p><p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p></div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5>Success Meets Academy</h5><p>Transforming careers through innovative training and skill development programs.</p></div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><h5>Quick Links</h5><ul class="list-unstyled"><li><a href="/#programs">Programs</a></li><li><a href="/#courses">Courses</a></li><li><a href="#">Career Transform</a></li><li><a href="/About/">About</a></li></ul></div>
+                <div class="col-lg-4 col-md-6"><h5>Contact Info</h5><p><i class="fas fa-map-marker-alt me-2"></i> Andagaloregate, Near Rasipuram, Namakkal</p><p><i class="fas fa-phone me-2"></i> +91 93609 94617</p><p><i class="fas fa-envelope me-2"></i> successmeetsacademy@gmail.com</p></div>
             </div>
-            <div class="footer-bottom mt-5 text-center"><p class="mb-0">© 2024 Success Meets Academy. All Rights Reserved.</p><p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p>
+            <div class="footer-bottom mt-5 text-center"><p>© 2024 Success Meets Academy. All Rights Reserved.</p><p>Designed & Developed By <a href="https://www.exploiteye.in/" target="_blank" rel="noopener noreferrer">Exploit Eye</a></p></div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inline script specific to this page
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 1000, once: true, offset: 50 });
-
-            // This is the core data "database" for the roadmap generator.
             const roadmapData = {
-                'data-analyst': {
-                    title: 'Data Analyst',
-                    steps: [
-                        { icon: 'fas fa-cogs', phase: 'Phase 1: Leverage Your Foundation', description: 'Your existing analytical mindset is your biggest asset. We start by translating that into the language of data.', skills: ['Problem Decomposition', 'Statistical Thinking', 'Advanced Excel'] },
-                        { icon: 'fas fa-database', phase: 'Phase 2: Core Technical Skills', description: 'Build the technical toolkit every data analyst needs to manipulate and query data effectively.', skills: ['SQL (PostgreSQL)', 'Python (Pandas, NumPy)', 'Data Warehousing Concepts'] },
-                        { icon: 'fas fa-chart-bar', phase: 'Phase 3: Visualization & Storytelling', description: 'Learn to turn raw data into compelling stories and actionable insights using powerful visualization tools.', skills: ['Tableau', 'Power BI', 'Data Storytelling Principles'] },
-                        { icon: 'fas fa-project-diagram', phase: 'Phase 4: Portfolio & Specialization', description: 'Apply your skills to real-world projects. A project analyzing business data or market trends would be a perfect fit.', skills: ['Portfolio Projects', 'Domain-Specific Analysis', 'Interview Prep'] }
-                    ],
-                    cta: { link: '/DataAnalytics/', text: 'Explore our Data Analytics Course' }
-                },
-                'full-stack': {
-                    title: 'Full Stack Developer',
-                    steps: [
-                        { icon: 'fas fa-code', phase: 'Phase 1: Programming Fundamentals', description: 'Your logical thinking is a great starting point for coding. We start with the core languages of the web.', skills: ['HTML5 & CSS3', 'JavaScript (ES6+)', 'Git & GitHub'] },
-                        { icon: 'fas fa-desktop', phase: 'Phase 2: Frontend Development', description: 'Learn to build beautiful, responsive, and interactive user interfaces using modern frameworks.', skills: ['React.js', 'Responsive Design', 'API Integration'] },
-                        { icon: 'fas fa-server', phase: 'Phase 3: Backend Development', description: 'Build the server-side logic, databases, and APIs that power web applications.', skills: ['Node.js & Express', 'REST APIs', 'SQL & NoSQL (MongoDB)'] },
-                        { icon: 'fas fa-rocket', phase: 'Phase 4: Deployment & Portfolio', description: 'Deploy your full-stack applications to the cloud and build a robust portfolio to showcase your end-to-end development skills.', skills: ['Docker', 'Cloud Services (AWS/Heroku)', 'Full-Stack Projects'] }
-                    ],
-                    cta: { link: '/FullStack/', text: 'Explore our Full Stack Development Course' }
-                },
-                'ui-ux': {
-                    title: 'UI/UX Designer',
-                    steps: [
-                        { icon: 'fas fa-brain', phase: 'Phase 1: Design Thinking & Empathy', description: 'Learn the fundamentals of user-centered design. Focus on understanding user problems before seeking solutions.', skills: ['Design Thinking', 'User Personas', 'Empathy Mapping'] },
-                        { icon: 'fas fa-sitemap', phase: 'Phase 2: Research & Structure', description: 'Master the techniques for user research and structuring information logically to create intuitive user flows.', skills: ['User Interviews', 'Journey Mapping', 'Information Architecture'] },
-                        { icon: 'fas fa-drafting-compass', phase: 'Phase 3: Wireframing & Prototyping', description: 'Bring ideas to life by creating low-fidelity wireframes and high-fidelity, interactive prototypes in Figma.', skills: ['Figma', 'Wireframing', 'Interactive Prototyping'] },
-                        { icon: 'fas fa-palette', phase: 'Phase 4: Visual Design & Portfolio', description: 'Learn the principles of UI design, including color, typography, and layout, and build a portfolio-ready case study.', skills: ['UI Principles', 'Design Systems', 'Portfolio Case Study'] }
-                    ],
-                    cta: { link: '/UIUX/', text: 'Explore our UI/UX Design Course' }
-                }
+                'data-analyst':{title:'Data Analyst',steps:[{icon:'fas fa-cogs',phase:'Phase 1: Leverage Your Foundation',description:'Your existing analytical mindset is your biggest asset. We start by translating that into the language of data.',skills:['Problem Decomposition','Statistical Thinking','Advanced Excel']},{icon:'fas fa-database',phase:'Phase 2: Core Technical Skills',description:'Build the technical toolkit every data analyst needs to manipulate and query data effectively.',skills:['SQL (PostgreSQL)','Python (Pandas, NumPy)','Data Warehousing Concepts']},{icon:'fas fa-chart-bar',phase:'Phase 3: Visualization & Storytelling',description:'Learn to turn raw data into compelling stories and actionable insights using powerful visualization tools.',skills:['Tableau','Power BI','Data Storytelling Principles']},{icon:'fas fa-project-diagram',phase:'Phase 4: Portfolio & Specialization',description:'Apply your skills to real-world projects. A project analyzing business data or market trends would be a perfect fit.',skills:['Portfolio Projects','Domain-Specific Analysis','Interview Prep']}],cta:{link:'/DataAnalytics/',text:'Explore our Data Analytics Course'}},
+                'full-stack':{title:'Full Stack Developer',steps:[{icon:'fas fa-code',phase:'Phase 1: Programming Fundamentals',description:'Your logical thinking is a great starting point for coding. We start with the core languages of the web.',skills:['HTML5 & CSS3','JavaScript (ES6+)','Git & GitHub']},{icon:'fas fa-desktop',phase:'Phase 2: Frontend Development',description:'Learn to build beautiful, responsive, and interactive user interfaces using modern frameworks.',skills:['React.js','Responsive Design','API Integration']},{icon:'fas fa-server',phase:'Phase 3: Backend Development',description:'Build the server-side logic, databases, and APIs that power web applications.',skills:['Node.js & Express','REST APIs','SQL & NoSQL (MongoDB)']},{icon:'fas fa-rocket',phase:'Phase 4: Deployment & Portfolio',description:'Deploy your full-stack applications to the cloud and build a robust portfolio to showcase your end-to-end development skills.',skills:['Docker','Cloud Services (AWS/Heroku)','Full-Stack Projects']}],cta:{link:'/FullStack/',text:'Explore our Full Stack Development Course'}},
+                'ui-ux':{title:'UI/UX Designer',steps:[{icon:'fas fa-brain',phase:'Phase 1: Design Thinking & Empathy',description:'Learn the fundamentals of user-centered design. Focus on understanding user problems before seeking solutions.',skills:['Design Thinking','User Personas','Empathy Mapping']},{icon:'fas fa-sitemap',phase:'Phase 2: Research & Structure',description:'Master the techniques for user research and structuring information logically to create intuitive user flows.',skills:['User Interviews','Journey Mapping','Information Architecture']},{icon:'fas fa-drafting-compass',phase:'Phase 3: Wireframing & Prototyping',description:'Bring ideas to life by creating low-fidelity wireframes and high-fidelity, interactive prototypes in Figma.',skills:['Figma','Wireframing','Interactive Prototyping']},{icon:'fas fa-palette',phase:'Phase 4: Visual Design & Portfolio',description:'Learn the principles of UI design, including color, typography, and layout, and build a portfolio-ready case study.',skills:['UI Principles','Design Systems','Portfolio Case Study']}],cta:{link:'/UIUX/',text:'Explore our UI/UX Design Course'}}
             };
             
             const findPathBtn = document.getElementById('find-path');
@@ -307,53 +139,29 @@
                 let stepsHtml = roadmap.steps.map(step => `
                     <div class="roadmap-step">
                         <div class="step-icon"><i class="${step.icon}"></i></div>
-                        <div class="step-content">
-                            <h5>${step.phase}</h5>
-                            <p>${step.description}</p>
-                            <div>${step.skills.map(skill => `<span class="badge bg-secondary">${skill}</span>`).join('')}</div>
-                        </div>
-                    </div>
-                `).join('');
+                        <div class="step-content"><h5>${step.phase}</h5><p>${step.description}</p>
+                        <div>${step.skills.map(skill => `<span class="badge">${skill}</span>`).join('')}</div></div></div>`).join('');
                 
-                let ctaHtml = `
-                    <div class="cta-card mt-5">
-                        <h4>Ready to Start Your Journey?</h4>
-                        <p>Our expert-led courses are designed to guide you through this exact blueprint.</p>
-                        <a href="${roadmap.cta.link}" class="btn btn-brand">${roadmap.cta.text}</a>
-                    </div>
-                `;
-
+                let ctaHtml = `<div class="card bg-light p-4 mt-5 text-center"><h4 class="h5">Ready to Start Your Journey?</h4><p>Our expert-led courses are designed to guide you through this exact blueprint.</p><a href="${roadmap.cta.link}" class="btn btn-brand">${roadmap.cta.text}</a></div>`;
                 roadmapContainer.innerHTML = stepsHtml + ctaHtml;
             };
 
             findPathBtn.addEventListener('click', () => {
                 const currentDomainSelect = document.getElementById('current-domain');
                 const targetCareerSelect = document.getElementById('target-career');
-                
                 const currentDomainText = currentDomainSelect.options[currentDomainSelect.selectedIndex].text;
                 const targetCareerValue = targetCareerSelect.value;
-
                 const roadmap = roadmapData[targetCareerValue];
                 
                 if (roadmap) {
                     renderRoadmap(roadmap, currentDomainText, roadmap.title);
                     resultsSection.style.display = 'block';
                     resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                    // Handle case where no roadmap is found (optional)
-                    alert('Roadmap for the selected career is not yet available. Please check back later!');
                 }
             });
-            
-            // Generate a default view on page load
-            const defaultFromText = document.getElementById('current-domain').options[0].text;
-            const defaultToValue = document.getElementById('target-career').options[0].value;
-            const defaultRoadmap = roadmapData[defaultToValue];
-            if (defaultRoadmap) {
-                renderRoadmap(defaultRoadmap, defaultFromText, defaultRoadmap.title);
-            }
         });
     </script>
+    <script src="/script.js"></script>
 
 </body>
 </html>
